@@ -1,0 +1,216 @@
+﻿<html>
+
+<head>
+
+<script> 
+  try {
+    if (window.self !== window.top) {
+      document.documentElement.classList.add("inside-iframe");
+    }
+  } catch (error) {
+    document.documentElement.classList.add("inside-iframe");
+  }
+</script>
+
+<style>
+		/* ubiraet prokrutku esli eta forma vstavlenna v druguty kak iframe.
+		Sript vishe - dobavlyaet klass: inside-iframe esli forma vstavlenna kak iframe 
+		i CSS dlya etogo klassa za preshaet scrolling */
+		html.inside-iframe,
+		html.inside-iframe body {
+			overflow: hidden;
+		}
+  
+		body {
+			padding-top: var(--menu-height); /* высота меню */
+		}
+		
+		header {
+			position: relative;
+		}		
+		
+		.main-menu {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: 1000; /* чтобы было поверх всего */
+		    background: #d73;
+		}
+		
+
+		
+		.main-menu ul {
+		    display: flex;          /* делаем горизонтально */
+		    margin: 0;
+		    padding: 0;
+			height: var(--menu-height); /* высота меню */
+		    list-style: none;       /* убираем точки */
+		    align-items: center; /* центрируем элементы внутри */
+		    background: var(--menu-background-color);
+		    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+		}
+		
+
+		.main-menu li {
+		    height: 100%;
+		}
+
+		
+		.main-menu a {
+			display: flex;
+		    align-items: center; /* центрируем элементы внутри */
+		    padding: 0px 15px; /* отступы вокруг текста пункта меню 1-в/н 2-п/л */
+			height: 100%;
+		    text-decoration: none; /* чтобы не было подчеркивания */
+		    text-shadow: 0 2px 2px rgba(0,0,0,0.2);
+		    color: var(--menu-color);
+		}
+		
+		
+		.main-menu a:hover {
+		    background: var(--menu-color);       /* эффект при наведении */
+		    color: white;
+			font-weight: bold;
+		    text-shadow: 0 2px 2px rgba(0,0,0,0.4);
+		    padding: 3px 18px; /* отступы вокруг текста пункта меню 1-в/н 2-п/л */
+		    box-shadow: 0 5px 5px rgba(0,0,0,0.4);
+		}
+		
+		
+		thead th, tfoot th {
+			background-color:  var(--menu-color);
+			color: white;
+		}
+		
+		tbody td,
+		tbody th {
+			background-color: var(--menu-background-color);;
+			color: #222;
+		}
+		
+		tbody th:first-child,
+		tbody td:first-child {
+			background-color: var(--menu-color);
+			color: white;
+		}
+
+		tbody tr > :nth-child(3){
+			background-color: white;
+			color: var(--menu-color);
+		}
+		
+		.double-line {
+			border: none;
+			border-top: 4px double black;
+		}
+		
+	</style>
+
+
+	<title>My form</title>
+</head>
+
+</body>
+
+	<!--	soderjimoe formy -->
+	<form id="testForm" method="post" action="http://unityhub.local/my_test/result.php">
+		<p>Что вы думаете об этом выступлении?</p>
+		<textarea name="comments" cols="100" rows="4">Введите свой комментарий...</textarea>
+		
+		<br>
+		<br>
+		<label for="username">Imya:</label>
+		<input id="username" type="text" name="username" /> 
+
+	
+		<br>
+		<br>
+		<fieldset>
+		<legend>Your preferences</legend>
+			
+			<p>Пожалуйста, выберите любимый жанр музыки:
+				 <br>
+				 <input type="radio" name="genre" value="rock" checked="checked" /> Рок
+				 <input type="radio" name="genre" value="pop" /> Поп 
+				 <input type="radio" name="genre" value="techno" /> Электроника
+			</p>
+			 
+			<p>Пожалуйста, выберите, где вы слушаете музыку: <br />
+				 <input type="checkbox" name="service" value="house" checked="checked" /> Дома
+				 <input type="checkbox" name="service" value="work" /> На работе
+				 <input type="checkbox" name="service" value="inroad" /> В дороге
+			</p>
+			
+			<label>На каком устройстве вы слушаете музыку чаще всего?
+				<select name="devices">
+					<option value="ipod">iPod</option>
+					<option value="radio">Радио</option>
+					<option value="computer" selected>Компьютер</option>
+				</select>
+			</label>
+
+			<p> Играете ли вы на одном из инструментов,
+			 перечисленных ниже? <br>(Вы можете выбрать сразу
+			 несколько вариантов ответа, <br> нажав и удерживая
+			 клавишу <b>Ctrl</b> (Windows) или <b>Cmd</b>
+			 (OS X)).</p>
+			 <select name="instrumenty" size="3" multiple="multiple">
+				 <option value="gitara" selected="selected">Гитара</option>
+				 <option value="barabany">Барабаны</option>
+				 <option value="klavishnye" selected="selected">Клавишные</option>
+				 <option value="bas">Бас-гитара</option>
+			 </select>
+
+			<p> Играете ли вы на одном из инструментов,
+			 перечисленных ниже? <br>(Вы можете выбрать сразу
+			 несколько вариантов ответа, <br> нажав и удерживая
+			 клавишу <b>Ctrl</b> (Windows) или <b>Cmd</b>
+			 (OS X)).</p>
+			 <select name="instrumenty" size="3" multiple="multiple">
+				 <option value="gitara" selected="selected">Гитара</option>
+				 <option value="barabany">Барабаны</option>
+				 <option value="klavishnye" selected="selected">Клавишные</option>
+				 <option value="bas">Бас-гитара</option>
+			 </select>
+
+			<p> Играете ли вы на одном из инструментов,
+			 перечисленных ниже? <br>(Вы можете выбрать сразу
+			 несколько вариантов ответа, <br> нажав и удерживая
+			 клавишу <b>Ctrl</b> (Windows) или <b>Cmd</b>
+			 (OS X)).</p>
+			 <select name="instrumenty" size="3" multiple="multiple">
+				 <option value="gitara" selected="selected">Гитара</option>
+				 <option value="barabany">Барабаны</option>
+				 <option value="klavishnye" selected="selected">Клавишные</option>
+				 <option value="bas">Бас-гитара</option>
+			 </select>
+			
+			<br> <br>
+			<label for="depart">Дата вылета</label>
+			<input id="depart" type="date" name="depart" required="required" /> 
+			
+			 <!-- lable bez id -->
+			<br> <br>
+			<label>Пожалуйста введите адрес вашего сайта:
+				<input type="url" name="sait" value="https://yoursite.org" />
+			</label>
+			
+			<br> <br>
+			<label> Пожалуйста введите адрес электронной почты:
+				<input type="email" name="email" />
+			</label>
+			
+			<br>
+			<br>
+		</fieldset>
+		
+		<br>
+		<button type="submit" name="buttonAction" value="submit">Отправить</button>
+	
+	
+	</form>
+	
+
+</body>
+</html>

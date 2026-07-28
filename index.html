@@ -10,18 +10,33 @@
 
 	<style>
 		:root {
+			--tag-color: #f75d48;
+			--purple-color: #782E7A;
+			
+			--table-background-color: #0056a7;
+
 			--menu-height: 70px;
 			--menu-color: #F73;
 			--menu-background-color: #EEE7E7;
 			
-			--table-background-color: #0056a7;
-			
-			--reference-section-color: #EEE7E7;
-			--description-block-color: #F2F8FB;
-			--example-block-color: white; /* #f8f8f8; */
+			--section-reference-color: #EEE7E7;
+			--block-description-color: #F2F8FB;
+			--block-example-color: white; /* #f8f8f8; */
+
 		}
 
 		
+
+		/* ********************** */
+		/* otstup na visotu menu, dlya pravilnoy pozicii bloka rezultatov (pri skrollinge) */ 
+		#block_result {
+			scroll-margin-top: 80px;
+		}
+		/* otstup na visotu menu, dlya pravilnoy pozicii bloka rezultatov (pri skrollinge) */ 
+		/* ********************** */
+
+
+
 		/* ********************** */
 		/* format menu */
 		body {
@@ -79,44 +94,53 @@
 		
 
 
-		/* ********************** */
-		/* format sekciy i blokov */
-		h1, h2, h3, h4, h5, h6, p {
+		/* *********************** */
+		/* format sekciy i blokov  */
+		/* h1, h2, h3, h4, h5, h6, */
+		p {
 			margin: 0;	/* убирает встроенные в браузер отступы для абзацев и заголовков*/
 		}
 		
+		pre {
+			margin: 0; /* ubiraet otstupi dlya tega "pre" */
+			overflow-x: auto;
+		}
+		
 		.section_horisontal {
-			display: flex;
-			gap: 20px; /* расстояние между блоками */
+			display: flex;              /* ставит блоки в одну строку */
+			/* align-items: flex-start; /* прижимает блоки к верху */
+			align-items: stretch;		/* viravnivaet razmer blokov po bolshemy, po visote */
+			gap: 10px;                  /* расстояние между блоками */
 		}		
 
 		.block_horisontal {
-			flex: 1; /* оба блока займут одинаковую ширину */
-		/*	padding: 20px;
-			border: 1px solid #ccc; */
+			flex: 1 1 0; /* оба блока займут одинаковую ширину */
+			min-width: 0;
+			box-sizing: border-box;
+			margin-top: 0 !important; /* bes etogo "align-items: flex-start;" ne srabativaet */
 		}		
 
-		.reference-section {
-			margin: 20px 0;
-			padding: 20px;
+		.section-reference {
+			margin: 60px 0;
+			padding: 30px;
 			border: 1px solid #ccc;
 			border-radius: 5px;
-			background-color: var(--reference-section-color);
+			background-color: var(--section-reference-color);
 		}
 
-		.description-block {
-			margin: 10px 0;
-			padding: 15px;
+		.block-description {
+			margin: 30px 0 10px;
+			padding: 20px 30px;
 		 	border: 1px solid #ccc; 
 			border-radius: 5px;
-			background-color: var(--description-block-color);
+			background-color: var(--block-description-color);
 		}
 
-		.example-block {
+		.block-example {
 			margin: 10px 0;
-			padding: 15px;
-		/* 	border: 1px dashed #999;c */
-			background-color: var(--example-block-color);
+			padding: 30px;
+			border: 1px solid #ccc;
+			background-color: var(--block-example-color);
 		}
 		/* format sekciy i blokov */
 		/* ********************** */
@@ -125,6 +149,25 @@
 
 		/* ********************** */
 		/* format tablic */ 
+		
+		table {
+			width: 100%;
+			border: 1px solid;
+			border-color: gray;			
+			border-spacing: 2px;			
+			/*  border-collapse: collapse; - dlya odinochnoy ramki*/
+		}
+		
+		.limit-max-width {
+			max-width: 600px;
+		}
+		
+		th, td {
+			border: 1px solid;
+			border-color: gray;			
+			padding: 10px;
+		}
+		
 		thead th, tfoot th {
 			background-color:  var(--menu-color);
 			color: white;
@@ -136,6 +179,11 @@
 			color: #222;
 		}
 		
+		tbody tr > th:first-child { /* viravnivaet zagolovki strok po levomu  */
+			text-align: left;
+			font-weight: normal;
+		}
+
 		tbody th:first-child,
 		tbody td:first-child {
 			background-color: var(--menu-color);
@@ -148,14 +196,64 @@
 		}
 		/* format tablic */ 
 		/* ********************** */
+		
+		
+		
+		/* ********************** */
+		/* format SVG */ 
+		.svg-icon {
+			width: 60px;
+			height: 60px;
+			fill: var(--purple-color);
+			vertical-align: middle;
+		}
+		/* format SVG */ 
+		/* ********************** */
+		
+		
+		
+		/* ********************** */
+		/* format otobrajeniya HTML tegov primerov */ 
+		b {
+			color: var(--tag-color);
+			font-weight: bold;
+		}
+		/* format otobrajeniya HTML tegov primerov */ 
+		/* ********************** */
+	
+	
+	
+		/* ********************** */
+		/* Oformlenie "button" */ 
+		.button-cusom {
+			bachground: var(--menu-color);
+			transition: background 0.3s;
+		}
 
+		.button-cusom:hover {
+			bachground: var(--menu-background-color);
+		}
+		/* dlya avtoizmeneniya shirini "textarea" */ 
+		/* ********************** */
+		
+		
+		
+		/* ********************** */
+		/* dlya avtoizmeneniya shirini "textarea" */ 
+		textarea {
+			width: 100%;
+			max-width: 100%;
+			box-sizing: border-box;
+		}
+		/* dlya avtoizmeneniya shirini "textarea" */ 
+		/* ********************** */
 	</style>
 
 </head>
 
 </body>
 
-	<!-- glavnoye menu -->
+	<!-- glavnoye MENU SVERHU -->
 	<header>
 		<nav  class="main-menu">
 		
@@ -170,7 +268,7 @@
 		</nav>
 	</header>
 
-	<!-- obichnoe menu sleva -->
+	<!-- obichnoe MENU SLEVA -->
 	<aside>
 	    <nav>
 	        <ul>
@@ -182,12 +280,13 @@
 
 
 	<!-- ************************************ -->
-	<!-- Ispolzovanie zagolovkov -->
-	<section class="reference-section">
-		<h2>Заголовки &lt;h1&gt; &lt;h2&gt; ... </h2>	
+	<!-- Ispolzovanie ZAGOLOVKOV -->
+	<section id="zagolovki" class="section-reference">
+		<h2>Заголовки <b>&lt;h1&gt; &lt;h2&gt; ...</b>  </h2>	
 		
-		<div class="description-block">
-			<p><b>&lt;h1&gt;</b> - Этот текст может быть введением к тексту,
+		<div class="block-description">
+			<p>
+				<b>&lt;h1&gt;</b> - Этот текст может быть введением к тексту,
 				помещенному  далее на странице. В случае если текст достаточно
 				длинный, он может быть разделен на несколькоразделов
 				с подзаголовками.
@@ -197,26 +296,26 @@
 				подзаголовки более низкого уровня.
 			</p>
 		</div>
-		<div class="example-block">
-			<h1>Это основной заголовок - &lt;h1&gt;</h1>
-			<h2>Это подзаголовок - &lt;h2&gt;</h2>
+		<div class="block-example">
+			<h1>Это основной заголовок - <b>&lt;h1&gt;</b></h1>
+			<h2>Это подзаголовок - <b>&lt;h2&gt;</b></h2>
 		</div>
 				
 	</section>
 	
 
 	<!-- ************************************ -->
-	<!-- Ispolzovanie formatirovaniya -->
-	<section class="reference-section">
+	<!-- Ispolzovanie FORMATirovaniya -->
+	<section id="formatirovanie" class="section-reference">
 		<h2>Различные виды форматирования.</h2>	
 		
 		<div class="section_horisontal">
-			<div class="description-block block_horisontal">
+			<div class="block-description block_horisontal">
 				<p> 
 					<b>&lt;blockquote&gt;</b> - Это цитата с указанием источника, но не его виндно (только поисковикам).
 				</p>
 			</div>
-			<div class="example-block  block_horisontal">
+			<div class="block-example  block_horisontal">
 				<blockquote cite="https://unity-hub.org/"> <!-- cite указывает источник цитаты, но обычно не показывается пользователю на странице. Он больше для браузера, поисковиков и семантики. -->
 					Это цитата c unity-hub.
 				</blockquote>
@@ -224,14 +323,14 @@
 		</div>
 
 		<div class="section_horisontal">
-			<div class="description-block block_horisontal">
+			<div class="block-description block_horisontal">
 				<p> 
 					<b>&lt;del&gt;</b> - зачеркнутый текст 
 					<br> используется для удаленного текста. <br> 
 					&lt;del datetime="2026-07-12" cite="https://example.com/changes"&gt;
 				</p>
 			</div>
-			<div class="example-block  block_horisontal">
+			<div class="block-example  block_horisontal">
 				<p> 
 					Это была <del datetime="2026-07-12">худшая</del> из идей
 				</p>
@@ -239,12 +338,12 @@
 		</div>
 
 		<div class="section_horisontal">
-			<div class="description-block block_horisontal">
+			<div class="block-description block_horisontal">
 				<p> 
 					<b>&lt;ins&gt;</b> - подчеркнутый текст
 				</p>
 			</div>
-			<div class="example-block  block_horisontal">
+			<div class="block-example  block_horisontal">
 				<p> 
 					Это была <ins>лучшая</ins> из идей
 				</p>
@@ -252,13 +351,13 @@
 		</div>
 
 		<div class="section_horisontal">
-			<div class="description-block block_horisontal">
+			<div class="block-description block_horisontal">
 				<p> 
 					<b>&lt;span&gt;</b> - подсказка
 					<br> При наведении появится всплывающий текст - "Это подсказка"
 				</p>
 			</div>
-			<div class="example-block  block_horisontal">
+			<div class="block-example  block_horisontal">
 				<span title="Это подсказка"> 
 					Наведите курсор сюда и появится текст поддсказки
 				</span>
@@ -266,12 +365,12 @@
 		</div>
 		
 		<div class="section_horisontal">
-			<div class="description-block block_horisontal">
+			<div class="block-description block_horisontal">
 				<p> 
 					<b>&lt;abbr&gt;</b> - аббривиатура
 				</p>
 			</div>
-			<div class="example-block  block_horisontal">
+			<div class="block-example  block_horisontal">
 				<p>
 					Наведите курсор на слово
 					<abbr title="Национальное агентство по аэронавтике и исследованию космического пространства">
@@ -283,12 +382,12 @@
 		</div>
 		
 		<div class="section_horisontal">
-			<div class="description-block block_horisontal">
+			<div class="block-description block_horisontal">
 				<p> <b>&lt;s&gt;</b> - зачеркнутый текст 
 					<br> используется для неактуальной информации текста. <br> 
 				</p>
 			</div>
-			<div class="example-block  block_horisontal">
+			<div class="block-example  block_horisontal">
 				<p>
 					Ноутбук Samsung:<br>
 					Старая цена: <s>31 900 руб.</s><br>
@@ -298,366 +397,629 @@
 		</div>
 		
 		<div class="section_horisontal">
-			<div class="description-block block_horisontal">
+			<div class="block-description block_horisontal">
 				<p> 
 					<b>&lt;address&gt;</b> - адрес
+					<br> <b>&lt;a</b> href="mailto:email@mywebsite.ru"<b>&gt;</b> email@mywebsite.ru<b>&lt;/a&gt;</b>
+					 - email co ssilkoy na otpravku pochty
 				</p>
 			</div>
-			<div class="example-block  block_horisontal">
+			<div class="block-example  block_horisontal">
 				<address>
-					<p> <a href="mailto:email@mywebsite.ru">
-						email@mywebsite.ru</a></p>
-					<p> г. Ухань, ул. Ковида, д. 25.</p>
+					<p> 
+						<a href="mailto:email@mywebsite.ru">email@mywebsite.ru</a> 
+						<br>г. Ухань, ул. Ковида, д. 25.
+					</p>
 				</address>
 			</div>
 		</div>
 		
 	</section>
 	
-	<!-- *********************** -->
-	<!-- Ispolzovanie formatirovaniya -->
-	<br> <br>
-	<hr class="double-line">
-	<h2>Различные виды форматирования</h2>	
-
-
-
 
 	<!-- *********************** -->
 	<!-- Ispolzovanie Spiskov-->
-	<br> <br>
-	<hr class="double-line">
-	<h2>Списки</h2>
-	
-	<ol title="Рецепт пюре"> 
-		<li> Порежьте картофель кубиками.</li>
-		<li> Варите картофель в соленой воде на медленном огне в течение 15-20 минут до размягчения.</li>
-		<li> Подогрейте и смешайте молоко, сливочное масло и мускатный орех.</li>
-		<li> Слейте воду из кастрюли и потолките картофель.</li>
-		<li> Перемешайте картофель со смесью из молока,	масла и мускатного ореха.</li>
-	</ol>
-
-	<ul>
-		<li>1 кг картофеля</li>
-		<li>100 мл молока</li>
-		<li>50 г соленого масла</li>
-		<li>Тертый мускатный орех
-			<ol> 
-				<li> Взять орех.</li>
-				<li> Взять терку.</li>
-				<li> Тереть мускатный орех.</li>
-				<li> Засыпать в блюдо.</li>
-				<li> Перемешать.</li>
+	<section id="spiski" class="section-reference">
+		<h2>Списки</h2>	
+		
+		<div class="block-description">
+			<p>
+				<b>&lt;ol title="zagolovok"&gt;</b> - numerovanniy spisok. 
+				<br>&nbsp;&nbsp; <b>&lt;li&gt;</b> - element spiska. 
+				<br> Zagolovok title ne viden i poyavlayetsa pri navedenii na element spiska
+			</p>
+		</div>
+		<div class="block-example">
+			<ol title="Рецепт пюре"> 
+				<li> Порежьте картофель кубиками.</li>
+				<li> Варите картофель в соленой воде на медленном огне в течение 15-20 минут до размягчения.</li>
+				<li> Подогрейте и смешайте молоко, сливочное масло и мускатный орех.</li>
+				<li> Слейте воду из кастрюли и потолките картофель.</li>
+				<li> Перемешайте картофель со смесью из молока,	масла и мускатного ореха.</li>
 			</ol>
-		</li>
-		<li>Соль и перец по вкусу</li>
-	</ul>
+		</div>
+				
+		<div class="block-description">
+			<p>
+				<b>&lt;ul&gt;</b> - spisok s markerami. 
+				<br>&nbsp;&nbsp; <b>&lt;li&gt;</b> - spisok s markerami. 
+			</p>
+		</div>
+		<div class="block-example">
+			<ul>
+				<li>1 кг картофеля</li>
+				<li>100 мл молока</li>
+				<li>50 г соленого масла</li>
+				<li>Тертый мускатный орех
+					<ol> 
+						<li> Взять орех.</li>
+						<li> Взять терку.</li>
+						<li> Тереть мускатный орех.</li>
+						<li> Засыпать в блюдо.</li>
+						<li> Перемешать.</li>
+					</ol>
+				</li>
+				<li>Соль и перец по вкусу</li>
+			</ul>
+			
+			<hr>
+			<h3>Обзоры кинофильмов:</h3>
+			<ul>
+				<li> <a href="http://www.kinopoisk.ru">	Кинопоиск</a> </li>
+				<li> <a href="http://www.megacritic.ru">Мегакритик</a> </li>
+				<li> <a href="http://kinoblog.org">		Киноблог</a> </li>
+				<li> <a href="http://televesti.ru">		Телевести.Ру</a> </li>
+			</ul>
+		</div>
 
-	<dl>
-		<dt> Сашими</dt>
-			<dd> Сырая рыба, нарезанная тонкими кусочками;
-			подается с такими приправами, как
-			нашинкованная японская редька (дайкон),
-			корень имбиря, васаби или соевый соус.</dd>
-		<dt> Весы</dt>
-			<dd> Прибор, используемый для определения точного
-			веса ингредиентов.</dd>
-			<dd> Зодиакальный знак, распространяющийся на
-			календаре с 23 сентября по 22 октября,
-			единственный в зодиаке неодушевленный
-			символ.</dd>
-		<dt> Ноу-хау</dt>
-			<dd> Мастерство, умение, практическая сметка,
-			высококвалифицированная работа; компетенция
-			и опыт, приобретаемые длительной
-			практикой.</dd>
-	</dl>
+		<div class="block-description">
+			<p>
+				<b>&lt;dl&gt;</b> - tekctoviy soisok s rashifrovkoy. 
+				<br>&nbsp;&nbsp; <b>&lt;dt&gt;</b> - znacheniye. 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp; <b>&lt;dd&gt;</b> - rashifrovka
+			</p>
+		</div>
+		<div class="block-example">
+			<dl>
+				<dt> Сашими</dt>
+					<dd> Сырая рыба, нарезанная тонкими кусочками;
+					подается с такими приправами, как
+					нашинкованная японская редька (дайкон),
+					корень имбиря, васаби или соевый соус.</dd>
+				<dt> Весы</dt>
+					<dd> Прибор, используемый для определения точного
+					веса ингредиентов.</dd>
+					<dd> Зодиакальный знак, распространяющийся на
+					календаре с 23 сентября по 22 октября,
+					единственный в зодиаке неодушевленный
+					символ.</dd>
+				<dt> Ноу-хау</dt>
+					<dd> Мастерство, умение, практическая сметка,
+					высококвалифицированная работа; компетенция
+					и опыт, приобретаемые длительной
+					практикой.</dd>
+			</dl>
+		</div>
 
-	<h3>Обзоры кинофильмов:</h3>
-	<ul>
-		<li><a href="http://www.kinopoisk.ru">
-		Кинопоиск</a></li>
-		<li><a href="http://www.megacritic.ru">
-		Мегакритик</a></li>
-		<li><a href="http://kinoblog.org">
-		Киноблог</a></li>
-		<li><a href="http://televesti.ru">
-		Телевести.Ру</a></li>
-	</ul>
+	</section>
+
 
 	<!-- *********************** -->
 	<!-- Vivod specsimvolov tipa:	< > & " ' © -->
-	<br> <br>
-	<hr class="double-line">
-	<div>
+	<section id="specsimvoly" class="section-reference">
 		<h2>Kак вывести на экран специальные символы</h2>	
-		<fieldset>
-			<legend>Kак вывести на экран специальные символы</legend>		
-
-			<table width="800" cellpadding="10" cellspacing="2" border="1" >
+		
+		<div class="block-description">
+				<!-- 			<tableclass="limit-max-width"  max-width="600" cellpadding="10" cellspacing="2" border="1" > -->
+ 			<table class="limit-max-width">
 				<tbody>
-					<tr>	<td >&amp;lt;</td>		<td style="text-align: center;"> &lt; </td>	<td>левая угловая скобка</td>	</tr>
-					<tr>	<td>&amp;gt;</td>		<td style="text-align: center;"> &gt; </td>	<td>правая угловая скобка</td>	</tr>
+					<tr>	<td >&amp;lt;</td>		<td style="text-align: center;"> &lt; </td>		<td>левая угловая скобка</td>	</tr>
+					<tr>	<td>&amp;gt;</td>		<td style="text-align: center;"> &gt; </td>		<td>правая угловая скобка</td>	</tr>
 					<tr>	<td>&amp;amp;</td>		<td style="text-align: center;"> &amp; </td>	<td>амперсанд</td>				</tr>
 					<tr>	<td>&amp;quot;</td>		<td style="text-align: center;"> &quot; </td>	<td>двойная кавычка</td>		</tr>
 					<tr>	<td>&amp;apos;</td>		<td style="text-align: center;"> &apos; </td>	<td>одинарная кавычка</td>		</tr>
 					<tr>	<td>&amp;copy;</td>		<td style="text-align: center;"> &copy; </td>	<td>знак copyright</td>			</tr>
 					<tr>	<td>&amp;nbsp;</td>		<td style="text-align: center;"> &nbsp; </td>	<td>неразрывный пробел</td>		</tr>
+					<tr>	<td>&amp;#9993;</td>	<td style="text-align: center;"> &#9993; </td>	<td>email</td>					</tr>
+					<tr>	<td>&amp;#9742;</td>	<td style="text-align: center;"> &#9742; </td>	<td>phone number</td>			</tr>
+					<tr>	<td>&amp;#9743;</td>	<td style="text-align: center;"> &#9742; </td>	<td>phone number</td>			</tr>					
+					<tr>	<td>&amp;#128205;</td>	<td style="text-align: center;"> &#128205; </td><td>address</td>				</tr>
+					<tr>	<td>&amp;#127760;</td>	<td style="text-align: center;"> &#127760; </td><td>website</td>				</tr>
+					<tr>	<td><a href="https://www.toptal.com/designers/htmlarrows/symbols/?utm_source=chatgpt.com">Site with sybols - toptal.com</a></td>	<td style="text-align: center;"> </td><td>ssilka na vse simvoli</td></tr>
 				</tbody>
 			</table>
-		
+		</div>
+		<div class="block-example">
 			<h3> Пример 1: </h3>
 			<p>
 				HTML-тег: &lt;meta&gt;<br>
 				Copyright: &copy; 2026 TSOS Unity Hub<br>
 				5 &gt; 3<br>
 				3 &lt; 5<br>
-			  Tom &amp; Jerry
+				Tom &amp; Jerry
 			</p>
 			
-			<h3> Пример 2: </h3>
-			<p>&#9993; info@example.com</p>
-			<p>&#9742; 01788 123456</p>
-			<p>&#128205; Rugby Town Hall, Rugby</p>
-			<p>&#127760; www.example.com</p>
-			
-		</fieldset>
-	</div>
-
-
-
+			<hr>
+			<h3>Пример 2: </h3>
+			<p>
+				&#9993; info@example.com<br>
+				&#9742; 01788 123456<br>
+				&#128205; Rugby Town Hall, Rugby<br>
+				&#127760; www.example.com
+			</p>
+		</div>
+	</section>
+				
 	<!-- *********************** -->
-	<!-- Ispolzovanie span -->
-	<br> <br>
-	<hr class="double-line">
-	<div>
-		<h2>Ispolzovanie <style="color: blue;"> &lt;span&gt; </span></h2>	
-		<fieldset>
-			<legend>Ispolzovanie <style="color: blue;"> &lt;span&gt; </span> </legend>		
-
-			<p>Текст с <span style="color: blue;">кусочком внутри</span>.</p>
-			<h1>Заголовок с <span style="color: red;">выделенным словом</span></h1>
-			<h2>Раздел: <span style="color: red;">HTML</span></h2>
-			<a href="#">Ссылка с <span style="color: red;">выделенным текстом</span></a>
-			<li>Пункт списка с <span style="color: green;">важной частью</span></li>
-			<button>Нажми <span style="color: red;">сюда</span></button>
-		</fieldset>
-	</div>
-
-	
-	
-	<!-- Ispolzovatie elementa "form" - otpravka i vivod otpravlayemih poley s pomoshyu JS (v razdele <script>) -->
-	<!-- ************************************ -->
-	<br> <br>
-	<hr class="double-line">
-	<h2>Ispolzovanie "tables"</h2>
-
-	<!-- Tablica 1 -->
-	<table width="800" cellpadding="10" cellspacing="2" border="1" >
-		<thead>
-			<tr>
-				 <th bgcolor="var(--menu-color)" ></th>
-				 <th>TV1000</th>
-				 <th>ТНТ</th>
-				 <th>СТС</th>
-			 </tr>
-		</thead>
+	<!-- Vivod SVG-iconok -->
+	<section id="SVG-icon" class="section-reference">
+		<h2><b>&lt;svg&gt;</b> - вывести на экран специальные символы SVG-icon </h2>
 		
-		<tbody>
-			<tr>
-				 <th>20:00-21:00</th>
-				 <td rowspan="2">Фильм</td>
-				 <td>Ток-шоу</td>
-				 <td>Юмор</td>
-			 </tr>
-			 <tr>
-				 <th>21:00-22:00</th>
-				 <td>Ток-шоу</td>
-				 <td>Мультфильм</td>
-			 </tr>
-		</tbody>
+		<div class="section_horisontal"> <!-- Google Map -->
+			<div class="block-description block_horisontal"> <!-- opisanie -->
+				<pre><code>
+  <b>&lt;svg</b> class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: var(--menu-color)"<b>&gt;</b>  
+    &lt;path d="M12 2C8.69 2 6 4.69 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.31-2.69-6-6-6zm0 8.5A2.5 2.5 0 1 1 12 5a2.5 2.5 0 0 1 0 5.5z"/&gt;
+  <b>&lt;/svg&gt;</b>
+				</code></pre>
+			</div>
+			<div class="block-example block_horisontal"> <!-- primeri -->
+				<a	href="https://www.google.com/maps/search/?api=1&query=Rugby+Town+Hall+Rugby" target="_blank" rel="noopener noreferrer">
+				<!-- noopener запрещает открытой странице управлять исходной страницей через JavaScript.
+					 noreferrer не передаёт открываемому сайту адрес страницы, с которой пользователь перешёл. -->
+					<svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: var(--menu-color)">
+						<path d="M12 2C8.69 2 6 4.69 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.31-2.69-6-6-6zm0 8.5A2.5 2.5 0 1 1 12 5a2.5 2.5 0 0 1 0 5.5z"/>
+					</svg>
+					- Google Map
+				</a>
+			</div>
+		</div>
+	
+		<div class="section_horisontal"> <!-- Address -->
+			<div class="block-description block_horisontal"> <!-- opisanie -->
+				<pre><code>
+  <b>&lt;svg</b> class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: blue" <b>&gt;</b>  
+    &lt;path d="M12 3 2 12h3v9h6v-6h2v6h6v-9h3L12 3zm5 16h-2v-6H9v6H7v-7.9l5-4.5 5 4.5V19z"/&gt;
+  <b>&lt;/svg&gt;</b>
+				</code></pre>
+			</div>
+			<div class="block-example block_horisontal"> <!-- primeri -->
+				<svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: blue">
+					<path d="M12 3 2 12h3v9h6v-6h2v6h6v-9h3L12 3zm5 16h-2v-6H9v6H7v-7.9l5-4.5 5 4.5V19z"/>
+				</svg>
+				- Адрес
+			</div>
+		</div>
 		
-		 <tfoot>
-			 <tr>
-				 <th></th>
-				 <th>*</th>
-				 <th>**</th>
-				 <th>***</th>
-			 </tr>
-		 </tfoot>
-	</table>
-	
-	<br>
-	<!-- Tablica 2 -->
-	<table width="900" cellpadding="20" cellspacing="1" border="1" >
-		 <thead>
-			 <tr>
-				 <th></th>
-				 <th scope="col">Хостинг "Домашний начальный"</th>
-				 <th scope="col">Хостинг "Домашний Премиум"</th>
-			 </tr>
-		 </thead>
-		 <tbody>
-			 <tr>
-				 <th scope="row">Дисковое пространство</th>
-				 <td>1 Гб</td>
-				 <td>3 Гб</td>
-			 </tr>
-			 <tr>
-				 <th scope="row">Трафик</th>
-				 <td>15 Гб/мес</td>
-				 <td>50 Гб/мес</td>
-			 </tr>
-		 </tbody>
-		 <tfoot>
-			 <tr>
-				<!-- dlya tfoot td ne zadan format, poetomu oni belie -->
-				 <td></td>
-				 <td colspan="2">Закажи сейчас и сэкономь 10%!</td>
-				 <th></th> <!-- a eta yacheyka budet pokrashena potomu shto ona <th> i dlya nee v CSS zadan format/ Kolonka vishe ne otdormatirovana - potomu belaya -->
-			 </tr>
-		 </tfoot>
-	</table>
-	
-	
-	
-	<!-- Ispolzovatie elementa "form" - otpravka i vivod otpravlayemih poley s pomoshyu JS (v razdele <script>) -->
-	<!-- ************************************ -->
-	<br> <br>
-	<hr class="double-line">
-	<h2>Ispolzovanie "forms"</h2>
-	<!-- soderjimoe formy -->
-	<form id="testForm" method="post" action="http://unityhub.local/my_test/result.php">
-		<p>Что вы думаете об этом выступлении?</p>
-		<textarea name="comments" cols="100" rows="4">Введите свой комментарий...</textarea>
+		<div class="section_horisontal"> <!-- Phone -->
+			<div class="block-description block_horisontal"> <!-- opisanie -->
+				<pre><code>
+  <b>&lt;svg</b> class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: black" <b>&gt;</b>  
+    &lt;path d="M17 1H7C5.9 1 5 1.9 5 3v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14zm-4 3h-2v-1h2v1z"/&gt;
+  <b>&lt;/svg&gt;</b>
+				</code></pre>
+			</div>
+			<div class="block-example block_horisontal"> <!-- primeri -->
+				<svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: black">
+					<path d="M17 1H7C5.9 1 5 1.9 5 3v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14zm-4 3h-2v-1h2v1z"/>
+				</svg>
+				<a href="tel:+441788123456">- Телефон</a>
+			</div>
+		</div>
 		
-		<br>
-		<br>
-		<label for="username">Imya:</label>
-		<input id="username" type="text" name="username" /> 
-
+		<div class="section_horisontal"> <!-- Email -->
+			<div class="block-description block_horisontal"> <!-- opisanie -->
+				<pre><code>
+  <b>&lt;svg</b> class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: red" <b>&gt;</b>  
+    &lt;path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/&gt;
+  <b>&lt;/svg&gt;</b>
+				</code></pre>
+			</div>
+			<div class="block-example block_horisontal"> <!-- primeri -->
+				<svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: red">
+					<path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+				</svg>
+				<a href="mailto:info@example.com"> - Почта</a>
+			</div>
+		</div>
 	
-		<br>
-		<br>
-		<fieldset>
-		<legend>Your preferences</legend>
-			
-			<p>Пожалуйста, выберите любимый жанр музыки:
-				 <br>
-				 <input type="radio" name="genre" value="rock" checked="checked" /> Рок
-				 <input type="radio" name="genre" value="pop" /> Поп 
-				 <input type="radio" name="genre" value="techno" /> Электроника
-			</p>
-			 
-			<p>Пожалуйста, выберите, где вы слушаете музыку: <br />
-				 <input type="checkbox" name="service" value="house" checked="checked" /> Дома
-				 <input type="checkbox" name="service" value="work" /> На работе
-				 <input type="checkbox" name="service" value="inroad" /> В дороге
-			</p>
-			
-			<label>На каком устройстве вы слушаете музыку чаще всего?
-				<select name="devices">
-					<option value="ipod">iPod</option>
-					<option value="radio">Радио</option>
-					<option value="computer" selected>Компьютер</option>
-				</select>
-			</label>
-
-			<p> Играете ли вы на одном из инструментов,
-			 перечисленных ниже? <br>(Вы можете выбрать сразу
-			 несколько вариантов ответа, <br> нажав и удерживая
-			 клавишу <b>Ctrl</b> (Windows) или <b>Cmd</b>
-			 (OS X)).</p>
-			 <select name="instrumenty" size="3" multiple="multiple">
-				 <option value="gitara" selected="selected">Гитара</option>
-				 <option value="barabany">Барабаны</option>
-				 <option value="klavishnye" selected="selected">Клавишные</option>
-				 <option value="bas">Бас-гитара</option>
-			 </select>
-			
-			<br> <br>
-			<label for="depart">Дата вылета</label>
-			<input id="depart" type="date" name="depart" required="required" /> 
-			
-			 <!-- lable bez id -->
-			<br> <br>
-			<label>Пожалуйста введите адрес вашего сайта:
-				<input type="url" name="sait" value="https://yoursite.org" />
-			</label>
-			
-			<br> <br>
-			<label> Пожалуйста введите адрес электронной почты:
-				<input type="email" name="email" />
-			</label>
-			
-			<br>
-			<br>
-		</fieldset>
-		
-		<br>
-		<button type="submit" name="buttonAction" value="submit">Отправить</button>
-	
-	
-	</form>
-	
-	<br>
-	<!-- otdelnaya forma shtobi poisk otpravlal v parametrah tolko pole Poisk -->
-	<form id="serchForm" method="post" action="http://unityhub.local/my_test/result.php">
-		<!-- <p>Поиск:</p>  -->
-		<label for="poisk">Поиск:</label>
-		<input type="search" name="poisk" placeholder="Stroka poiska"/>
-		<input type="submit" name="buttonAction" value="Serch" />
-	</form>
-
-	<!-- konteiner dlya rezultata  (sam rezultat formiruet JS)-->
-	<br> <br>
-	<hr class="double-line">  
-	<h2>Переданные параметры:</h2>
-	<div id="result">
-		<p> ... </p>
-	</div>
-	<div id="docHeight">
-	</div>
-
-
-
-	<!-- Ispolzovatie elementa "Input" s raznimy tipami -->
-	<!-- ************************************ -->
-	<br> <br>
-	<hr class="double-line">  
-	<form action="/test" method="post">
-		<p> Ispolzovatie elementa "Input" s raznimy tipami </p>
-		<input type="text" name="username">
-		<input type="checkbox" name="subscribe" value="yes">
-		<input type="file" name="avatar">
-		<input type="submit" value="Отправить //////">
-	</form>		
-
-		
-	
-	<!-- ************************************ -->
-	<!-- opisanie -->
-	<section class="reference-section">
-		<h2> "Zagolovok sekcii"</h2>
-		
-		<div class="example-block">
-			<div class="description-block">
+		<div class="section_horisontal"> <!-- Website -->
+			<div class="block-description block_horisontal"> <!-- opisanie -->
+				<pre><code>
+  <b>&lt;svg</b> class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" <b>&gt;</b>  
+    &lt;path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.92 6h-2.95a15.7 15.7 0 0 0-1.38-3.56A8.05 8.05 0 0 1 18.92 8zM12 4c.83 1.2 1.47 2.54 1.85 4h-3.7C10.53 6.54 11.17 5.2 12 4zM4.26 14a7.8 7.8 0 0 1 0-4h3.38a16.6 16.6 0 0 0 0 4H4.26zm.82 2h2.95a15.7 15.7 0 0 0 1.38 3.56A8.05 8.05 0 0 1 5.08 16zM8.03 8H5.08a8.05 8.05 0 0 1 4.33-3.56A15.7 15.7 0 0 0 8.03 8zM12 20c-.83-1.2-1.47-2.54-1.85-4h3.7c-.38 1.46-1.02 2.8-1.85 4zm2.24-6H9.76a14.35 14.35 0 0 1 0-4h4.48a14.35 14.35 0 0 1 0 4zm.35 5.56A15.7 15.7 0 0 0 15.97 16h2.95a8.05 8.05 0 0 1-4.33 3.56zM16.36 14a16.6 16.6 0 0 0 0-4h3.38a7.8 7.8 0 0 1 0 4h-3.38z"/&gt;
+  <b>&lt;/svg&gt;</b>
+				</code></pre>
+			</div>
+			<div class="block-example block_horisontal"> <!-- primeri -->
+				<svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" >
+					<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.92 6h-2.95a15.7 15.7 0 0 0-1.38-3.56A8.05 8.05 0 0 1 18.92 8zM12 4c.83 1.2 1.47 2.54 1.85 4h-3.7C10.53 6.54 11.17 5.2 12 4zM4.26 14a7.8 7.8 0 0 1 0-4h3.38a16.6 16.6 0 0 0 0 4H4.26zm.82 2h2.95a15.7 15.7 0 0 0 1.38 3.56A8.05 8.05 0 0 1 5.08 16zM8.03 8H5.08a8.05 8.05 0 0 1 4.33-3.56A15.7 15.7 0 0 0 8.03 8zM12 20c-.83-1.2-1.47-2.54-1.85-4h3.7c-.38 1.46-1.02 2.8-1.85 4zm2.24-6H9.76a14.35 14.35 0 0 1 0-4h4.48a14.35 14.35 0 0 1 0 4zm.35 5.56A15.7 15.7 0 0 0 15.97 16h2.95a8.05 8.05 0 0 1-4.33 3.56zM16.36 14a16.6 16.6 0 0 0 0-4h3.38a7.8 7.8 0 0 1 0 4h-3.38z"/>
+				</svg>
+				<a href="https://unity-hub.org/">- Сайт</a>
 			</div>
 		</div>
 		
 	</section>
-
-	<section class="reference-section">
-		<h2>Название темы</h2>
-
-		<div class="description-block">
-			описание / заметки / объяснение
+	
+	
+	<!-- *********************** -->
+	<!-- Ispolzovanie <span> -->
+	<section id="span"class="section-reference">
+		<h2>Ispolzovanie <style="color: blue;"> &lt;span&gt; </span></h2>	
+		
+		<div class="block-description">
+			<p>
+				Chast teksta vnutri lubogo elementa mojet bit zakluchena v <b>&lt;span&gt;</b> i otformatirovana proisvolnim sposobom
+			</p>
 		</div>
-
-		<div class="example-block">
-			сам пример: form, iframe, button, table и т.д.
+		<div class="block-example">
+			<p>Текст с <span style="color: blue;">кусочком</span> внутри.</p>
+			<h2>Заголовок с <span style="color: blue;">выделенным</span> словом</h2>
+			<a href="#">Ссылка с <span style="color: teal;">выделенным текстом</span></a>
+			<ul><li>Пункт списка с <span style="color: red;">важной частью</span></li></ul>
+			<button>Нажми <span style="color: green;">сюда</span></button>
 		</div>
+				
 	</section>
+
+
+	<!-- *********************** -->
+	<!-- <table> - Ispolzovatie tablic -->
+	<!-- otpravka i vivod otpravlayemih poley s pomoshyu JS (v razdele <script>) -->
+	<section id="tablici" class="section-reference">
+		<h2><b>&lt;table&gt;</b> - Ispolzovatie tablic </h2>	
+		
+		<!-- zagolovki -->
+		<div class="section_horisontal">
+			<div class="block_horisontal">
+				<h3>HTML</h3>
+			</div>
+			<div class="block_horisontal">
+				<h3>CSS</h3>
+			</div>
+		</div>
+		<!-- opisanie -->
+		<div class="section_horisontal">
+			<div class="block-description block_horisontal">
+				<pre><code>
+<b>&lt;table&gt;</b> - tablica
+
+  <b>&lt;thead&gt;</b> - Shapka tablici,
+    <b>&lt;tr&gt;</b> - stroka (shapki)
+      <b>&lt;th&gt;</b> - zagolovok kolonki 1 (yacheika shapki),
+      <b>&lt;th&gt;</b> - zagolovok kolonki 2 (yacheika shapki),
+      <b>&lt;th&gt;</b> ...
+    <b>&lt;/tr&gt;</b>
+  <b>&lt;/thead&gt;</b>
+
+  <b>&lt;tbody&gt;</b> - telo tablici,
+    <b>&lt;tr&gt;</b> - stroka
+      <b>&lt;th&gt;</b> - zagolovok stroki 1,
+      <b>&lt;td&gt;</b> - yacheyka 1,
+      <b>&lt;td&gt;</b> ...
+    <b>&lt;/tr&gt;</b>
+  <b>&lt;/tbody&gt;</b>
+
+  <b>&lt;tfoot&gt;</b> - "podval" tablici,
+    <b>&lt;tr&gt;</b> - stroka
+      <b>&lt;th&gt;</b> - itog kolonki 1 (yacheika dna),
+      <b>&lt;th&gt;</b> - itog kolonki 2 (yacheika dna),
+      <b>&lt;th&gt;</b> ...
+    <b>&lt;/tr&gt;</b>
+  <b>&lt;/tbody&gt;</b>
+  
+<b>&lt;/table&gt;</b>				
+				</code></pre>
+			</div>
+			<div class="block-description block_horisontal">
+				<pre><code>
+	/* ********************** */
+	/* format tablic */ 
+	thead th, tfoot th {
+		background-color:  var(--menu-color);
+		color: white;
+	}
+
+	tbody td,
+	tbody th {
+		background-color: var(--menu-background-color);;
+		color: #222;
+	}
+
+	tbody th:first-child,
+	tbody td:first-child {
+		background-color: var(--menu-color);
+		color: white;
+	}
+
+	tbody tr > :nth-child(3){
+		background-color: white;
+		color: var(--menu-color);
+	}
+	/* format tablic */ 
+	/* ********************** */				
+				</code></<pre>
+			</div>
+		</div>
+		<!-- primeri -->
+		<div class="block-example">
+			<h3> Пример: Tablica 1 </h3>
+			<table>
+				<thead>
+					<tr>
+						 <th bgcolor="var(--menu-color)" ></th>
+						 <th>TV1000</th>
+						 <th>ТНТ</th>
+						 <th>СТС</th>
+					 </tr>
+				</thead>
+				
+				<tbody>
+					<tr>
+						 <th>20:00-21:00</th>
+						 <td rowspan="2">Фильм</td>
+						 <td>Ток-шоу</td>
+						 <td>Юмор</td>
+					 </tr>
+					 <tr>
+						 <th>21:00-22:00</th>
+						 <td>шок-Тшоу</td>
+						 <td>Мультфильм</td>
+					 </tr>
+				</tbody>
+				
+				 <tfoot>
+					 <tr>
+						 <th></th>
+						 <th>*</th>
+						 <th>**</th>
+						 <th>***</th>
+					 </tr>
+				 </tfoot>
+			</table>
+	
+			<h3> Пример: Tablica 2 (s obyedineniem yacheek) </h3>
+			<table>
+				 <thead>
+					 <tr>
+						 <th>Orangevaya potomu shto <b>&lt;th&gt;</b> i dlya nego est svoi stil v CSS</th>
+						 <th scope="col">Хостинг "Домашний начальный"</th>
+						 <th scope="col">Хостинг "Домашний Премиум"</th>
+					 </tr>
+				 </thead>
+				 <tbody>
+					 <tr>
+						 <th scope="row">Дисковое пространство</th>
+						 <td>1 Гб</td>
+						 <td>3 Гб</td>
+					 </tr>
+					 <tr>
+						 <th scope="row">Трафик</th>
+						 <td>15 Гб/мес</td>
+						 <td>50 Гб/мес</td>
+					 </tr>
+				 </tbody>
+				 <tfoot>
+					 <tr>
+						<!-- dlya tfoot td ne zadan format, poetomu oni belie -->
+						 <td>Belaya potomu shto <b>&lt;td&gt;</b> i dlya nego est stil v CSS</td>
+						 <td colspan="2">Закажи сейчас и сэкономь 10%!</td>
+						 <th></th> <!-- a eta yacheyka budet pokrashena potomu shto ona <th> (dlya nee v CSS zadan format). Kolonka vishe ne otdormatirovana - potomu belaya -->
+					 </tr>
+				 </tfoot>
+			</table>
+		</div>
+				
+	</section>
+
+
+	<!-- *********************** -->
+	<!-- Ispolzovatie elementa <form>  -->
+	<!-- otpravka i vivod otpravlayemih poley s pomoshyu JS (v razdele <script>) -->
+	<section class="section-reference">
+		<h2>Ispolzovanie form"</h2>
+		
+		<div class="block-description"> <!-- opisanie -->
+				<pre><code>
+<b>&lt;form</b> - forma
+  <b>id="myTestForm"</b> - ID formi (naprimer dlya JS)
+  <b>method="post"</b> - get/post metod otpravki dannih formi. 
+    GET - kak parametri adresnoy stroki.
+    POST - в теле HTTP-запроса vida:
+      заголовки                 <i>Content-Type: application/x-www-form-urlencoded</i>
+        +                       +
+      тело запроса с данными    <i>username=Ivan&email=test@example.com</i>
+  <b>action="http://my.local/result.php"</b> - web-adres otpravki dannih
+<b>&gt;</b>
+
+  <b>&lt;fieldset&gt; &lt;/fieldset&gt;</b> - obyedinyaet elementi formi v nabor (na ekrane v ramke)
+  <b>&lt;legend&gt;</b>"Zagolovok"<b>&lt;/legend&gt;</b> - zagolovok naboda (ramki)
+
+  <b>&lt;label for="comments"&gt;</b>Что вы думаете об этом выступлении?<b>&lt;/label&gt;</b>
+    - vivodit zagolovok elementa. 
+    Svyaz cherez ID elenenta: <b>for="comments"</b> (Dlya textarea zadan <b>id="comments"</b>)
+  <b>&lt;textarea</b> - mnogostrochnoe pole vvoda.
+    <b>id="comments"</b> - identifikator (dlya obrasheniya na forme naprimer dlya lable)
+    <b>name="comment"</b> - peredaetsa kak imya parametra (polya) pri otpravke formi (POST). 
+      Otpravitsa: comment="tekst kotoriy polzovatel vvedet v eto pole na forme"
+    <b>cols="60"</b> - shirina polya na ekrane (dlinna stroki). V primere zadano cherz CSS dlya mashtabirovaniya
+    <b>rows="4"</b> - kolichestvo strok
+    <b>placeholder="Введите свой комментарий..."</b> - tekst podskazki do vvoda
+  <b>&gt; &lt;/textarea&gt;</b>
+
+  <b>&lt;label&gt; Пожалуйста введите Imya:</b> - drugoy variant ispolzovaniya <b>lable</b> bez <b>for="ID"</b>
+	<b>&lt;input id="username" type="text" name="username" /&gt;</b> - vvod stroki 
+  <b>&lt;/label&gt;</b>
+  
+  <b>&lt;input id="depart" type="date" name="depart" required="required" /&gt;</b> - vvod dati
+    <b>required="required</b> priznak odyazatelnogo vvoda
+  <b>&lt;input type="url" name="sait" value="https://yoursite.org" /&gt;</b> - vvod web-adresa
+  <b>&lt;input type="email" name="email" /&gt;</b> - vvod email
+
+  radio-knopki				
+  <b>&lt;input type="radio" name="genre" value="rock" checked="checked" /&gt;</b> Рок
+   ...
+  <b>&lt;input type="radio" name="genre" value="pop" /&gt;</b> Поп 
+
+  Check-boksy
+  <b>&lt;input type="checkbox" name="service" value="house" checked="checked" /&gt;</b> Дома
+   ...
+  <b>&lt;input type="checkbox" name="service" value="work" /&gt;</b> На работе
+
+  Selektor so mnojestvennim viborom
+  <b>&lt;select name="devices"&gt;</b>
+    <b>&lt;option value="ipod"&gt;</b>iPod<b>&lt;/option&gt;</b>
+      ...
+    <b>&lt;option value="computer" selected&gt;</b>Компьютер<b>&lt;/option&gt;</b>
+  <b>&lt;/select&gt;</b>
+
+  Kmopki
+  <b>&lt;button type="submit" name="buttonAction" value="fetch"&gt;</b>Отправить (FETCH)<b>&lt;/button&gt;</b>
+  <b>&lt;button type="submit" name="buttonAction" value="post"&gt;</b>Отправить (POST)<b>&lt;/button&gt;</b>
+    
+<b>&lt;/form&gt;</b>				
+				</code></pre>
+				
+				<br><br>
+				<p>
+					Posle najatiya knopki, forma otpravlyaet polya (u kotorih zadano "name" v parametrah)<br>
+					metogom formy <b>method="post"</b> (po umolchaniy GET)<br>
+					po adresy <b>action="http://unityhub.local/my_test/result.php"</b><br>
+					Otpravlenniye danniye poluchit fail PHP na servere<br>
+				</p>
+					<pre><code>
+&lt?php // result.php
+header('Content-Type: text/plain; charset=utf-8'); // Устанавливаем кодировку
+// Проверяем, есть ли данные POST
+if (!empty($_POST)) {
+	echo "Сервер получил данные:\n\n";
+	foreach ($_POST as $key => $value) { echo $key . " = " . $value . "\n";	}
+} else {
+	echo "POST-параметры не получены.";
+}
+?&rt
+					</code></pre>
+				<p>
+					<br>
+					V primere pri otkritii formy JS naznachaet forme obrabotchiki najatiya knopok (function(event))
+				</p>
+					<pre><code>
+  <b>form.addEventListener("submit", function(event) {</b>
+    // Этот код выполнится позже
+  <b>});</b>
+					</code></pre>
+				<p>
+					<b>function(event)</b> - vipolnitsa pri najatii knopki.	V ney propisani 2 varianta<br>
+					kotoriye zavisit ot znacheniya atributa knopki <b>value="..."</b><br>
+					<b>value="post"</b> obichnaya otpravka cherez metod v atribyte formy <b>method="post"</b><br>
+					<b>value="fetch"</b> FETCH (s vivodom rezultata v tablicu na toy je stranice) <br>
+				</p>
+					
+		</div>
+		
+		<div class="block-example"> <!-- primeri -->
+			<form id="testForm" method="post" action="http://unityhub.local/my_test/result.php">
+				<label for="comments">Что вы думаете об этом выступлении?</label>
+				<br>
+				<textarea id="comments" name="comments" cols="60" rows="4" placeholder="Введите свой комментарий..." > </textarea>
+				
+				<br><br>
+				<label for="username">Imya:</label>
+				<input id="username" type="text" name="username" /> 
+			
+				<br><br>
+				<fieldset>
+				<legend>Your preferences</legend>
+					
+					<p>Пожалуйста, выберите любимый жанр музыки:
+						 <br>
+						 <input type="radio" name="genre" value="rock" checked="checked" /> Рок
+						 <input type="radio" name="genre" value="pop" /> Поп 
+						 <input type="radio" name="genre" value="techno" /> Электроника
+					</p> <br>
+					 
+					<p>Пожалуйста, выберите, где вы слушаете музыку: <br />
+						 <input type="checkbox" name="service" value="house" checked="checked" /> Дома
+						 <input type="checkbox" name="service" value="work" /> На работе
+						 <input type="checkbox" name="service" value="inroad" /> В дороге
+					</p> <br>
+					
+					<label>На каком устройстве вы слушаете музыку чаще всего?
+						<select name="devices">
+							<option value="ipod">iPod</option>
+							<option value="radio">Радио</option>
+							<option value="computer" selected>Компьютер</option>
+						</select>
+					</label> <br>
+
+					<p> Играете ли вы на одном из инструментов,
+					 перечисленных ниже? <br>(Вы можете выбрать сразу
+					 несколько вариантов ответа, <br> нажав и удерживая
+					 клавишу <i>Ctrl</i> (Windows) или <i>Cmd</i> (OS X)).
+					 </p>  <br>
+					 <select name="instrumenty" size="3" multiple="multiple">
+						 <option value="gitara" selected="selected">Гитара</option>
+						 <option value="barabany">Барабаны</option>
+						 <option value="klavishnye" selected="selected">Клавишные</option>
+						 <option value="bas">Бас-гитара</option>
+					 </select>
+					
+					<br> <br>
+					<label for="depart">Дата вылета</label>
+					<input id="depart" type="date" name="depart" required="required" /> 
+					
+					 <!-- lable bez id -->
+					<br> <br>
+					<label>Пожалуйста введите адрес вашего сайта:
+						<input type="url" name="sait" value="https://yoursite.org" />
+					</label>
+					
+					<br> <br>
+					<label> Пожалуйста введите адрес электронной почты:
+						<input type="email" name="email" />
+					</label>
+					
+					<br>
+					<br>
+				</fieldset>
+				
+				<br>
+				<button class="button-cusom" type="submit" name="buttonAction" value="fetch">Отправить - (FETCH)</button>
+				<button type="submit" name="buttonAction" value="post">Отправить (POST)</button>
+			
+			</form>
+		</div>
+		<div id="block_result" class="block-description"> <!-- Rezultat otpravki formi -->
+			<h2>Переданные параметры:</h2>
+			<div id="result">
+				<p> ... </p>
+			</div>
+			<br>
+			<div id="docHeight">
+			</div>
+		</div>
+				
+	</section>
+
+
+
+
+	<!-- *********************** -->
+	<!-- SHABLON -->
+	<section class="section-reference">
+		<h2>Shablon sekcii</h2>	
+		
+		<div class="block-description">
+			<p>
+				<b>&lt;h1&gt;</b> - Opisanie,
+			</p>
+		</div>
+		<div class="block-example">
+			<h2>Primer &lt;h2&gt;</h2>
+		</div>
+				
+	</section>
+
 
 
 
@@ -676,6 +1038,15 @@
 		const result = document.getElementById("result"); // sekciya rezultatov (iznachalno pustaya)
 
 
+		// Функция для result
+		function jumpToResultSection() {
+			document.getElementById("block_result").scrollIntoView({
+				behavior: "smooth",
+				block: "start"
+			});
+		}
+		
+		
 		// Функция для вычисления высоты и скролла
 		function scrollToBottom(container) {
 			// izmenenie zagolovka formi posle otpravki
@@ -700,12 +1071,19 @@
 			
 			
 		// vivod otpravlaemih parametrov dlya luboy iz 2 form
-		const forms = [document.getElementById("testForm"), document.getElementById("serchForm")];
+		// const forms = [document.getElementById("testForm"), document.getElementById("serchForm")];
+		const forms = [document.getElementById("testForm"),	document.getElementById("serchForm")].filter(Boolean); //filtr po naliciy elementa (formi)
 		forms.forEach(form => {		
 			form.addEventListener("submit", function(event) {
-				// Останавливаем стандартный submit на мгновение
-				event.preventDefault();
-
+				
+				if (event.submitter?.value !== "fetch") {
+					// otpravka cherez standartniy POST (GET) s vivodom rezultatov raboty PHP  
+					return;
+				}					
+				
+				// otpravka cherez FETCH s vivodom rezultatov na stranicu 
+				event.preventDefault(); // Останавливаем стандартный submit
+				
 				// Читаем данные
 				const formData = new FormData(form);
 				const result = document.getElementById("result");
@@ -767,7 +1145,8 @@
 
 				
 				// Вызываем функцию скролла после вставки элементов в DOM
-				scrollToBottom();
+				// scrollToBottom();
+				jumpToResultSection();
 			});
 		});
 		

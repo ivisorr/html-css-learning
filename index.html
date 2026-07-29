@@ -225,13 +225,15 @@
 	
 		/* ********************** */
 		/* Oformlenie "button" */ 
-		.button-cusom {
-			bachground: var(--menu-color);
+		.button-custom {
+			background: var(--menu-background-color);
 			transition: background 0.3s;
+
 		}
 
-		.button-cusom:hover {
-			bachground: var(--menu-background-color);
+		.button-custom:hover {
+			background: var(--menu-color);
+			color: var(--menu-background-color);
 		}
 		/* dlya avtoizmeneniya shirini "textarea" */ 
 		/* ********************** */
@@ -247,7 +249,20 @@
 		}
 		/* dlya avtoizmeneniya shirini "textarea" */ 
 		/* ********************** */
-	</style>
+	
+	
+	
+		/* ********************** */
+		/* Vpisivaet iframe v blok */ 
+		.block-example iframe {
+			display: block;
+			width: 100%;
+			height: 800px; /* razmer iframe nam ne izvesten */
+			border: 0;
+		}		
+		/* Vpisivaet iframe v blok */ 
+		/* ********************** */
+</style>
 
 </head>
 
@@ -268,6 +283,7 @@
 		</nav>
 	</header>
 
+
 	<!-- obichnoe MENU SLEVA -->
 	<aside>
 	    <nav>
@@ -280,7 +296,7 @@
 
 
 	<!-- ************************************ -->
-	<!-- Ispolzovanie ZAGOLOVKOV -->
+	<!-- <H1> - Zagolovki -->
 	<section id="zagolovki" class="section-reference">
 		<h2>Заголовки <b>&lt;h1&gt; &lt;h2&gt; ...</b>  </h2>	
 		
@@ -305,7 +321,7 @@
 	
 
 	<!-- ************************************ -->
-	<!-- Ispolzovanie FORMATirovaniya -->
+	<!-- Formatirovanie -->
 	<section id="formatirovanie" class="section-reference">
 		<h2>Различные виды форматирования.</h2>	
 		
@@ -418,7 +434,7 @@
 	
 
 	<!-- *********************** -->
-	<!-- Ispolzovanie Spiskov-->
+	<!-- <OL> <UL> <DL> - Spiski-->
 	<section id="spiski" class="section-reference">
 		<h2>Списки</h2>	
 		
@@ -505,7 +521,7 @@
 
 
 	<!-- *********************** -->
-	<!-- Vivod specsimvolov tipa:	< > & " ' © -->
+	<!--Specsimvoli	< > & " ' © -->
 	<section id="specsimvoly" class="section-reference">
 		<h2>Kак вывести на экран специальные символы</h2>	
 		
@@ -549,9 +565,10 @@
 			</p>
 		</div>
 	</section>
-				
+	
+	
 	<!-- *********************** -->
-	<!-- Vivod SVG-iconok -->
+	<!-- <SVG> - SVG-iconki -->
 	<section id="SVG-icon" class="section-reference">
 		<h2><b>&lt;svg&gt;</b> - вывести на экран специальные символы SVG-icon </h2>
 		
@@ -640,12 +657,12 @@
 		</div>
 		
 	</section>
-	
-	
+
+
 	<!-- *********************** -->
-	<!-- Ispolzovanie <span> -->
+	<!-- <SPAN> -formatirovanie chasti teksta -->
 	<section id="span"class="section-reference">
-		<h2>Ispolzovanie <style="color: blue;"> &lt;span&gt; </span></h2>	
+		<h2>Ispolzovanie <span style="color: blue;"> &lt;span&gt; </span></h2>	
 		
 		<div class="block-description">
 			<p>
@@ -664,8 +681,7 @@
 
 
 	<!-- *********************** -->
-	<!-- <table> - Ispolzovatie tablic -->
-	<!-- otpravka i vivod otpravlayemih poley s pomoshyu JS (v razdele <script>) -->
+	<!-- <TABLE> - ispolzovatie tablic -->
 	<section id="tablici" class="section-reference">
 		<h2><b>&lt;table&gt;</b> - Ispolzovatie tablic </h2>	
 		
@@ -814,10 +830,10 @@
 
 
 	<!-- *********************** -->
-	<!-- Ispolzovatie elementa <form>  -->
+	<!-- <FORM> - formi -->
 	<!-- otpravka i vivod otpravlayemih poley s pomoshyu JS (v razdele <script>) -->
 	<section class="section-reference">
-		<h2>Ispolzovanie form"</h2>
+		<h2> <b>&lt;form&gt;</b>- Ispolzovanie form</h2>
 		
 		<div class="block-description"> <!-- opisanie -->
 				<pre><code>
@@ -918,7 +934,7 @@ if (!empty($_POST)) {
 		</div>
 		
 		<div class="block-example"> <!-- primeri -->
-			<form id="testForm" method="post" action="http://unityhub.local/my_test/result.php">
+			<form id="testForm" method="post" action="php/form-handler.php">
 				<label for="comments">Что вы думаете об этом выступлении?</label>
 				<br>
 				<textarea id="comments" name="comments" cols="60" rows="4" placeholder="Введите свой комментарий..." > </textarea>
@@ -929,7 +945,7 @@ if (!empty($_POST)) {
 			
 				<br><br>
 				<fieldset>
-				<legend>Your preferences</legend>
+					<legend>Your preferences</legend>
 					
 					<p>Пожалуйста, выберите любимый жанр музыки:
 						 <br>
@@ -984,7 +1000,7 @@ if (!empty($_POST)) {
 				</fieldset>
 				
 				<br>
-				<button class="button-cusom" type="submit" name="buttonAction" value="fetch">Отправить - (FETCH)</button>
+				<button class="button-custom" type="submit" name="buttonAction" value="fetch">Отправить - (FETCH)</button>
 				<button type="submit" name="buttonAction" value="post">Отправить (POST)</button>
 			
 			</form>
@@ -997,6 +1013,23 @@ if (!empty($_POST)) {
 			<br>
 			<div id="docHeight">
 			</div>
+		</div>
+				
+	</section>
+
+
+	<!-- *********************** -->
+	<!-- <IFRAME> - vstraivanie drugoy stranici -->
+	<section class="section-reference">
+		<h2> <b>&lt;iframe&gt;</b> - окнo через которое вы можнo видеть контент других страниц</h2>	
+		
+		<div class="block-description">
+			<p>
+				<b>&lt;iframe&gt;</b> - Opisanie,
+			</p>
+		</div>
+		<div class="block-example">
+			<iframe src="forms/form.html" title="Test form"></iframe>
 		</div>
 				
 	</section>
@@ -1024,7 +1057,7 @@ if (!empty($_POST)) {
 
 
 	<!-- ************************************ -->
-	<!-- JS funkcii -->
+	<!-- JavaScript funkcii -->
 	<script>
 		// ustanovka nachalnogo znacheniya dati vileta na segodnya
 		const depart = document.getElementById("depart");

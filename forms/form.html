@@ -15,95 +15,23 @@
 <style>
 		/* ubiraet prokrutku esli eta forma vstavlenna v druguty kak iframe.
 		Sript vishe - dobavlyaet klass: inside-iframe esli forma vstavlenna kak iframe 
-		i CSS dlya etogo klassa za preshaet scrolling */
+		i CSS dlya etogo klassa za preshaet scrolling 
 		html.inside-iframe,
 		html.inside-iframe body {
 			overflow: hidden;
 		}
-  
-		body {
-			padding-top: var(--menu-height); /* высота меню */
-		}
+		*/
 		
-		header {
-			position: relative;
-		}		
 		
-		.main-menu {
-			position: fixed;
-			top: 0;
-			left: 0;
+		/* ********************** */
+		/* dlya avtoizmeneniya shirini "textarea" */ 
+		textarea {
 			width: 100%;
-			z-index: 1000; /* чтобы было поверх всего */
-		    background: #d73;
+			max-width: 100%;
+			box-sizing: border-box;
 		}
-		
-
-		
-		.main-menu ul {
-		    display: flex;          /* делаем горизонтально */
-		    margin: 0;
-		    padding: 0;
-			height: var(--menu-height); /* высота меню */
-		    list-style: none;       /* убираем точки */
-		    align-items: center; /* центрируем элементы внутри */
-		    background: var(--menu-background-color);
-		    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-		}
-		
-
-		.main-menu li {
-		    height: 100%;
-		}
-
-		
-		.main-menu a {
-			display: flex;
-		    align-items: center; /* центрируем элементы внутри */
-		    padding: 0px 15px; /* отступы вокруг текста пункта меню 1-в/н 2-п/л */
-			height: 100%;
-		    text-decoration: none; /* чтобы не было подчеркивания */
-		    text-shadow: 0 2px 2px rgba(0,0,0,0.2);
-		    color: var(--menu-color);
-		}
-		
-		
-		.main-menu a:hover {
-		    background: var(--menu-color);       /* эффект при наведении */
-		    color: white;
-			font-weight: bold;
-		    text-shadow: 0 2px 2px rgba(0,0,0,0.4);
-		    padding: 3px 18px; /* отступы вокруг текста пункта меню 1-в/н 2-п/л */
-		    box-shadow: 0 5px 5px rgba(0,0,0,0.4);
-		}
-		
-		
-		thead th, tfoot th {
-			background-color:  var(--menu-color);
-			color: white;
-		}
-		
-		tbody td,
-		tbody th {
-			background-color: var(--menu-background-color);;
-			color: #222;
-		}
-		
-		tbody th:first-child,
-		tbody td:first-child {
-			background-color: var(--menu-color);
-			color: white;
-		}
-
-		tbody tr > :nth-child(3){
-			background-color: white;
-			color: var(--menu-color);
-		}
-		
-		.double-line {
-			border: none;
-			border-top: 4px double black;
-		}
+		/* dlya avtoizmeneniya shirini "textarea" */ 
+		/* ********************** */
 		
 	</style>
 
@@ -115,14 +43,13 @@
 
 	<!--	soderjimoe formy -->
 	<form id="testForm" method="post" action="http://unityhub.local/my_test/result.php">
-		<p>Что вы думаете об этом выступлении?</p>
-		<textarea name="comments" cols="100" rows="4">Введите свой комментарий...</textarea>
-		
-		<br>
-		<br>
 		<label for="username">Imya:</label>
 		<input id="username" type="text" name="username" /> 
 
+		<br>
+		<p>Что вы думаете об этом выступлении?</p>
+		<textarea name="comments" rows="4">Введите свой комментарий...</textarea>
+		
 	
 		<br>
 		<br>

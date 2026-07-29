@@ -1,0 +1,259 @@
+/* ******************************************** */
+/* ОБЩИЕ СТИЛИ СТРАНИЦЫ - index.html */ 
+/* ******************************************** */
+
+
+
+:root {
+    --tag-color: #F73;
+    --purple-color: #782E7A;
+    
+    --table-background-color: #0056a7;
+
+    --menu-height: 70px;
+    --menu-color: #F73;
+    --menu-background-color: #EEE7E7;
+    
+    --section-reference-color: #EEE7E7;
+    --block-description-color: #F2F8FB;
+    --block-example-color: white; /* #f8f8f8; */
+
+}
+
+
+
+/* ********************** */
+/* otstup na visotu menu, dlya pravilnoy pozicii bloka rezultatov (pri skrollinge) */ 
+#block_result {
+    scroll-margin-top: 80px;
+}
+/* otstup na visotu menu, dlya pravilnoy pozicii bloka rezultatov (pri skrollinge) */ 
+/* ********************** */
+
+
+
+/* ********************** */
+/* format menu */
+body {
+    padding-top: var(--menu-height); /* высота меню */
+}
+
+header {
+    position: relative;
+}		
+
+.main-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* чтобы было поверх всего */
+    background: #d73;
+}
+
+.main-menu ul {
+    display: flex;          /* делаем горизонтально */
+    margin: 0;
+    padding: 0;
+    height: var(--menu-height); /* высота меню */
+    list-style: none;       /* убираем точки */
+    align-items: center; /* центрируем элементы внутри */
+    background: var(--menu-background-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.main-menu li {
+    height: 100%;
+}
+
+.main-menu a {
+    display: flex;
+    align-items: center; /* центрируем элементы внутри */
+    padding: 0px 15px; /* отступы вокруг текста пункта меню 1-в/н 2-п/л */
+    height: 100%;
+    text-decoration: none; /* чтобы не было подчеркивания */
+    text-shadow: 0 2px 2px rgba(0,0,0,0.2);
+    color: var(--menu-color);
+}
+
+.main-menu a:hover {
+    background: var(--menu-color);       /* эффект при наведении */
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 2px 2px rgba(0,0,0,0.4);
+    padding: 3px 18px; /* отступы вокруг текста пункта меню 1-в/н 2-п/л */
+    box-shadow: 0 5px 5px rgba(0,0,0,0.4);
+}
+/* format menu */
+/* ********************** */
+
+
+
+/* *********************** */
+/* format sekciy i blokov  */
+/* h1, h2, h3, h4, h5, h6, */
+p {
+    margin: 0;	/* убирает встроенные в браузер отступы для абзацев и заголовков*/
+}
+
+pre {
+    margin: 0; /* ubiraet otstupi dlya tega "pre" */
+    overflow-x: auto;
+}
+
+.section_horisontal {
+    display: flex;              /* ставит блоки в одну строку */
+    /* align-items: flex-start; /* прижимает блоки к верху */
+    align-items: stretch;		/* viravnivaet razmer blokov po bolshemy, po visote */
+    gap: 10px;                  /* расстояние между блоками */
+}		
+
+.block_horisontal {
+    flex: 1 1 0; /* оба блока займут одинаковую ширину */
+    min-width: 0;
+    box-sizing: border-box;
+    margin-top: 0 !important; /* bes etogo "align-items: flex-start;" ne srabativaet */
+}		
+
+.section-reference {
+    margin: 60px 0;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: var(--section-reference-color);
+}
+
+.block-description {
+    margin: 30px 0 10px;
+    padding: 20px 30px;
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    background-color: var(--block-description-color);
+}
+
+.block-example {
+    margin: 10px 0;
+    padding: 30px;
+    border: 1px solid #ccc;
+    background-color: var(--block-example-color);
+}
+/* format sekciy i blokov */
+/* ********************** */
+
+
+
+/* ********************** */
+/* format tablic */ 
+
+table {
+    width: 100%;
+    border: 1px solid;
+    border-color: gray;			
+    border-spacing: 2px;			
+    /*  border-collapse: collapse; - dlya odinochnoy ramki*/
+}
+
+.limit-max-width {
+    max-width: 600px;
+}
+
+th, td {
+    border: 1px solid;
+    border-color: gray;			
+    padding: 10px;
+}
+
+thead th, tfoot th {
+    background-color:  var(--menu-color);
+    color: white;
+}
+
+tbody td,
+tbody th {
+    background-color: var(--menu-background-color);;
+    color: #222;
+}
+
+tbody tr > th:first-child { /* viravnivaet zagolovki strok po levomu  */
+    text-align: left;
+    font-weight: normal;
+}
+
+tbody th:first-child,
+tbody td:first-child {
+    background-color: var(--menu-color);
+    color: white;
+}
+
+tbody tr > :nth-child(3){
+    background-color: white;
+    color: var(--menu-color);
+}
+/* format tablic */ 
+/* ********************** */
+
+
+
+/* ********************** */
+/* format SVG */ 
+.svg-icon {
+    width: 60px;
+    height: 60px;
+    fill: var(--purple-color);
+    vertical-align: middle;
+}
+/* format SVG */ 
+/* ********************** */
+
+
+
+/* ********************** */
+/* format otobrajeniya HTML tegov primerov */ 
+b {
+    color: var(--tag-color);
+    font-weight: bold;
+}
+/* format otobrajeniya HTML tegov primerov */ 
+/* ********************** */
+
+
+
+/* ********************** */
+/* Oformlenie "button" */ 
+.button-custom {
+    background: var(--menu-background-color);
+    transition: background 0.3s;
+
+}
+
+.button-custom:hover {
+    background: var(--menu-color);
+    color: var(--menu-background-color);
+}
+/* dlya avtoizmeneniya shirini "textarea" */ 
+/* ********************** */
+
+
+
+/* ********************** */
+/* dlya avtoizmeneniya shirini "textarea" */ 
+textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+/* dlya avtoizmeneniya shirini "textarea" */ 
+/* ********************** */
+
+
+
+/* ********************** */
+/* Vpisivaet iframe v blok */ 
+.block-example iframe {
+    display: block;
+    width: 100%;
+    height: 800px; /* razmer iframe nam ne izvesten */
+    border: 0;
+}		
+/* Vpisivaet iframe v blok */ 
+/* ********************** */

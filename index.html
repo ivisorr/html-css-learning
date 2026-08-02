@@ -22,10 +22,15 @@
 		    <ul>
 			<img loading="eager" src="https://www.deepl.com/img/logo/deepl-logo-blue.svg" 
 			alt="Ntrcnnn" width="40" height="40"  style="margin:10px;">
-		        <li><a href="#">Главная</a></li>
-		        <li><a href="#">Фильмы</a></li>
-		        <li><a href="#">Сериалы</a></li>
-		        <li><a href="#">Контакты</a></li>
+		        <li><a href="#formatirovanie">Форматирование</a></li>
+		        <li><a href="#spiski">Списки</a></li>
+		        <li><a href="#specsimvoly">Спецсимволы</a></li>
+		        <li><a href="#SVG-icon">SVG-iconki</a></li>
+		        <li><a href="#span">SPAN</a></li>
+		        <li><a href="#tablici">Таблицы</a></li>
+		        <li><a href="#forms">Формы</a></li>
+		        <li><a href="#iframes">IFRAME</a></li>
+		        <li><a href="#audio">Аудио</a></li>
 		    </ul>
 		</nav>
 	</header>
@@ -579,47 +584,47 @@
 	<!-- *********************** -->
 	<!-- <FORM> - formi -->
 	<!-- otpravka i vivod otpravlayemih poley s pomoshyu JS (v razdele <script>) -->
-	<section class="section-reference">
-		<h2> <b>&lt;form&gt;</b>- Ispolzovanie form</h2>
+	<section id="forms" class="section-reference">
+		<h2> <b>&lt;form&gt;</b> - Использование форм</h2>
 		
 		<div class="block-description"> <!-- opisanie -->
-				<pre><code>
+			<pre><code>
 <b>&lt;form</b> - forma
-  <b>id="myTestForm"</b> - ID formi (naprimer dlya JS)
-  <b>method="post"</b> - get/post metod otpravki dannih formi. 
-    GET - kak parametri adresnoy stroki.
-    POST - в теле HTTP-запроса vida:
+  <b>id="myTestForm"</b> - ID формы ( параметр для CSS и JS)
+  <b>method="post"</b> - get/post метод отправки данных формы. 
+    GET - как параметр адресной строки.
+    POST - в теле HTTP-запроса вида:
       заголовки                 <i>Content-Type: application/x-www-form-urlencoded</i>
         +                       +
       тело запроса с данными    <i>username=Ivan&email=test@example.com</i>
-  <b>action="http://my.local/result.php"</b> - web-adres otpravki dannih
+  <b>action="http://my.local/result.php"</b> - web-адресполучателя данных
 <b>&gt;</b>
 
-  <b>&lt;fieldset&gt; &lt;/fieldset&gt;</b> - obyedinyaet elementi formi v nabor (na ekrane v ramke)
-  <b>&lt;legend&gt;</b>"Zagolovok"<b>&lt;/legend&gt;</b> - zagolovok naboda (ramki)
+  <b>&lt;fieldset&gt; &lt;/fieldset&gt;</b> - объединяет атрибуты формы в набор (на экране в рамке)
+  <b>&lt;legend&gt;</b>"Zagolovok"<b>&lt;/legend&gt;</b> - звголовок набора (рамки)
 
-  <b>&lt;label for="comments"&gt;</b>Что вы думаете об этом выступлении?<b>&lt;/label&gt;</b>
-    - vivodit zagolovok elementa. 
-    Svyaz cherez ID elenenta: <b>for="comments"</b> (Dlya textarea zadan <b>id="comments"</b>)
-  <b>&lt;textarea</b> - mnogostrochnoe pole vvoda.
-    <b>id="comments"</b> - identifikator (dlya obrasheniya na forme naprimer dlya lable)
-    <b>name="comment"</b> - peredaetsa kak imya parametra (polya) pri otpravke formi (POST). 
-      Otpravitsa: comment="tekst kotoriy polzovatel vvedet v eto pole na forme"
-    <b>cols="60"</b> - shirina polya na ekrane (dlinna stroki). V primere zadano cherz CSS dlya mashtabirovaniya
-    <b>rows="4"</b> - kolichestvo strok
-    <b>placeholder="Введите свой комментарий..."</b> - tekst podskazki do vvoda
-  <b>&gt; &lt;/textarea&gt;</b>
+  <b>&lt;label for="comments"&gt;</b>Что вы думаете об этом выступлении?<b>&lt;/label&gt;</b> - заголовок элемента. 
+    Связь через id элемента: <b>for="comments"</b> (Для textarea задан <b>id="comments"</b>)
+  <b>&lt;textarea</b> - многосмтрочноке поле ввода.
+    <b>id="comments"</b> - идентификатор (для обращениея в форме, например для <b>lable</b>)
+    <b>name="comment"</b> - Имя параметра (поля)ю Передается при отправке формы (POST). 
+      Отправится: comment="Текст введенный пользователем в поле"
+    <b>cols="60"</b> - ширина поля на экране (длина строки). В примере заданно через CSS для масштабирования.
+    <b>rows="4"</b> - высота в строках.
+    <b>placeholder="Введите свой комментарий..."</b> - текст-подсказка доввода.
+  <b>&gt;
+  &lt;/textarea&gt;</b>
 
-  <b>&lt;label&gt; Пожалуйста введите Imya:</b> - drugoy variant ispolzovaniya <b>lable</b> bez <b>for="ID"</b>
-	<b>&lt;input id="username" type="text" name="username" /&gt;</b> - vvod stroki 
+  <b>&lt;label&gt; Пожалуйста введите имя:</b> - другой вариант использования <b>lable</b> без <b>for="ID"</b>
+	<b>&lt;input id="username" type="text" name="username" /&gt;</b> - полеввода 
   <b>&lt;/label&gt;</b>
   
-  <b>&lt;input id="depart" type="date" name="depart" required="required" /&gt;</b> - vvod dati
-    <b>required="required</b> priznak odyazatelnogo vvoda
-  <b>&lt;input type="url" name="sait" value="https://yoursite.org" /&gt;</b> - vvod web-adresa
-  <b>&lt;input type="email" name="email" /&gt;</b> - vvod email
+  <b>&lt;input id="depart" type="date" name="depart" required="required" /&gt;</b> - ввод даты
+    <b>required="required</b> признак обязательности ввода
+  <b>&lt;input type="url" name="sait" value="https://yoursite.org" /&gt;</b> - ввод web-адреса
+  <b>&lt;input type="email" name="email" /&gt;</b> - ввод email
 
-  radio-knopki				
+  Радио-кнопки				
   <b>&lt;input type="radio" name="genre" value="rock" checked="checked" /&gt;</b> Рок
    ...
   <b>&lt;input type="radio" name="genre" value="pop" /&gt;</b> Поп 
@@ -629,26 +634,26 @@
    ...
   <b>&lt;input type="checkbox" name="service" value="work" /&gt;</b> На работе
 
-  Selektor so mnojestvennim viborom
+  Селектрор со множественным выбором
   <b>&lt;select name="devices"&gt;</b>
     <b>&lt;option value="ipod"&gt;</b>iPod<b>&lt;/option&gt;</b>
       ...
     <b>&lt;option value="computer" selected&gt;</b>Компьютер<b>&lt;/option&gt;</b>
   <b>&lt;/select&gt;</b>
 
-  Kmopki
+  Кнопки
   <b>&lt;button type="submit" name="buttonAction" value="fetch"&gt;</b>Отправить (FETCH)<b>&lt;/button&gt;</b>
   <b>&lt;button type="submit" name="buttonAction" value="post"&gt;</b>Отправить (POST)<b>&lt;/button&gt;</b>
     
 <b>&lt;/form&gt;</b>				
 				</code></pre>
 				
-				<br><br>
+				<br>
 				<p>
-					Posle najatiya knopki, forma otpravlyaet polya (u kotorih zadano "name" v parametrah)<br>
-					metogom formy <b>method="post"</b> (po umolchaniy GET)<br>
-					po adresy <b>action="http://unityhub.local/my_test/result.php"</b><br>
-					Otpravlenniye danniye poluchit fail PHP na servere<br>
+					После нажатия кнопки, форма отправляет поля (у которых задано "name" в параметрах)<br>
+					метод формы <b>method="post"</b> (по умолчанию - GET)<br>
+					po adresy <b>action="/php/result.php"</b><br>
+					оправленные данные получает файл /result.php в папке PHP на сервере<br>
 				</p>
 					<pre><code>
 &lt?php // result.php
@@ -664,7 +669,7 @@ if (!empty($_POST)) {
 					</code></pre>
 				<p>
 					<br>
-					V primere pri otkritii formy JS naznachaet forme obrabotchiki najatiya knopok (function(event))
+					В примере при откравке формы JS назначает в форме обработчик нажания кнопок (function(event))
 				</p>
 					<pre><code>
   <b>form.addEventListener("submit", function(event) {</b>
@@ -672,10 +677,10 @@ if (!empty($_POST)) {
   <b>});</b>
 					</code></pre>
 				<p>
-					<b>function(event)</b> - vipolnitsa pri najatii knopki.	V ney propisani 2 varianta<br>
-					kotoriye zavisit ot znacheniya atributa knopki <b>value="..."</b><br>
-					<b>value="post"</b> obichnaya otpravka cherez metod v atribyte formy <b>method="post"</b><br>
-					<b>value="fetch"</b> FETCH (s vivodom rezultata v tablicu na toy je stranice) <br>
+					<b>function(event)</b> - выполняется при нажатии кнопки. В ней прописаны 2 варианта<br>
+					которые зависят от значения атрибута кнопки <b>value="..."</b><br>
+					<b>value="post"</b> обычная отправка через метод POST <br>
+					<b>value="fetch"</b> отправка методом FETCH (с выводом таблицы результатов на той же странице) <br>
 				</p>
 					
 		</div>
@@ -752,6 +757,7 @@ if (!empty($_POST)) {
 			
 			</form>
 		</div>
+
 		<div id="block_result" class="block-description"> <!-- Rezultat otpravki formi -->
 			<h2>Переданные параметры:</h2>
 			<div id="result">
@@ -767,12 +773,12 @@ if (!empty($_POST)) {
 
 	<!-- *********************** -->
 	<!-- <IFRAME> - vstraivanie drugoy stranici -->
-	<section class="section-reference">
+	<section id="iframes" class="section-reference">
 		<h2> <b>&lt;iframe&gt;</b> - окнo через которое вы можнo видеть контент других страниц</h2>	
 		
 		<div class="block-description">
 			<p>
-				<b>&lt;iframe&gt;</b> - Opisanie,
+				<b>&lt;iframe&gt; src="forms/form.html" title="Test form">&lt;/iframe&gt;</b>
 			</p>
 		</div>
 		<div class="block-example">
@@ -782,9 +788,43 @@ if (!empty($_POST)) {
 	</section>
 
 
+	<!-- audoi -->
+	<section id="audio" class="section-reference">
+		<h2><b>&lt;audio&gt;</b> - вставка аудио контента</h2>	
+		
+		<div class="block-description">
+			<p>
+				<b>&lt;audio</b>
+					<ul class="attributes">
+						<li><b>src =</b> - Путь к аудиофайлу.</li>
+						<li><b>controls</b> - Показывает панель управления.</li>
+						<li><b>autoplay</b> - Автоматическое воспроизведение.</li>
+						<li><b>loop</b> - Повторять после окончания.</li>
+						<li><b>muted</b> - Без звука.</li>
+						<li><b>preload</b> - Предварительная загрузка.</li>
+						<li><b>crossorigin</b> - Настройки доступа.</li>
+					</ul>
+				<b>&gt;</b> <br>
+					<ul class="attributes">
+						<li><b>&lt;source src="Имя файла" type="audio/mpeg"&gt;</b> - способ через source </li>
+						<li></li><b>&lt;source "music.ogg" type="audio/ogg"&gt;</b> </li>
+					</ul>
+				<b>&lt;/audio&gt;</b>
+			</p>
+		</div>
+		<div class="block-example">
+			<audio controls preload="auto">
+				<source src="04-The-Trick.mp3" type="audio/mpeg">
+				<source src="02-Breathe.mp3" type="audio/mpeg">
+			</audio>
+			<audio src="">
+		</div>
+				
+	</section>
 
 
-	<!-- *********************** -->
+
+<!-- *********************** -->
 	<!-- SHABLON -->
 	<section class="section-reference">
 		<h2>Shablon sekcii</h2>	

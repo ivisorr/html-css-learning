@@ -257,3 +257,15 @@ textarea {
 }		
 /* Vpisivaet iframe v blok */ 
 /* ********************** */
+
+
+
+/* ********************** */
+/* Формат списка атрибутов */ 
+.attributes {
+    list-style: none;
+    margin: 0;
+    padding-left: 20px;
+}
+/* Vpisivaet iframe v blok */ 
+/* ********************** */

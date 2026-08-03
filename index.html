@@ -9,6 +9,7 @@
 	<title>My HTML/CSS test page</title>
 
 	<link rel="stylesheet" href="css/styles.css">
+
 	<script src="js/scripts.js" defer></script>
 
 </head>
@@ -23,14 +24,15 @@
 			<img loading="eager" src="https://www.deepl.com/img/logo/deepl-logo-blue.svg" 
 			alt="Ntrcnnn" width="40" height="40"  style="margin:10px;">
 		        <li><a href="#formatirovanie">Форматирование</a></li>
-		        <li><a href="#spiski">Списки</a></li>
 		        <li><a href="#specsimvoly">Спецсимволы</a></li>
 		        <li><a href="#SVG-icon">SVG-iconki</a></li>
 		        <li><a href="#span">SPAN</a></li>
+		        <li><a href="#spiski">Списки</a></li>
 		        <li><a href="#tablici">Таблицы</a></li>
 		        <li><a href="#forms">Формы</a></li>
 		        <li><a href="#iframes">IFRAME</a></li>
 		        <li><a href="#audio">Аудио</a></li>
+				<li><a href="#video">Видео</a></li>
 		    </ul>
 		</nav>
 	</header>
@@ -40,11 +42,37 @@
 	<aside>
 	    <nav>
 	        <ul>
-	            <li><a href="#">Категория 1</a></li>
-	            <li><a href="#">Категория 2</a></li>
-	        </ul>
+		        <li><a href="#formatirovanie">Форматирование</a></li>
+		        <li><a href="#specsimvoly">Спецсимволы</a></li>
+		        <li><a href="#SVG-icon">SVG-iconki</a></li>
+		        <li><a href="#span">SPAN</a></li>
+		        <li><a href="#spiski">Списки</a></li>
+		        <li><a href="#tablici">Таблицы</a></li>
+		        <li><a href="#forms">Формы</a></li>
+		        <li><a href="#iframes">IFRAME</a></li>
+		        <li><a href="#audio">Аудио</a></li>
+				<li><a href="#video">Видео</a></li>	        </ul>
 	    </nav>
 	</aside>
+	
+
+	<!-- ************************************ -->
+	<!-- <H1> - Ssilki -->
+	<section id="zagolovki" class="section-reference">
+		<h2>Poleznie ssilki</h2>
+				<div class="section_horisontal">
+			<div class="block-description block_horisontal">
+				<p> 
+					<b>Paletton</b>	<br>
+					<a href="https://paletton.com/" target="_blank">https://paletton.com/</a>
+				</p>
+			</div>
+			<div class="block-example  block_horisontal">
+				Удобный инструмент для выбора цвета
+			</div>
+		</div>					
+	</section>
+	
 
 
 	<!-- ************************************ -->
@@ -184,93 +212,6 @@
 		
 	</section>
 	
-
-	<!-- *********************** -->
-	<!-- <OL> <UL> <DL> - Spiski-->
-	<section id="spiski" class="section-reference">
-		<h2>Списки</h2>	
-		
-		<div class="block-description">
-			<p>
-				<b>&lt;ol title="zagolovok"&gt;</b> - numerovanniy spisok. 
-				<br>&nbsp;&nbsp; <b>&lt;li&gt;</b> - element spiska. 
-				<br> Zagolovok title ne viden i poyavlayetsa pri navedenii na element spiska
-			</p>
-		</div>
-		<div class="block-example">
-			<ol title="Рецепт пюре"> 
-				<li> Порежьте картофель кубиками.</li>
-				<li> Варите картофель в соленой воде на медленном огне в течение 15-20 минут до размягчения.</li>
-				<li> Подогрейте и смешайте молоко, сливочное масло и мускатный орех.</li>
-				<li> Слейте воду из кастрюли и потолките картофель.</li>
-				<li> Перемешайте картофель со смесью из молока,	масла и мускатного ореха.</li>
-			</ol>
-		</div>
-				
-		<div class="block-description">
-			<p>
-				<b>&lt;ul&gt;</b> - spisok s markerami. 
-				<br>&nbsp;&nbsp; <b>&lt;li&gt;</b> - spisok s markerami. 
-			</p>
-		</div>
-		<div class="block-example">
-			<ul>
-				<li>1 кг картофеля</li>
-				<li>100 мл молока</li>
-				<li>50 г соленого масла</li>
-				<li>Тертый мускатный орех
-					<ol> 
-						<li> Взять орех.</li>
-						<li> Взять терку.</li>
-						<li> Тереть мускатный орех.</li>
-						<li> Засыпать в блюдо.</li>
-						<li> Перемешать.</li>
-					</ol>
-				</li>
-				<li>Соль и перец по вкусу</li>
-			</ul>
-			
-			<hr>
-			<h3>Обзоры кинофильмов:</h3>
-			<ul>
-				<li> <a href="http://www.kinopoisk.ru">	Кинопоиск</a> </li>
-				<li> <a href="http://www.megacritic.ru">Мегакритик</a> </li>
-				<li> <a href="http://kinoblog.org">		Киноблог</a> </li>
-				<li> <a href="http://televesti.ru">		Телевести.Ру</a> </li>
-			</ul>
-		</div>
-
-		<div class="block-description">
-			<p>
-				<b>&lt;dl&gt;</b> - tekctoviy soisok s rashifrovkoy. 
-				<br>&nbsp;&nbsp; <b>&lt;dt&gt;</b> - znacheniye. 
-				<br>&nbsp;&nbsp;&nbsp;&nbsp; <b>&lt;dd&gt;</b> - rashifrovka
-			</p>
-		</div>
-		<div class="block-example">
-			<dl>
-				<dt> Сашими</dt>
-					<dd> Сырая рыба, нарезанная тонкими кусочками;
-					подается с такими приправами, как
-					нашинкованная японская редька (дайкон),
-					корень имбиря, васаби или соевый соус.</dd>
-				<dt> Весы</dt>
-					<dd> Прибор, используемый для определения точного
-					веса ингредиентов.</dd>
-					<dd> Зодиакальный знак, распространяющийся на
-					календаре с 23 сентября по 22 октября,
-					единственный в зодиаке неодушевленный
-					символ.</dd>
-				<dt> Ноу-хау</dt>
-					<dd> Мастерство, умение, практическая сметка,
-					высококвалифицированная работа; компетенция
-					и опыт, приобретаемые длительной
-					практикой.</dd>
-			</dl>
-		</div>
-
-	</section>
-
 
 	<!-- *********************** -->
 	<!--Specsimvoli	< > & " ' © -->
@@ -429,6 +370,93 @@
 			<button>Нажми <span style="color: green;">сюда</span></button>
 		</div>
 				
+	</section>
+
+
+	<!-- *********************** -->
+	<!-- <OL> <UL> <DL> - Spiski-->
+	<section id="spiski" class="section-reference">
+		<h2>Списки</h2>	
+		
+		<div class="block-description">
+			<p>
+				<b>&lt;ol title="zagolovok"&gt;</b> - numerovanniy spisok. 
+				<br>&nbsp;&nbsp; <b>&lt;li&gt;</b> - element spiska. 
+				<br> Zagolovok title ne viden i poyavlayetsa pri navedenii na element spiska
+			</p>
+		</div>
+		<div class="block-example">
+			<ol title="Рецепт пюре"> 
+				<li> Порежьте картофель кубиками.</li>
+				<li> Варите картофель в соленой воде на медленном огне в течение 15-20 минут до размягчения.</li>
+				<li> Подогрейте и смешайте молоко, сливочное масло и мускатный орех.</li>
+				<li> Слейте воду из кастрюли и потолките картофель.</li>
+				<li> Перемешайте картофель со смесью из молока,	масла и мускатного ореха.</li>
+			</ol>
+		</div>
+				
+		<div class="block-description">
+			<p>
+				<b>&lt;ul&gt;</b> - spisok s markerami. 
+				<br>&nbsp;&nbsp; <b>&lt;li&gt;</b> - spisok s markerami. 
+			</p>
+		</div>
+		<div class="block-example">
+			<ul>
+				<li>1 кг картофеля</li>
+				<li>100 мл молока</li>
+				<li>50 г соленого масла</li>
+				<li>Тертый мускатный орех
+					<ol> 
+						<li> Взять орех.</li>
+						<li> Взять терку.</li>
+						<li> Тереть мускатный орех.</li>
+						<li> Засыпать в блюдо.</li>
+						<li> Перемешать.</li>
+					</ol>
+				</li>
+				<li>Соль и перец по вкусу</li>
+			</ul>
+			
+			<hr>
+			<h3>Обзоры кинофильмов:</h3>
+			<ul>
+				<li> <a href="http://www.kinopoisk.ru">	Кинопоиск</a> </li>
+				<li> <a href="http://www.megacritic.ru">Мегакритик</a> </li>
+				<li> <a href="http://kinoblog.org">		Киноблог</a> </li>
+				<li> <a href="http://televesti.ru">		Телевести.Ру</a> </li>
+			</ul>
+		</div>
+
+		<div class="block-description">
+			<p>
+				<b>&lt;dl&gt;</b> - tekctoviy soisok s rashifrovkoy. 
+				<br>&nbsp;&nbsp; <b>&lt;dt&gt;</b> - znacheniye. 
+				<br>&nbsp;&nbsp;&nbsp;&nbsp; <b>&lt;dd&gt;</b> - rashifrovka
+			</p>
+		</div>
+		<div class="block-example">
+			<dl>
+				<dt> Сашими</dt>
+					<dd> Сырая рыба, нарезанная тонкими кусочками;
+					подается с такими приправами, как
+					нашинкованная японская редька (дайкон),
+					корень имбиря, васаби или соевый соус.</dd>
+				<dt> Весы</dt>
+					<dd> Прибор, используемый для определения точного
+					веса ингредиентов.</dd>
+					<dd> Зодиакальный знак, распространяющийся на
+					календаре с 23 сентября по 22 октября,
+					единственный в зодиаке неодушевленный
+					символ.</dd>
+				<dt> Ноу-хау</dt>
+					<dd> Мастерство, умение, практическая сметка,
+					высококвалифицированная работа; компетенция
+					и опыт, приобретаемые длительной
+					практикой.</dd>
+			</dl>
+		</div>
+
 	</section>
 
 
@@ -788,7 +816,7 @@ if (!empty($_POST)) {
 	</section>
 
 
-	<!-- audoi -->
+	<!-- AUDIO -->
 	<section id="audio" class="section-reference">
 		<h2><b>&lt;audio&gt;</b> - вставка аудио контента</h2>	
 		
@@ -806,18 +834,74 @@ if (!empty($_POST)) {
 					</ul>
 				<b>&gt;</b> <br>
 					<ul class="attributes">
-						<li><b>&lt;source src="Имя файла" type="audio/mpeg"&gt;</b> - способ через source </li>
-						<li></li><b>&lt;source "music.ogg" type="audio/ogg"&gt;</b> </li>
+						Cпособ через <b>source</b> (альтернативные версии одного и того же аудио.)
+						<li><b>&lt;source src="audio/song.mp3" type="audio/mpeg"&gt;</b> </li>
+						<li><b>&lt;source src=""music.ogg" type="audio/ogg"&gt;</b> </li>
+						<li><b>&lt;source src=""music.wav" type="audio/wav"&gt;</b> </li>
+						<li>Ваш браузер не поддерживает аудио.</li>	
 					</ul>
 				<b>&lt;/audio&gt;</b>
 			</p>
 		</div>
 		<div class="block-example">
 			<audio controls preload="auto">
-				<source src="04-The-Trick.mp3" type="audio/mpeg">
-				<source src="02-Breathe.mp3" type="audio/mpeg">
+				<source src="assets\audio\02-Breathe.mp3" type="audio/mpeg">
+				Ваш браузер не поддерживает аудио.	
 			</audio>
 			<audio src="">
+		</div>
+				
+	</section>
+
+
+<!-- *********************** -->
+	<!-- VIDEO -->
+	<section id="video" class="section-reference">
+		<h2><b>&lt;video&gt;</b> - вставка видео контента.</h2>	
+		
+		<div class="block-description">
+			<p>
+				<b>&lt;video</b>
+				<ul class="attributes">
+					<li><b>src =</b> - Путь к видеофайлу.</li>
+					<li><b>controls</b> - Показывает панель управления.</li>
+					<li><b>autoplay</b> - Автоматическое воспроизведение.</li>
+					<li><b>loop</b> - Повторять после окончания.</li>
+					<li><b>muted</b> - Без звука.</li>
+					<li><b>poster="assets/images/video-poster.jpg"</b> - Показывает изображение до запуска видео</li>
+					<li><b>playsinline</b> - Просит мобильный браузер воспроизводить видео внутри страницы, а не обязательно во весь экран</li>
+					<li><b>preload = </b> - Предварительная загрузка. <br> </li>
+					<ul class="attributes">
+						<li><b>none</b> - Браузер не должен начинать загрузку 
+							видеоролика, пока пользователь не щелкнет мышью по кнопке Воспроизведение. </li>
+						<li><b>auto</b> - Браузер должен загрузить видео ролик по окончании загрузки страницы</li>
+						<li><b>metadata</b> - Браузер должен лишь собрать такую метаинформацию, как размер видео, первый кадр, список воспроизведения и длительность</li>
+					</ul>
+							<li><b>crossorigin</b> - Настройки доступа.</li>
+				</ul>
+				<b>&gt;</b> <br>
+				<ul class="attributes">
+					Cпособ через <b>source</b> (Браузер выберет первый поддерживаемый источник)
+					<li><b>&lt;source src="assets/video/example.mp4" type="video/mp4"&gt;</b> </li>
+					<li><b>&lt;source src="assets/video/example.webm" type="video/webm"&gt;</b> </li>
+					<li>Ваш браузер не поддерживает видео.</li>	
+					<li><b>&lt;track</b> - Добавляет субтитры к видео. <br> </li>
+					<ul class="attributes">
+						<li><b>src="assets/subtitles/example-en.vtt"</b> </li>
+						<li><b>kind="subtitles"</b> </li>
+						<li><b>srclang="en"</b> </li>
+						<li><b>label="English"</b> </li>
+					</ul>
+					<b>&lt;/track&gt;</b>
+					<li><b>width=""</b> и <b>height=""</b> - Размеры видео на странице (обычно настраивают через CSS)</li>
+				</ul>
+				<b>&lt;/video&gt;</b>
+			</p>
+		</div>
+		<div class="block-example">
+			<video controls width="640" height="360" preload="auto">
+				<source src="assets/video/365737_medium.mp4" type="video/mp4">
+			</video>
 		</div>
 				
 	</section>

@@ -5,10 +5,11 @@
 
 
 :root {
+    --background-color: white;
     --tag-color: #F73;
     --purple-color: #782E7A;
     
-    --table-background-color: #0056a7;
+    --table-background-color: #00a746;
 
     --menu-height: 70px;
     --menu-color: #F73;
@@ -21,14 +22,9 @@
 }
 
 
-
-/* ********************** */
-/* otstup na visotu menu, dlya pravilnoy pozicii bloka rezultatov (pri skrollinge) */ 
-#block_result {
-    scroll-margin-top: 80px;
+body {
+    background-color: var(--background-color);
 }
-/* otstup na visotu menu, dlya pravilnoy pozicii bloka rezultatov (pri skrollinge) */ 
-/* ********************** */
 
 
 
@@ -220,15 +216,18 @@ b {
 
 /* ********************** */
 /* Oformlenie "button" */ 
+
 .button-custom {
+    border: 1px solid;
+    border-radius: 2px;
     background: var(--menu-background-color);
     transition: background 0.3s;
-
 }
 
 .button-custom:hover {
     background: var(--menu-color);
     color: var(--menu-background-color);
+    border-color: var(--menu-background-color);
 }
 /* dlya avtoizmeneniya shirini "textarea" */ 
 /* ********************** */
@@ -268,4 +267,4 @@ textarea {
     padding-left: 20px;
 }
 /* Vpisivaet iframe v blok */ 
-/* ********************** */
+/* ********************** */#

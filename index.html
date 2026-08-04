@@ -775,8 +775,11 @@ if (!empty($_POST)) {
 						<input type="email" name="email" />
 					</label>
 					
-					<br>
-					<br>
+					<br><br>
+					<label> 0-100%:
+						<input class="slider" type="range" name="volume" min="0" max="100" value="50" step="1">
+					</label>
+					<br><br>
 				</fieldset>
 				
 				<br>
@@ -812,7 +815,19 @@ if (!empty($_POST)) {
 		<div class="block-example">
 			<iframe src="forms/form.html" title="Test form"></iframe>
 		</div>
-				
+		<div class="block-example">
+			<h2> Youtube cherez <b>iframe</b> - ne rabotaet pri lokalnom zapuste</h2>	
+			<iframe 
+				width="595" 
+				height="1057" 		
+				src="https://www.youtube.com/embed/WrIiWk1hFeg" 
+				title="Ranking the MOST Surprising Singing Moments" 
+				frameborder="0" 
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				referrerpolicy="strict-origin-when-cross-origin" 
+				allowfullscreen>
+			</iframe>
+		</div>
 	</section>
 
 

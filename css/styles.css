@@ -13,11 +13,14 @@
 
     --menu-height: 70px;
     --menu-color: #F73;
-    --menu-background-color: #EEE7E7;
+    --menu-background-color: #EEE7E7;    
+    --menu-shadow: #00000066;
     
     --section-reference-color: #EEE7E7;
     --block-description-color: #F2F8FB;
     --block-example-color: white; /* #f8f8f8; */
+
+    accent-color: var(--menu-color);
 
 }
 
@@ -40,26 +43,29 @@ header {
 
 .main-menu {
     position: fixed;
+    
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000; /* чтобы было поверх всего */
-    background: #d73;
+    background: var(--menu-color);
 }
 
 .main-menu ul {
     display: flex;          /* делаем горизонтально */
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
-    height: var(--menu-height); /* высота меню */
+    min-height: var(--menu-height); /* высота меню */
     list-style: none;       /* убираем точки */
     align-items: center; /* центрируем элементы внутри */
     background: var(--menu-background-color);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: var(--menu-shadow);/* тень под меню */
 }
 
 .main-menu li {
     height: 100%;
+    height: var(--menu-height);
 }
 
 .main-menu a {
@@ -75,10 +81,9 @@ header {
 .main-menu a:hover {
     background: var(--menu-color);       /* эффект при наведении */
     color: white;
-    font-weight: bold;
-    text-shadow: 0 2px 2px rgba(0,0,0,0.4);
-    padding: 3px 18px; /* отступы вокруг текста пункта меню 1-в/н 2-п/л */
-    box-shadow: 0 5px 5px rgba(0,0,0,0.4);
+	text-shadow: 0 2px 2px var(--menu-shadow);
+	box-shadow: 0 5px 5px var(--menu-shadow);
+
 }
 /* format menu */
 /* ********************** */
@@ -220,8 +225,10 @@ b {
 .button-custom {
     border: 1px solid;
     border-radius: 2px;
-    background: var(--menu-background-color);
-    transition: background 0.3s;
+    border-color: gray;			
+    transition: background 0.5s;
+    padding: 2px 5px;
+    box-shadow: 0 2px 2px var(--menu-shadow);
 }
 
 .button-custom:hover {

@@ -1,0 +1,118 @@
+<html>
+<head>
+    <title>Цвет</title>
+    <style type="text/css">
+        body {
+            background-color: silver;
+            color: white;
+            padding: 20px;
+            font-family: Arial, Verdana, sans-serif;
+        }
+
+        h1 {
+            background-color: #ffffff;
+            background-color: hsla(0,100%,100%,0.5);
+            color: #64645A;
+            padding: inherit;
+        }
+
+        p {
+            padding: 5px;
+            margin: 0px;
+        }
+    </style>
+</head>
+
+ <body>
+	<h1>Шкала pH</h1>
+	<div id="ph-scale" class="ph-scale">
+   </div>
+
+
+    <script>
+        const phScale = document.getElementById("ph-scale");
+
+        /* Щелочная часть: стартовый цвет соответствует pH 8 */
+        const ALKALINE_START = {
+            red: 140,
+            green: 202,
+            blue: 242
+        };
+
+        const ALKALINE_STEP = {
+            red: -20,
+            green: -12,
+            blue: -3
+        };
+
+        /* Кислотная часть: стартовый цвет соответствует pH 6 */
+        const ACID_START = {
+            red: 245,
+            green: 176,
+            blue: 204
+        };
+
+        const ACID_STEP = {
+            red: -3,
+            green: -20,
+            blue: -12
+        };
+
+
+        /* Создаёт Цвет */
+        function getColorRGB(stepNumber, coloursStart, coloursStep){
+            const red = coloursStart.red + coloursStep.red * stepNumber;
+            const green = coloursStart.green + coloursStep.green * stepNumber; 
+            const blue = coloursStart.blue + coloursStep.blue * stepNumber;
+
+            return `rgb(${red}, ${green}, ${blue})`;           
+        }
+
+        /* Создаёт строку шкалы pH */
+        function addPhLevel(ph, description="", bgColor="silver",  textColor="white") {
+            const paragraph = document.createElement("p");
+
+            paragraph.className = "ph-level";
+            paragraph.style.color = textColor;
+            paragraph.style.backgroundColor = bgColor;
+
+            paragraph.textContent = ph === ""
+                ? description
+                : `${ph.toFixed(1)} ${description}`;
+            phScale.append(paragraph);
+
+            return paragraph;
+        }
+
+
+
+        //    ЩЕЛОЧНАЯ ЧАСТЬ: pH 14–8 
+        // =========================
+        // Zagolovok 
+        addPhLevel( "", "СИЛЬНОЩЕЛОЧНАЯ СРЕДА", undefined, getColorRGB(6, ALKALINE_START, ALKALINE_STEP));
+
+        // Stroki pH 14–8 
+        for (let stepNumber = 6; stepNumber >= 0; stepNumber--) {
+            const ph = stepNumber + 8;
+            addPhLevel(ph, "", getColorRGB(stepNumber, ALKALINE_START, ALKALINE_STEP));
+        }
+
+
+        //    НЕЙТРАЛЬНАЯ ЧАСТЬ: pH 7
+        //    ========================= */
+        addPhLevel(7, "НЕЙТРАЛЬНАЯ СРЕДА", "hsla(0, 100%, 100%, 0.7)", "gray");
+
+
+        //    КИСЛОТНАЯ ЧАСТЬ: pH 6–0
+        //    ========================= */
+        // Stroki pH 6–0
+        for (let stepNumber = 0; stepNumber <= 6; stepNumber++) {
+            const ph = stepNumber;
+            addPhLevel(ph, "", getColorRGB(stepNumber, ACID_START, ACID_STEP));
+        }
+
+        // Zagolovok 
+        addPhLevel( "", "СИЛЬНОКИСЛАЯ СРЕДА", undefined, getColorRGB(6, ACID_START, ACID_STEP));
+    </script>
+</body>
+</html>        

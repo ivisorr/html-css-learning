@@ -808,20 +808,46 @@ if (!empty($_POST)) {
 		<h2> <b>&lt;iframe&gt;</b> - окнo через которое вы можнo видеть контент других страниц</h2>	
 		
 		<div class="block-description">
+			<h2>form</h2>	
 			<p>
 				<b>&lt;iframe&gt; src="forms/form.html" title="Test form">&lt;/iframe&gt;</b>
 			</p>
 		</div>
 		<div class="block-example">
-			<iframe src="forms/form.html" title="Test form"></iframe>
+			<p>forms/form.html</p>
+			<br>
+			<iframe src="forms/form.html" title="Test: form"></iframe>
+		</div>
+
+		<div class="block-description">
+			<h2>Colours</h2>	
+			<p>
+				<b>&lt;iframe&gt; src="forms/colours.html" title="Test color">&lt;/iframe&gt;</b>
+			</p>
 		</div>
 		<div class="block-example">
-			<h2> Youtube cherez <b>iframe</b> - ne rabotaet pri lokalnom zapuste</h2>	
+			<p>forms/colours.html</p>
+			<br>
+			<iframe src="forms/colours.html" title="Test color"></iframe>
+		</div>
+
+		<div class="block-description">
+			<h2>Youtube</h2>	
+			<p> Youtube cherez <b>iframe</b> - ne rabotaet pri lokalnom zapuske</p>
+			<br>
+			<p>
+				<b>&lt;iframe&gt; src="https://www.youtube.com/embed/WrIiWk1hFeg" title="Test Youtube">&lt;/iframe&gt;</b>
+			</p>
+
+		</div>
+		<div class="block-example">
+			<p>https://www.youtube.com/embed/WrIiWk1hFeg</p>
+			<br>
 			<iframe 
 				width="595" 
 				height="1057" 		
 				src="https://www.youtube.com/embed/WrIiWk1hFeg" 
-				title="Ranking the MOST Surprising Singing Moments" 
+				title="Test Youtube" 
 				frameborder="0" 
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 				referrerpolicy="strict-origin-when-cross-origin" 
@@ -859,6 +885,7 @@ if (!empty($_POST)) {
 			</p>
 		</div>
 		<div class="block-example">
+			<p>assets/audio/02-Breathe.mp3</p><br>
 			<audio controls preload="auto">
 				<source src="assets\audio\02-Breathe.mp3" type="audio/mpeg">
 				Ваш браузер не поддерживает аудио.	
@@ -914,14 +941,13 @@ if (!empty($_POST)) {
 			</p>
 		</div>
 		<div class="block-example">
-			<p><b>&lt;video</b> - assets/video/365737_medium.mp4</p><br>
+			<p>assets/video/365737_medium.mp4</p><br>
 			<video controls width="640" height="360" preload="auto">
 				<source src="assets/video/365737_medium.mp4" type="video/mp4">
 			</video>
 		</div>
 				
 	</section>
-
 
 
 <!-- *********************** -->
@@ -939,6 +965,9 @@ if (!empty($_POST)) {
 		</div>
 				
 	</section>
+
+
+
 
 
 <!-- *********************** -->

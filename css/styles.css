@@ -32,7 +32,7 @@ body {
 
 
 /* ********************** */
-/* format menu */
+/* Формат меню */
 body {
     padding-top: var(--menu-height); /* высота меню */
 }
@@ -85,27 +85,27 @@ header {
 	box-shadow: 0 5px 5px var(--menu-shadow);
 
 }
-/* format menu */
+/* Формат меню */
 /* ********************** */
 
 
 
 /* *********************** */
-/* format sekciy i blokov  */
+/* Формат секций и блоков  */
 /* h1, h2, h3, h4, h5, h6, */
 p {
     margin: 0;	/* убирает встроенные в браузер отступы для абзацев и заголовков*/
 }
 
 pre {
-    margin: 0; /* ubiraet otstupi dlya tega "pre" */
+    margin: 0; /* убирает отступы для теега "pre" */
     overflow-x: auto;
 }
 
 .section_horisontal {
     display: flex;              /* ставит блоки в одну строку */
     /* align-items: flex-start; /* прижимает блоки к верху */
-    align-items: stretch;		/* viravnivaet razmer blokov po bolshemy, po visote */
+    align-items: stretch;		/* выравнивает размер блоков по большему, по высоте */
     gap: 10px;                  /* расстояние между блоками */
 }		
 
@@ -113,7 +113,7 @@ pre {
     flex: 1 1 0; /* оба блока займут одинаковую ширину */
     min-width: 0;
     box-sizing: border-box;
-    margin-top: 0 !important; /* bes etogo "align-items: flex-start;" ne srabativaet */
+    margin-top: 0 !important; /* без этого "align-items: flex-start;" не срабатывает */
 }		
 
 .section-reference {
@@ -138,20 +138,19 @@ pre {
     border: 1px solid #ccc;
     background-color: var(--block-example-color);
 }
-/* format sekciy i blokov */
+/* Формат секций и блоков */
 /* ********************** */
 
 
 
 /* ********************** */
-/* format tablic */ 
-
+/* Формат таблиц*/ 
 table {
     width: 100%;
     border: 1px solid;
     border-color: gray;			
     border-spacing: 2px;			
-    /*  border-collapse: collapse; - dlya odinochnoy ramki*/
+    /*  border-collapse: collapse; - для слияния в одиночную рамку*/
 }
 
 .limit-max-width {
@@ -190,38 +189,37 @@ tbody tr > :nth-child(3){
     background-color: white;
     color: var(--menu-color);
 }
-/* format tablic */ 
+/* Формат таблиц */ 
 /* ********************** */
 
 
 
 /* ********************** */
-/* format SVG */ 
+/* Формат SVG */ 
 .svg-icon {
     width: 60px;
     height: 60px;
     fill: var(--purple-color);
     vertical-align: middle;
 }
-/* format SVG */ 
+/* Формат SVG */ 
 /* ********************** */
 
 
 
 /* ********************** */
-/* format otobrajeniya HTML tegov primerov */ 
+/* Формат отображения HTML-тегов примеров */ 
 b {
     color: var(--tag-color);
     font-weight: bold;
 }
-/* format otobrajeniya HTML tegov primerov */ 
+/* Формат отображения HTML-тегов примеров */ 
 /* ********************** */
 
 
 
 /* ********************** */
-/* Oformlenie "button" */ 
-
+/* Оформление кнопок */ 
 .button-custom {
     border: 1px solid;
     border-radius: 2px;
@@ -236,42 +234,42 @@ b {
     color: var(--menu-background-color);
     border-color: var(--menu-background-color);
 }
-/* dlya avtoizmeneniya shirini "textarea" */ 
+/* Оформление кнопок */ 
 /* ********************** */
 
 
 
 /* ********************** */
-/* dlya avtoizmeneniya shirini "textarea" */ 
+/* Для автоизменения ширины textarea */ 
 textarea {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
 }
-/* dlya avtoizmeneniya shirini "textarea" */ 
+/* Для автоизменения ширины textarea */ 
 /* ********************** */
 
 
 
 /* ********************** */
-/* Vpisivaet iframe v blok */ 
+/* Вписывает iframe в блок */ 
 .block-example iframe {
     display: block;
     width: 100%;
-    height: 800px; /* razmer iframe nam ne izvesten */
+    height: 800px; /* размер iframe заранее не известен поэтому ставим свое значение */
     border: 0;
-}		
-/* Vpisivaet iframe v blok */ 
+}
+/* Вписывает iframe в блок */ 
 /* ********************** */
 
 
 
 /* ********************** */
-/* Формат списка атрибутов */ 
+/* Формат списка атрибутов тегов */ 
 .attributes {
     list-style: none;
     margin: 0;
     padding-left: 20px;
 }
-/* Vpisivaet iframe v blok */ 
-/* ********************** */#
+/* Формат списка атрибутов тегов */ 
+/* ********************** */

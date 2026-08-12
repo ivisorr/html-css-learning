@@ -5,7 +5,7 @@
 
 
 :root {
-    --background-color: rgb(223, 202, 202);
+    --background-color: white;
     --tag-color: #F73;
     --purple-color: #782E7A;
     
@@ -13,12 +13,13 @@
 
     --menu-height: 70px;
     --menu-color: #F73;
-    --menu-background-color: #EEE7E7;    
+    --menu-background-color1: #3d3a37;
+    --menu-background-color: rgb(223, 202, 202);    
     --menu-shadow: #00000066;
     
     --section-reference-color: #EEE7E7;
-    --block-description-color: #F2F8FB;
-    --block-example-color: white; /* #f8f8f8; */
+    --block-description-color: #ecf3f7;
+    --block-example-color: #edf2ef; /* #f8f8f8; */
 
     accent-color: var(--menu-color);
 
@@ -26,40 +27,50 @@
 
 
 body {
+    padding-top: var(--menu-height); /* высота меню */
     background-color: var(--background-color);
 }
 
-
+/* header {
+    position: relative;
+}		 */
 
 /* ********************** */
 /* Формат меню */
-body {
-    padding-top: var(--menu-height); /* высота меню */
-}
-
-header {
-    position: relative;
-}		
-
 .main-menu {
     position: fixed;
+
+    display: grid;
+    grid-template-columns: 80px minmax(0, 1fr) 80px minmax(0, 1fr) 80px;
+    align-items: center;
     
     top: 0;
     left: 0;
     width: 100%;
+    height: var(--menu-height); /* высота меню */
     z-index: 1000; /* чтобы было поверх всего */
-    background: var(--menu-color);
+    background: var(--menu-background-color);
+    overflow: visible;
 }
 
 .main-menu ul {
     display: flex;          /* делаем горизонтально */
-    flex-wrap: wrap;
+    align-items: center; /* центрируем элементы внутри */
+    align-items: stretch;
+    justify-content: center;
+
+    height: 100%;
     margin: 0;
     padding: 0;
-    min-height: var(--menu-height); /* высота меню */
+
+    
+    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    
+    min-height: var(--menu-height); 
+
     list-style: none;       /* убираем точки */
-    align-items: center; /* центрируем элементы внутри */
-    background: var(--menu-background-color);
+    background: var(--menu-background-color1);
     box-shadow: var(--menu-shadow);/* тень под меню */
 }
 
@@ -68,7 +79,7 @@ header {
     height: var(--menu-height);
 }
 
-.main-menu a {
+.main-menu li > a {
     display: flex;
     align-items: center; /* центрируем элементы внутри */
     padding: 0px 15px; /* отступы вокруг текста пункта меню 1-в/н 2-п/л */
@@ -78,13 +89,37 @@ header {
     color: var(--menu-color);
 }
 
-.main-menu a:hover {
+.main-menu li > a:hover {
     background: var(--menu-color);       /* эффект при наведении */
     color: white;
 	text-shadow: 0 2px 2px var(--menu-shadow);
 	box-shadow: 0 5px 5px var(--menu-shadow);
 
 }
+
+.menu-logo {
+    /* position: absolute; /* no grid */
+    position: relative;
+    top: 0;
+    left: 0;
+    
+   	width: 100px;
+	height: 100%;  
+}
+
+.menu-logo img {
+	position: absolute;
+
+	width: 80px;
+	height: 80px;
+
+	top: 30px;
+
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+
 /* Формат меню */
 /* ********************** */
 

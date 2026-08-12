@@ -2,8 +2,6 @@
 /* ОБЩИЕ СТИЛИ СТРАНИЦЫ - index.html */ 
 /* ******************************************** */
 
-
-
 :root {
     --background-color: white;
     --tag-color: #F73;
@@ -11,66 +9,66 @@
     
     --table-background-color: #00a746;
 
-    --menu-height: 70px;
+    --menu-height: 50px;
     --menu-color: #F73;
-    --menu-background-color1: #3d3a37;
     --menu-background-color: rgb(223, 202, 202);    
-    --menu-shadow: #00000066;
+    --menu-background-color1: #3d3a37;
+    --menu-background-color2: #706c67;
+    --menu-shadow: #000066;
     
     --section-reference-color: #EEE7E7;
     --block-description-color: #ecf3f7;
     --block-example-color: #edf2ef; /* #f8f8f8; */
 
+    --logo-size: 3050px;
+    --logo-offset: calc(-1 * var(--logo-size) / 2);
+
     accent-color: var(--menu-color);
 
 }
 
-
 body {
-    padding-top: var(--menu-height); /* высота меню */
+    padding-top: var(--menu-height); /* отступ начала страницы на высоту шапки*/
+    margin: 0;
     background-color: var(--background-color);
 }
 
-/* header {
-    position: relative;
-}		 */
+header {
+    position: fixed; /* чтобы заголовок не сдвигался */
+    top: 0; /* отступа сверху  */
+    left: 0; 
+    right: 0;
+    width: 100%;
+ 
+    display: grid;
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+    
+}		
 
 /* ********************** */
 /* Формат меню */
 .main-menu {
-    position: fixed;
-
-    display: grid;
-    grid-template-columns: 80px minmax(0, 1fr) 80px minmax(0, 1fr) 80px;
-    align-items: center;
-    
-    top: 0;
-    left: 0;
     width: 100%;
-    height: var(--menu-height); /* высота меню */
+    display: flex;          /* делаем горизонтально */
+    align-items: center;    
+
     z-index: 1000; /* чтобы было поверх всего */
-    background: var(--menu-background-color);
-    overflow: visible;
+    background: var(--menu-background-color1);
+
 }
 
 .main-menu ul {
     display: flex;          /* делаем горизонтально */
-    align-items: center; /* центрируем элементы внутри */
-    align-items: stretch;
-    justify-content: center;
+    justify-content:center;
+    flex-wrap: wrap; /* для переноса меню на втрокую строку если не помещается */
 
     height: 100%;
     margin: 0;
     padding: 0;
 
-    
-    flex-wrap: nowrap;
-    flex-wrap: wrap;
-    
-    min-height: var(--menu-height); 
-
     list-style: none;       /* убираем точки */
-    background: var(--menu-background-color1);
+    /* background: var(--menu-background-color1); */
     box-shadow: var(--menu-shadow);/* тень под меню */
 }
 
@@ -85,7 +83,7 @@ body {
     padding: 0px 15px; /* отступы вокруг текста пункта меню 1-в/н 2-п/л */
     height: 100%;
     text-decoration: none; /* чтобы не было подчеркивания */
-    text-shadow: 0 2px 2px rgba(0,0,0,0.2);
+    text-shadow: 0 2px 2px black;
     color: var(--menu-color);
 }
 
@@ -97,26 +95,68 @@ body {
 
 }
 
-.menu-logo {
-    /* position: absolute; /* no grid */
-    position: relative;
-    top: 0;
-    left: 0;
-    
-   	width: 100px;
-	height: 100%;  
+.line-logo img {
+    width: 50px;
+    height: 50px);
+    display: block;
+
+    /* transform: rotate(110deg); */
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-right: 10px;
+    margin-bottom: -10px;
+    animation: logo-rotate 5s linear infinite;
 }
 
-.menu-logo img {
-	position: absolute;
+@keyframes logo-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
 
-	width: 80px;
-	height: 80px;
+.logo-images {
+    display: flex;
+    margin: 0;
+    width: 100%;
+    z-index: 1001;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+}
 
-	top: 30px;
+.logo-top {
+    margin-bottom: var(--logo-offset);
+}
 
-	left: 50%;
-	transform: translateX(-50%);
+.logo-bottom {
+    margin-top: var(--logo-offset);
+}
+
+.logo-images .menu-logo{
+    flex: 1;
+    display: flex;
+    pointer-events: none;
+}
+
+.logo-images img{
+	width: var(--logo-size);
+	height: var(--logo-size);
+    pointer-events: auto; 
+}
+
+.logo-images .menu-logo:nth-child(1) {
+    justify-content: flex-start;
+}
+
+.logo-images .menu-logo:nth-child(2) {
+    justify-content: center;
+}
+
+.logo-images .menu-logo:nth-child(3) {
+    justify-content: flex-end;
 }
 
 

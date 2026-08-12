@@ -9,7 +9,8 @@
     
     --table-background-color: #00a746;
 
-    --menu-height: 50px;
+    --menu-height: 40px;
+
     --menu-color: #F73;
     --menu-background-color: rgb(223, 202, 202);    
     --menu-background-color1: #3d3a37;
@@ -20,11 +21,11 @@
     --block-description-color: #ecf3f7;
     --block-example-color: #edf2ef; /* #f8f8f8; */
 
-    --logo-size: 3050px;
+    --logo-size: 25px;
     --logo-offset: calc(-1 * var(--logo-size) / 2);
 
-    accent-color: var(--menu-color);
-
+    --line-logo-size: 50px; /* высота вращающегося логотипа */
+    --line-logo-offset: calc(-1 * ( var(--line-logo-size) - var(--menu-height) ) / 2); /* вертикальные отступы вращающегося логотипа */
 }
 
 body {
@@ -49,13 +50,13 @@ header {
 /* ********************** */
 /* Формат меню */
 .main-menu {
-    width: 100%;
     display: flex;          /* делаем горизонтально */
-    align-items: center;    
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
 
     z-index: 1000; /* чтобы было поверх всего */
     background: var(--menu-background-color1);
-
 }
 
 .main-menu ul {
@@ -95,31 +96,10 @@ header {
 
 }
 
-.line-logo img {
-    width: 50px;
-    height: 50px);
-    display: block;
-
-    /* transform: rotate(110deg); */
-    margin-left: 20px;
-    margin-top: 5px;
-    margin-right: 10px;
-    margin-bottom: -10px;
-    animation: logo-rotate 5s linear infinite;
-}
-
-@keyframes logo-rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
 
 .logo-images {
-    display: flex;
     margin: 0;
+    display: flex;
     width: 100%;
     z-index: 1001;
     justify-content: space-between;
@@ -160,6 +140,27 @@ header {
 }
 
 
+.line-logo img {
+    width: var(--line-logo-size);
+    height: var(--line-logo-size);
+    display: block;
+
+    /* transform: rotate(110deg); */
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: var(--line-logo-offset);
+    margin-bottom: var(--line-logo-offset);
+    animation: logo-rotate 5s linear infinite;
+}
+
+@keyframes logo-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
 /* Формат меню */
 /* ********************** */
 

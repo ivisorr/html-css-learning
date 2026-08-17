@@ -964,61 +964,47 @@
 
 
 <!-- *********************** -->
-	<!-- SHABLON -->
+	<!-- SHRIFTY -->
 	<section class="section-reference">
-		<h2>Формат цвета <b>HSLA</b> и прозрачность</h2>	
+		<h2>Формат Шрифта <b></b> </h2>	
 		
 		<div class="block-description">
-			<b>hsla(оттенок, насыщенность, светлота, прозрачность)</b> 
+			<b></b> 
+			<br>
+			<label>Шрифт (font-family):
+				<select id="font-family">
+					<!-- Option will be genereted by JS -->
+				</select>
+			</label>
 			<br><br>
-			<ul class="attributes">
-				<li><b>Оттенок</b> - Значение угла в диапазоне от 0 до 360 градусов.</li>
-				<li><b>Насыщенность</b> - Задается в процентах 0-100%.</li>
-				<li><b>Светлота</b> - Задается в процентах:</li>
-					<ul class="attributes">
-						<li>0% — белый,</li>
-						<li>50% — нормальный цвет,</li>
-						<li>100% — черный.</li>
-					</ul>
-				<li><b>Прозрачность</b> - альфа-канал</li>
-					<ul class="attributes">
-						<li>Принимает значения в диапазоне от 0 до 1,0.</li>
-						<li>Например, 0,5 соответствует 50%-ной прозрачности,</li>
-						<li>а 0,75 — 75%-ной</li>
-					</ul>
-			</ul>
+			<label>Размер (font-size):
+				<input
+					type="range"
+					id="font-size"
+					min="10"
+					max="72"
+					value="16"
+				>
+				<span id="font-size-value"><!-- will be genereted by JS --></span>	
+			</label>
+			<br><br>
+			<label>Жирность: (font-weight):
+				<select id="font-weight">
+					<!-- Option will be genereted by JS -->
+				</select>
+			</label>
+			<!-- <button class="button-custom" id="apply-font" type="button"> Применить </button> -->
 		</div>
-		<div class="block-example">
-			<p>
-				Красный - background-color: hsla(<span style="color: red;">000</span>,75%,75%,<b>1.0</b>)
-				<br>
-				Зеленый - background-color: hsla(<span style="color: green;">120</span>,75%,75%,<b>0.7</b>)
-				<br><br>
+		<div class="block-example" id="font-example">
+			<h2> Primer teksta dlya demonstracii izmeneniya nasroek shrifa</h2>
+			<br>
+			<p>	Tekushie nastroiki: </p>
+			<p id="font-settings">
+				<!-- Шрифт (font-family):<br>
+				Размер (font-size):<br>
+				Жирность: (font-weight):<br> -->
 			</p>
-			<div style="display: flex;"">
-				<div style="
-					background-color: hsla(000,75%,55%,1.0); 
-					display: flex; 
-					justify-content: center;
-					align-items: center;
-					width: 150px; 
-					height: 150px;
-				">	
-					<p>Прозрачность 1.0</p>
-				</div>
-				<div style=
-					"background-color: hsla(120,75%,75%,0.7); 
-					display: flex; 
-					justify-content: center;
-					align-items: center;
-					width: 150px; 
-					height: 150px;
-					margin-top: 30px; 
-					margin-left: -30px;
-				">	
-					<p>Прозрачность 0.7</p>
-				</div>
-			</div>
+			<br>
 		</div>
 				
 	</section>

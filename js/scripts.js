@@ -15,6 +15,72 @@ depart.value =
 const form = document.getElementById("testForm"); // sekciya formi s polyami
 const result = document.getElementById("result"); // sekciya rezultatov (iznachalno pustaya)
 
+// ************************************ //
+// Rabota so Sriftom //
+const fonts = [
+	"Arial",
+	"Verdana",
+	"Georgia",
+	"Times New Roman",
+	"Courier New"
+];
+const fontWeights = [
+	100,
+	200,
+	300,
+	400,
+	500,
+	600,
+	700,
+	800,
+	900
+];
+const fontFamilySelect = document.getElementById("font-family");
+const fontSizeInput = document.getElementById("font-size");
+const fontWeightSelect = document.getElementById("font-weight");
+// const applyButton = document.getElementById("apply-font");
+const target = document.getElementById("font-example");
+const fontSettingsText = document.getElementById("font-settings");
+const fontSizeValue = document.getElementById("font-size-value");
+
+applyFontSettings()
+
+// funkciya zapolnaet element selec - [selectElement]
+// znacheniyami iz massiva - [value]   
+function fillSelect(selectElement, values) {
+	for (const value of values) {
+		const option = document.createElement("option");
+		option.value = value;
+		option.textContent = value;
+		selectElement.append(option);
+	}
+}
+
+// funkciya primeneniya parametrov shrifta k sekcii primera 
+function applyFontSettings() {
+	target.style.fontFamily = fontFamilySelect.value;
+	target.style.fontWeight = fontWeightSelect.value;
+	target.style.fontSize = fontSizeInput.value + "px";
+
+    fontSizeValue.textContent =	fontSizeInput.value + "px";
+	fontSettingsText.innerHTML = `
+		Шрифт (font-family): ${fontFamilySelect.value}<br>
+		Размер (font-size): ${fontSizeInput.value}px<br>
+		Жирность (font-weight): ${fontWeightSelect.value}
+	`;
+}
+
+// zapolnanie select-elementov shiftov i razmerov 
+fillSelect(fontFamilySelect, fonts);
+fillSelect(fontWeightSelect, fontWeights);
+
+// naznacheniye obrabotchika sobitiy dlya izmeneniya parametrov shrifta
+fontFamilySelect.addEventListener("change", applyFontSettings);
+fontWeightSelect.addEventListener("change", applyFontSettings);
+fontSizeInput.addEventListener("input", applyFontSettings);
+// applyButton.addEventListener("click", applyFontSettings);
+
+
 
 // ************************************ //
 // Функция для result

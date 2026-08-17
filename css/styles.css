@@ -15,13 +15,13 @@
     --menu-background-color: rgb(223, 202, 202);    
     --menu-background-color1: #3d3a37;
     --menu-background-color2: #706c67;
-    --menu-shadow: #000066;
+    --menu-shadow: #323233;
     
     --section-reference-color: #EEE7E7;
     --block-description-color: #ecf3f7;
     --block-example-color: #edf2ef; /* #f8f8f8; */
 
-    --logo-size: 25px;
+    --logo-size: 30px;
     --logo-offset: calc(-1 * var(--logo-size) / 2);
 
     --line-logo-size: 50px; /* высота вращающегося логотипа */
@@ -30,8 +30,11 @@
 
 body {
     padding-top: var(--menu-height); /* отступ начала страницы на высоту шапки*/
+    padding-top: 100px; /* отступ начала страницы на высоту шапки*/
     margin: 0;
     background-color: var(--background-color);
+    font-family: Georgia, Times, serif;
+    font-family: system-ui, sans-serif;
 }
 
 header {
@@ -109,6 +112,8 @@ header {
 
 .logo-top {
     margin-bottom: var(--logo-offset);
+    transform: rotate(180deg);
+
 }
 
 .logo-bottom {
@@ -301,13 +306,13 @@ b {
     border-radius: 2px;
     border-color: gray;			
     transition: background 0.5s;
-    padding: 2px 5px;
-    box-shadow: 0 2px 2px var(--menu-shadow);
+    padding: 5px 10px;
+    box-shadow: 1px 2px 3px var(--menu-shadow);
 }
 
 .button-custom:hover {
     background: var(--menu-color);
-    color: var(--menu-background-color);
+    color: white;
     border-color: var(--menu-background-color);
 }
 /* Оформление кнопок */ 

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="200"
+     height="200"
+     viewBox="0 0 200 200">
+
+  <defs>
+    <!--
+      Базовая дуга:
+      - начало в центре (100,100)
+      - конец на внешней окружности радиуса 82
+      - радиус самой дуги тоже 82
+      Поэтому хорда = 82 и центральный угол дуги = 60°.
+      sweep-flag = 0 даёт изгиб вправо для первой дуги, направленной вверх.
+    -->
+    <path id="ray"
+          d="M 100 100
+             A 82 82 0 0 0 100 18"
+          fill="none"
+          stroke-width="3"
+          stroke-linecap="round"/>
+
+    <!--
+      Маска вырезает прозрачный центральный просвет диаметром 3 px,
+      чтобы цвета дуг не накладывались друг на друга в центре.
+    -->
+    <mask id="center-gap">
+      <rect x="0" y="0" width="200" height="200" fill="white"/>
+      <circle cx="100" cy="100" r="1.5" fill="black"/>
+    </mask>
+  </defs>
+
+  <g mask="url(#center-gap)">
+    <use href="#ray" transform="rotate(0 100 100)"     stroke="hsl(0 70% 72%)"/>
+    <use href="#ray" transform="rotate(22.5 100 100)"  stroke="hsl(22.5 70% 72%)"/>
+    <use href="#ray" transform="rotate(45 100 100)"    stroke="hsl(45 70% 72%)"/>
+    <use href="#ray" transform="rotate(67.5 100 100)"  stroke="hsl(67.5 70% 72%)"/>
+    <use href="#ray" transform="rotate(90 100 100)"    stroke="hsl(90 70% 72%)"/>
+    <use href="#ray" transform="rotate(112.5 100 100)" stroke="hsl(112.5 70% 72%)"/>
+    <use href="#ray" transform="rotate(135 100 100)"   stroke="hsl(135 70% 72%)"/>
+    <use href="#ray" transform="rotate(157.5 100 100)" stroke="hsl(157.5 70% 72%)"/>
+    <use href="#ray" transform="rotate(180 100 100)"   stroke="hsl(180 70% 72%)"/>
+    <use href="#ray" transform="rotate(202.5 100 100)" stroke="hsl(202.5 70% 72%)"/>
+    <use href="#ray" transform="rotate(225 100 100)"   stroke="hsl(225 70% 72%)"/>
+    <use href="#ray" transform="rotate(247.5 100 100)" stroke="hsl(247.5 70% 72%)"/>
+    <use href="#ray" transform="rotate(270 100 100)"   stroke="hsl(270 70% 72%)"/>
+    <use href="#ray" transform="rotate(292.5 100 100)" stroke="hsl(292.5 70% 72%)"/>
+    <use href="#ray" transform="rotate(315 100 100)"   stroke="hsl(315 70% 72%)"/>
+    <use href="#ray" transform="rotate(337.5 100 100)" stroke="hsl(337.5 70% 72%)"/>
+  </g>
+
+</svg>

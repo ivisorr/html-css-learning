@@ -9,7 +9,7 @@
     
     --table-background-color: #00a746;
 
-    --menu-height: 40px;
+    --menu-height: 60px;
 
     --menu-color: #F73;
     --menu-background-color: rgb(223, 202, 202);    
@@ -21,10 +21,10 @@
     --block-description-color: #ecf3f7;
     --block-example-color: #edf2ef; /* #f8f8f8; */
 
-    --logo-size: 30px;
+    --logo-size: 25px;
     --logo-offset: calc(-1 * var(--logo-size) / 2);
 
-    --line-logo-size: 50px; /* высота вращающегося логотипа */
+    --line-logo-size: 60px; /* высота вращающегося логотипа */
     --line-logo-offset: calc(-1 * ( var(--line-logo-size) - var(--menu-height) ) / 2); /* вертикальные отступы вращающегося логотипа */
 }
 
@@ -48,6 +48,10 @@ header {
     grid-template-rows: auto auto auto;
     justify-items: center;
     
+}
+
+* {
+	box-sizing: border-box;
 }
 
 /* ********************** */
@@ -104,6 +108,8 @@ header {
     margin: 0;
     display: flex;
     width: 100%;
+
+
     z-index: 1001;
     justify-content: space-between;
     align-items: center;
@@ -112,12 +118,15 @@ header {
 
 .logo-top {
     margin-bottom: var(--logo-offset);
-    transform: rotate(180deg);
-
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .logo-bottom {
     margin-top: var(--logo-offset);
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .logo-images .menu-logo{
@@ -130,6 +139,14 @@ header {
 	width: var(--logo-size);
 	height: var(--logo-size);
     pointer-events: auto; 
+}
+
+.logo-top img{
+    transform: rotate(45deg);
+}
+
+.logo-bottom img{
+    transform: rotate(-45deg) scaleY(-1); /* povernut i отразить слева направо */
 }
 
 .logo-images .menu-logo:nth-child(1) {

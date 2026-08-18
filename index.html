@@ -910,7 +910,7 @@
 	</section>
 
 
-<!-- *********************** -->
+	<!-- *********************** -->
 	<!-- VIDEO -->
 	<section id="video" class="section-reference">
 		<h2><b>&lt;video&gt;</b> - вставка видео контента.</h2>	
@@ -964,16 +964,26 @@
 	</section>
 
 
-<!-- *********************** -->
+	<!-- *********************** -->
 	<!-- SHRIFTY -->
 	<section id="font-settings" class="section-reference">
 		<h2>Формат Шрифта <b></b> </h2>	
 		
 		<div class="block-description">
-			<b></b> 
-			<br>
 			<label>Шрифт (font-family):
 				<select id="font-family">
+					<!-- Option will be genereted by JS -->
+				</select>
+			</label>
+			<br><br>
+			<label>Стиль: (font-style):
+				<select id="font-style">
+					<!-- Option will be genereted by JS -->
+				</select>
+			</label>
+			<br><br>
+			<label>Регистр (text-transform):
+				<select id="text-transform">
 					<!-- Option will be genereted by JS -->
 				</select>
 			</label>
@@ -1000,8 +1010,10 @@
 			<h2> Primer teksta dlya demonstracii izmeneniya nasroek shrifa</h2>
 			<br>
 			<p>	Tekushie nastroiki: </p>
-			<p id="font-settings">
+			<p id="font-settings-output">
 				<!-- Шрифт (font-family):<br>
+				Стиль: (font-style):<br> 
+				Регистр (text-transform):<br>
 				Размер (font-size):<br>
 				Жирность: (font-weight):<br> -->
 			</p>

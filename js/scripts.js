@@ -24,6 +24,17 @@ const fonts = [
 	"Times New Roman",
 	"Courier New"
 ];
+const fontStyles = [
+    "normal", 
+    "italic", 
+    "oblique"
+]
+const fontTransforms = [
+    "none",
+    "uppercase",
+    "lowercase",
+    "capitalize"
+]
 const fontWeights = [
 	100,
 	200,
@@ -36,11 +47,14 @@ const fontWeights = [
 	900
 ];
 const fontFamilySelect = document.getElementById("font-family");
+const fontStyleSelect = document.getElementById("font-style");
+const fontTransformSelect = document.getElementById("text-transform");
 const fontSizeInput = document.getElementById("font-size");
 const fontWeightSelect = document.getElementById("font-weight");
+
 // const applyButton = document.getElementById("apply-font");
 const target = document.getElementById("font-example");
-const fontSettingsText = document.getElementById("font-settings");
+const fontSettingsText = document.getElementById("font-settings-output");
 const fontSizeValue = document.getElementById("font-size-value");
 
 applyFontSettings()
@@ -59,12 +73,16 @@ function fillSelect(selectElement, values) {
 // funkciya primeneniya parametrov shrifta k sekcii primera 
 function applyFontSettings() {
 	target.style.fontFamily = fontFamilySelect.value;
+    target.style.fontStyle = fontStyleSelect.value;
+	target.style.textTransform = fontTransformSelect.value;
 	target.style.fontWeight = fontWeightSelect.value;
 	target.style.fontSize = fontSizeInput.value + "px";
 
     fontSizeValue.textContent =	fontSizeInput.value + "px";
 	fontSettingsText.innerHTML = `
 		Шрифт (font-family): ${fontFamilySelect.value}<br>
+        Стиль: (font-style): ${fontStyleSelect.value}<br>
+		Регистр (text-transform): ${fontTransformSelect.value}<br>
 		Размер (font-size): ${fontSizeInput.value}px<br>
 		Жирность (font-weight): ${fontWeightSelect.value}
 	`;
@@ -72,10 +90,14 @@ function applyFontSettings() {
 
 // zapolnanie select-elementov shiftov i razmerov 
 fillSelect(fontFamilySelect, fonts);
+fillSelect(fontStyleSelect, fontStyles );
+fillSelect(fontTransformSelect, fontTransforms);
 fillSelect(fontWeightSelect, fontWeights);
 
 // naznacheniye obrabotchika sobitiy dlya izmeneniya parametrov shrifta
 fontFamilySelect.addEventListener("change", applyFontSettings);
+fontStyleSelect.addEventListener("change", applyFontSettings);
+fontTransformSelect.addEventListener("change", applyFontSettings);
 fontWeightSelect.addEventListener("change", applyFontSettings);
 fontSizeInput.addEventListener("input", applyFontSettings);
 // applyButton.addEventListener("click", applyFontSettings);

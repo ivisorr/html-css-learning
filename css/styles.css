@@ -17,10 +17,11 @@
     --menu-background-color2: #706c67;
     --menu-shadow: #323233;
     
-    --section-reference-color: #EEE7E7;
+    --section-reference-color: #f3ecec; /* #EEE7E7 */
     --block-description-color: #ecf3f7;
     --block-example-color: #edf2ef; /* #f8f8f8; */
-
+    --section-reference-frame-color: #ccc; /* #EEE7E7 */
+ 
     --logo-size: 25px;
     --logo-offset: calc(-1 * var(--logo-size) / 2);
 
@@ -53,6 +54,20 @@ header {
 * {
 	box-sizing: border-box;
 }
+
+a:link {
+    color: var(--menu-color);
+}
+
+a:visited {
+    color: var(--purple-color);
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+
 
 /* ********************** */
 /* Формат меню */
@@ -215,11 +230,12 @@ pre {
 }		
 
 .section-reference {
-    margin: 60px 0;
+    margin: 60px 5px;
     padding: 30px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--section-reference-frame-color);
     border-radius: 5px;
     background-color: var(--section-reference-color);
+    box-shadow: 2px 3px 3px var(--section-reference-frame-color);
 }
 
 .block-description {

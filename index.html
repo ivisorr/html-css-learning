@@ -89,17 +89,38 @@
 	<!-- *********************** -->
 	<!-- Atributi Elementa -->
 	<section id="atributi-elementa" class="section-reference">
-		<h2>Atributi elementa</h2>	
+		<h2>Атрибуты элемента</h2>	
 		
 		<div class="block-description">
 			<p>
-				Dlya vibrannogo elementa chitaet i vivodit vozmojnie atributi iz: <br> https://unpkg.com/@mdn/browser-compat-data/data.json
+				Структурные данные загружаются из: <br>
+				<b> https://unpkg.com/@mdn/browser-compat-data/data.json </b><br>
+				Затем эти данные используются для заполнения элемента <b>&lt;select&gt;</b>.<br>
+				При выборе элемента заполняется таблица атрибутов.
 			</p>
 		</div>
+
 		<div class="block-example">
-			<h2>Primer &lt;...&gt;</h2>
+			<h3>элемент: 	
+				<select id="element_BCD">
+					<option>...downloading</option>
+				</select>
+			</h3>
+			
+			<table>
+				<thead>
+					<tr>
+						<th>атрибут</th>
+						<th>описание</th>
+						<th>описание</th>
+					</tr>
+				</thead>
+				<tbody id="attributes-table-body">
+					<!-- zapolnyaetsa is JS posle vibora elementa iz "element_BCD" -->
+				</tbody>
+			</table>
 		</div>
-				
+
 	</section>
 
 

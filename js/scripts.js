@@ -8,7 +8,83 @@
 
 
 
+// #region  ATRIBUTI ELEMENTOV
 // ************************************
+{
+    const elementSelect = document.getElementById("element_BCD");
+
+    let dataBCD;
+
+    // poluchaem dannie iz MDN
+    async function loadBCD() {
+        const response = await fetch(
+            "https://unpkg.com/@mdn/browser-compat-data/data.json"
+        );
+
+        dataBCD = await response.json();
+
+        // console.log(data.html.elements.img);
+        // console.log(Object.keys( dataBCD.html.elements));
+        // console.log(Object.keys(data.html.elements.img));
+
+        // zapolnenie Select elementami
+        fillSelectElements(); 
+    }
+
+    // zapolnayet Select na forme - perechnem elementov poluchennih iz BCD
+    function fillSelectElements() {
+        const elementsBCD = Object.keys(dataBCD.html.elements);
+
+        elementSelect.innerHTML = "";
+
+        for (const element of elementsBCD) {
+            const option = document.createElement("option");
+            option.value = element;
+            option.textContent = element;
+            elementSelect.append(option);
+        }
+    }
+
+    // zapolnyaet telo tablici atributov pri vibore elementa "elementName"        
+    function fillAttributesTable(elementName){
+        // telo tablici
+        
+        const tbody = document.getElementById("attributes-table-body");
+        const elementData = dataBCD.html.elements[elementName];
+        const attributes = Object.keys(elementData)
+            .filter(attribute => attribute !== "__compat")
+        console.log(attributes);
+        
+        tbody.innerHTML = "";
+
+        // Poluchit atributi elementa iz dataDCB
+        for (const attribute of attributes) {
+        //     const row = document.createElement("tr");
+
+        //     const nameCell = document.createElement("td");
+        //     nameCell.textContent = name;
+
+        //     const valueCell = document.createElement("td");
+        //     valueCell.textContent = value;
+
+        //     row.appendChild(nameCell);
+        //     row.appendChild(valueCell);
+
+        //     tbody.appendChild(row);
+        // }
+    }
+
+
+    loadBCD();
+
+    // naznacheniye obrabotchika sobitiy dlya izmeneniya parametrov shrifta
+    elementSelect.addEventListener("change", function () { fillAttributesTable(elementSelect.value); });
+
+}
+// ************************************
+// #endregion  ATRIBUTI ELEMENTOV
+
+    
 // #region  FORMY
 // ************************************
 {
@@ -133,11 +209,8 @@
 }
 // ************************************
 // #endregion  FORMY
-// ************************************
 
 
-
-// ************************************
 // #region  ШРИФТ //
 // ************************************
 {
@@ -233,4 +306,3 @@
 }
 // ************************************
 // #endregion  ШРИФТ
-// ************************************

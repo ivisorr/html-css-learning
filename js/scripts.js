@@ -50,28 +50,43 @@
         // telo tablici
         
         const tbody = document.getElementById("attributes-table-body");
+
         const elementData = dataBCD.html.elements[elementName];
-        const attributes = Object.keys(elementData)
-            .filter(attribute => attribute !== "__compat")
-        console.log(attributes);
+        // const attributes = Object.keys(elementData).filter( attribute => attribute !== "__compat" );
+        const attributes = Object.entries(elementData)
+            .filter(([name]) => name !== "__compat");
+        // console.log(attributes);
         
         tbody.innerHTML = "";
 
         // Poluchit atributi elementa iz dataDCB
-        for (const attribute of attributes) {
-        //     const row = document.createElement("tr");
+        for (const [name, data] of attributes) {
+            console.log(name);
+            console.log(data);
+            
+            const row = document.createElement("tr");
 
-        //     const nameCell = document.createElement("td");
-        //     nameCell.textContent = name;
+            const nameCell = document.createElement("td");
+            const descriptionCell = document.createElement("td");
+            const linkCell = document.createElement("td");
 
-        //     const valueCell = document.createElement("td");
-        //     valueCell.textContent = value;
+            // const attributeData = elementData[attribute];
+            // const compat = elementData[attribute].__compat;
 
-        //     row.appendChild(nameCell);
-        //     row.appendChild(valueCell);
+            // Имя атрибута
+            nameCell.textContent = name;
+            // console.log("attribute: " + attribute);
+            // console.log(attributeData);
 
-        //     tbody.appendChild(row);
-        // }
+            // valueCell1.textContent = compat.source_file;
+            // valueCell2.textContent = compat.mdn_url;
+
+            row.appendChild(nameCell);
+            row.appendChild(valueCell1);
+            row.appendChild(valueCell2);
+
+            tbody.appendChild(row);
+        }
     }
 
 
@@ -305,4 +320,4 @@
 
 }
 // ************************************
-// #endregion  ШРИФТ
+// #endregion  ШРИФT

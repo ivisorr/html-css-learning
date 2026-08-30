@@ -7,37 +7,158 @@
 // ************************************
 
 
-
-// #region  ATRIBUTI ELEMENTOV
+// #region  Атрибуты элементов
 // ************************************
 {
-    const elementSelect = document.getElementById("element_BCD");
+    // Выпадающий список єлементов на форме
+    const elementSelect = document.getElementById("element_HTML")
 
-    let dataBCD;
+    // Таблица элементов:
+    //      elementName - имя элемента
+    //      description - описание
+    //      attributeLinks - атрибуты
+    let dataElements = {}; 
 
-    // poluchaem dannie iz MDN
-    async function loadBCD() {
-        const response = await fetch(
-            "https://unpkg.com/@mdn/browser-compat-data/data.json"
-        );
+    // Таблица атрибутов:
+    //      attributeName - имя атрибута
+    //      elements - перечень элементов имеющих такой атрибут
+    //      description - описание
+    //      value - тип значения
+    let dataAttributes = {};
 
-        dataBCD = await response.json();
+    // Получение таблицы элементов ( dataElements) 
+    // и таблицы атрибутов (dataAttributes)
+    // со страницы: https://html.spec.whatwg.org/dev/indices.html 
+    async function loadHTMLStandard() {
+        const response = await fetch( "https://html.spec.whatwg.org/dev/indices.html" );
+        if (!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`);
+        }        
 
-        // console.log(data.html.elements.img);
-        // console.log(Object.keys( dataBCD.html.elements));
-        // console.log(Object.keys(data.html.elements.img));
+        // Помещает HTML-код всей страницы в строку htmlString
+        const htmlString = await response.text();
 
-        // zapolnenie Select elementami
-        fillSelectElements(); 
+        // Превращает строку в DOM
+        const parser = new DOMParser();
+        const documentDOM = parser.parseFromString(htmlString, "text/html");
+        // console.log("documentDOM", documentDOM);
+
+        // Заполняет Таблицу элементов
+        // Таблицу находим по 
+        // caption.textContent = "List of elements"
+        const elementsTable = [...documentDOM.querySelectorAll("caption")]
+            .find(caption => caption.textContent.trim() === "List of elements")
+                ?.closest("table");
+        if (!elementsTable) { throw new Error("Таблица элементов не найдена"); }
+        
+        // Формирует строки таблицы элемента
+        const elementRows = elementsTable.querySelectorAll("tbody tr");
+        // console.log("rows: ", elementRows);
+        for (const row of elementRows) {
+            // Имя элемента
+            const elementName = row.cells[0].textContent.trim();
+
+            // описание элемента
+            const description = row.cells[1].textContent.trim();
+
+            // Получение ссылки с описанием элемента текущей строки на сайте whatwg.org :
+            // В текущей строке "row" - (строка элемента) 
+            // В ячейке 0 "cells[0]" - на исходном сайте это первая колонка. 
+            //      (Там находится имя атрибута как ссылка ссылка <a href = "..." >имя</a>)
+            // Найти первый тег "a" - "querySelector("a")" потому что адрес "href" как раз внутри ноды <a href = "..." >
+            // Если он найден "?" - тогда получаем атрибут "href" - getAttribute("href")
+            const elementURL = row.cells[0].querySelector("a")?.getAttribute("href");
+
+            // перечень атрибутов
+            const attributeLinks = row.cells[5].querySelectorAll("a");
+            const attributes = [];
+            for (const link of attributeLinks) {
+                const name = link.textContent.trim();
+                const url = link.getAttribute("href");
+                attributes.push({
+                    name: name,
+                    url: url
+                });
+            }
+
+            const childrenLinks = row.cells[4].querySelectorAll("a");
+            const children = [];
+            for (const link of childrenLinks) {
+                const name = link.textContent.trim();
+                const url = link.getAttribute("href");
+                children.push({
+                    name: name,
+                    url: url
+                });
+            }
+
+
+            dataElements[elementName] = {
+                description: description,
+                url: elementURL,
+                children: children,
+                attributes: attributes
+            };
+        }
+
+        // Заполняет Таблицу атрибутов. 
+        // Таблицу находим по 
+        // caption.textContent = "List of attributes (excluding event handler content attributes)"
+        const attributesTable = [...documentDOM.querySelectorAll("caption")]
+            .find(caption =>
+                caption.textContent.trim() === "List of attributes (excluding event handler content attributes)"
+            )
+            ?.closest("table");
+        if (!attributesTable) { throw new Error("Таблица атрибутов не найдена"); }
+        
+        // Формирует строки таблицы атрибутов
+        const attributeRows = attributesTable.querySelectorAll("tbody tr");
+        for (const row of attributeRows) {
+            const attributeName = row.cells[0].textContent.trim();
+            const elements =
+                row.cells[1].textContent
+                    .split(";")
+                    .map(element => element.trim())
+                    .filter(element => element !== "");
+            const description = row.cells[2].textContent.trim();
+            const value = row.cells[3].textContent.trim();
+
+            if (!dataAttributes[attributeName]) { dataAttributes[attributeName] = []; }
+
+            dataAttributes[attributeName].push({
+                elements: elements,
+                description: description,
+                value: value
+            });
+        }
+
+    }       
+
+    // Получение данных, заполнение таблиц, 
+    // первичное заполнение формы и таблицы атрибутов (первого элеимента)
+    async function loadData() {
+        await Promise.all([
+            loadHTMLStandard()
+        ]);
+        // console.log("dataElements", dataElements);
+        // console.log("dataAttributes:", dataAttributes);
+
+        // Заполняет на форме поле с выпадающим списком эелементов (elementSelect) данными из (dataElements)
+        fillSelectElements();
+        // Заполняет на форме описание выбранного элемента (elementSelect)
+        fillElenetDescription(elementSelect.value);
+        // Заполняет на форме таблицу атрибутов (из dataAttributes) для первого выбранного элемента (elementSelect)
+        fillAttributesTable(elementSelect.value); 
     }
 
-    // zapolnayet Select na forme - perechnem elementov poluchennih iz BCD
+    // Заполняет на форме поле с выпадающим списком эелементов (elementSelect) из (dataElements)
     function fillSelectElements() {
-        const elementsBCD = Object.keys(dataBCD.html.elements);
+        const elements = Object.keys(dataElements);
 
         elementSelect.innerHTML = "";
+        // console.log("elementSelect$: ", elementSelect);
 
-        for (const element of elementsBCD) {
+        for (const element of elements) {
             const option = document.createElement("option");
             option.value = element;
             option.textContent = element;
@@ -45,62 +166,131 @@
         }
     }
 
-    // zapolnyaet telo tablici atributov pri vibore elementa "elementName"        
-    function fillAttributesTable(elementName){
-        // telo tablici
-        
-        const tbody = document.getElementById("attributes-table-body");
+    // Заполняет описание для выбранного элемента (elementSelect)
+    function fillElenetDescription(elementName){
+        const elementDescription = document.getElementById("elementDescription");
+        elementDescription.innerHTML = dataElements[elementName].description;
+        // console.log("dataElements[elementName]:", dataElements[elementName]);
 
-        const elementData = dataBCD.html.elements[elementName];
-        // const attributes = Object.keys(elementData).filter( attribute => attribute !== "__compat" );
-        const attributes = Object.entries(elementData)
-            .filter(([name]) => name !== "__compat");
-        // console.log(attributes);
+        const elementURL = document.getElementById("elementURL");
+        elementURL.href = new URL(
+            dataElements[elementName].url,
+            "https://html.spec.whatwg.org/dev/"
+        );
+        elementURL.textContent = dataElements[elementName].url;
+        elementURL.target = "_blank";
+
+    }
         
+    // Заполняет на форме таблицу атрибутов (из dataAttributes) 
+    // для выбранного элемента (elementSelect)
+    function fillAttributesTable(elementName){
+        // таблица
+        const tbody = document.getElementById("attributes-table-body");
         tbody.innerHTML = "";
 
-        // Poluchit atributi elementa iz dataDCB
-        for (const [name, data] of attributes) {
-            console.log(name);
-            console.log(data);
-            
-            const row = document.createElement("tr");
+        // перечень атрибутов выбранного в (elementSelect) элемента (elementName = elementSelect.value)
+        const attributes = dataElements[elementName].attributes; 
+        for (const attribute of attributes) {
+            const name = attribute.name;
+            const url = attribute.url;
 
+            // добавляет новубю строку и ячейки для атрибута
+            const row = document.createElement("tr");
+            
             const nameCell = document.createElement("td");
             const descriptionCell = document.createElement("td");
+            const valueCell = document.createElement("td");
             const linkCell = document.createElement("td");
-
-            // const attributeData = elementData[attribute];
-            // const compat = elementData[attribute].__compat;
 
             // Имя атрибута
             nameCell.textContent = name;
-            // console.log("attribute: " + attribute);
-            // console.log(attributeData);
 
-            // valueCell1.textContent = compat.source_file;
-            // valueCell2.textContent = compat.mdn_url;
+            // Ищем описание и значение атрибута для выбранного элемента
+            const attributeData = dataAttributes[name]
+                ?.find(data => data.elements.includes(elementName));
 
+            if (attributeData) {
+                descriptionCell.textContent = attributeData.description;
+                valueCell.textContent = attributeData.value;
+            }
+
+            // Ссылка на описание атрибута
+            if (url) {
+                const link = document.createElement("a");
+                link.href = new URL(
+                    url,
+                    "https://html.spec.whatwg.org/dev/"
+                );
+                link.textContent = url;
+                link.target = "_blank";
+                linkCell.appendChild(link);
+            }
+
+            // Добавляет ячейки и строку на форму
             row.appendChild(nameCell);
-            row.appendChild(valueCell1);
-            row.appendChild(valueCell2);
+            row.appendChild(descriptionCell);
+            row.appendChild(valueCell);
+            row.appendChild(linkCell);
 
             tbody.appendChild(row);
         }
+
+        // перебор потомков
+        const children = dataElements[elementName].children; 
+        for (const elementChild of children) {
+            const name = elementChild.name;
+            const url = elementChild.url;
+
+            // добавляет новубю строку и ячейки для атрибута
+            const row = document.createElement("tr");
+            
+            const nameCell = document.createElement("td");
+            const descriptionCell = document.createElement("td");
+            const valueCell = document.createElement("td");
+            const linkCell = document.createElement("td");
+
+            // Имя элемента-потомка
+            nameCell.textContent = name;
+            descriptionCell.textContent = dataElements[name]?.description;
+            valueCell.textContent = ""; // elenemtData.value;
+            // Ссылка на описание 
+            if (url) {
+                const link = document.createElement("a");
+                link.href = new URL(
+                    url,
+                    "https://html.spec.whatwg.org/dev/"
+                );
+                link.textContent = url;
+                link.target = "_blank";
+                linkCell.appendChild(link);
+            }
+
+            // Добавляет ячейки и строку на форму
+            row.appendChild(nameCell);
+            row.appendChild(descriptionCell);
+            row.appendChild(valueCell);
+            row.appendChild(linkCell);
+
+            tbody.appendChild(row);
+        }
+        
     }
 
+    loadData(); // Инициализация
 
-    loadBCD();
-
-    // naznacheniye obrabotchika sobitiy dlya izmeneniya parametrov shrifta
-    elementSelect.addEventListener("change", function () { fillAttributesTable(elementSelect.value); });
+    // Назначение обработчика при выборе elementSelect
+    elementSelect.addEventListener("change", function () { 
+        fillAttributesTable(elementSelect.value);
+        fillElenetDescription(elementSelect.value)
+    });
 
 }
 // ************************************
-// #endregion  ATRIBUTI ELEMENTOV
+// #endregion  Атрибуты элементов
 
-    
-// #region  FORMY
+
+// #region  Формы
 // ************************************
 {
     // ustanovka nachalnogo znacheniya dati vileta na segodnya
@@ -223,7 +413,7 @@
 
 }
 // ************************************
-// #endregion  FORMY
+// #endregion  Формы
 
 
 // #region  ШРИФТ //

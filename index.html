@@ -72,17 +72,31 @@
 	<!-- Полезные ссылки -->
 	<section id="zagolovki" class="section-reference">
 		<h2>Полезные ссылки</h2>
-				<div class="section_horisontal">
+		<div class="section_horisontal">
 			<div class="block-description block_horisontal">
-				<p> 
-					<b>Paletton</b>	<br>
-					<a href="https://paletton.com/" target="_blank">https://paletton.com/</a>
-				</p>
+				<h5>Paletton: 
+					<a href="https://paletton.com/" target="_blank">
+						https://paletton.com/
+					</a>
+				</h5>
 			</div>
 			<div class="block-example  block_horisontal">
 				Удобный инструмент для выбора цвета
 			</div>
-		</div>					
+		</div>
+
+		<div class="section_horisontal">
+			<div class="block-description block_horisontal">
+				<h5>HTML: The Living Standard:
+					<a href="https://html.spec.whatwg.org/dev/indices.html" target="_blank">
+						https://html.spec.whatwg.org/dev/indices.html
+					</a>
+				</h5>
+			</div>
+			<div class="block-example  block_horisontal">
+				Описание атрибутов HTML-элементов
+			</div>
+		</div>
 	</section>
 	
 
@@ -94,33 +108,58 @@
 		<div class="block-description">
 			<p>
 				Структурные данные загружаются из: <br>
-				<b> https://unpkg.com/@mdn/browser-compat-data/data.json </b><br>
+				<b> https://html.spec.whatwg.org/dev/indices.html </b><br>
 				Затем эти данные используются для заполнения элемента <b>&lt;select&gt;</b>.<br>
 				При выборе элемента заполняется таблица атрибутов.
 			</p>
 		</div>
 
 		<div class="block-example">
-			<h3>элемент: 	
-				<select id="element_BCD">
-					<option>...downloading</option>
-				</select>
-			</h3>
-			
+			<div class="section_horisontal">
+				<div class="block_horisontal">
+					<span>Элемент:</span> 
+				</div>
+				<div class="block_horisontal">
+					<select id="element_HTML">
+						<option>...downloading</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="section_horisontal">
+				<div class="block_horisontal">
+					<span>Описание:</span> 
+				</div>
+				<div class="block_horisontal">
+					<span id="elementDescription"> ... oписание</span> 
+				</div>
+			</div>
+
+			<div class="section_horisontal">
+				<div class="block_horisontal">
+					<span>Ссылка:</span> 
+				</div>
+				<div class="block_horisontal">
+					<a id="elementURL" href=""> </a>
+				</div>
+			</div>
+			<br>
+
 			<table>
 				<thead>
 					<tr>
-						<th>атрибут</th>
-						<th>описание</th>
-						<th>описание</th>
+						<th>Имя атрибута</th>
+						<th>Описание</th>
+						<th>Тип значения</th>
+						<th>Ссылка</th>
 					</tr>
 				</thead>
 				<tbody id="attributes-table-body">
-					<!-- zapolnyaetsa is JS posle vibora elementa iz "element_BCD" -->
+					<!-- Заполняется в JS после выбора элемента с сайта  -->
 				</tbody>
 			</table>
 		</div>
-
+				
 	</section>
 
 

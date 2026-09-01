@@ -1157,6 +1157,26 @@
 				</div>
 			</div>
 			<br>
+
+			<div class="section_horisontal"
+				style="
+					display: grid;
+					grid-template-columns: repeat(3, 1fr);
+					grid-template-rows: 100px 100px;
+					grid-template-rows: repeat(2, 1fr);
+					grid-template-areas:
+						'a a b'
+						'a a c';
+					aspect-ratio: 3 / 2;
+					width: 100%;
+
+				"
+			>
+				<div class="item1" style="  grid-area: a;  background: gray;" 	>Item1</div>
+				<div class="item2" style="  grid-area: b;  background: purple;">Item2</div>
+				<div class="item3" style="  grid-area: c;  background: blue;"	>Item3</div>
+			</div>
+
 			<div class="section_horisontal">
 				<div style="border: 1px solid gray; text-align: center;">
 					<img src="assets/images/Logo_2.png" width="100" height="100" alt="Logo2">

@@ -1130,27 +1130,76 @@
 <!-- *********************** -->
 	<!-- BLOCKS -->
 	<section class="section-reference">
-		<h2>BLOCKS</h2>	
+		<h2>Элементы для создания блоков и позиционирование</h2>	
 		
 		<div class="block-description">
 			<p>
-				<b>&lt; &gt;</b> - Opisanie,
-				.box       → любой элемент с class="box" <br>
-				div.box    → div, у которого class="box" <br>
-				div .box   → элемент class="box" внутри div <br>
+				Для элементов c <b>display: flex;</b>:<br>
+				<ul class="attributes">
+					<li><b>&lt;div&gt;</b> - Универсальный контейнер </li>
+					<li><b>&lt;section&gt;</b> - Секция страницы </li>
+					<li><b>&lt;article&gt;</b> - Самостоятельный блок контента, карточка, публикация и т. п. </li>
+					<li><b>&lt;header&gt;</b> - Верхняя часть страницы или секции </li>
+					<li><b>&lt;footer&gt;</b> - Нижняя часть страницы или секции </li>
+					<li><b>&lt;main&gt;</b> - Основное содержимое страницы </li>
+					<li><b>&lt;nav&gt;</b> - Контейнер навигации </li>
+					<li><b>&lt;aside&gt;</b> - Боковой/дополнительный контент </li>
+				</ul>
+				<br>
+				Выравнивание внутри такого <b>элемента</b> задается с помощью атрибутов:<br>
+				<br>
+				<b>justify-content</b> - по главной оси (main axis): горизонталь (flex-direction=row) / вертикаль (flex-direction=column)</li>
+					<ul class="attributes">
+						<li><b>stretch</b> - Растягивает элементы по поперечной оси — значение по умолчанию</li>
+						<li><b>flex-start</b> - Прижимает к началу поперечной оси</li>
+						<li><b>center</b> - Центрирует по поперечной оси</li>
+						<li><b>flex-end</b> - Прижимает к концу поперечной оси</li>
+						<li><b>baseline</b> - Выравнивает элементы по базовой линии текста</li>
+					</ul>
+				<br>
+				<b>align-items</b> - по пересекающей оси оси (cross axis): вертикаль (flex-direction=row) / горизонталь (flex-direction=column)
+					<ul class="attributes">
+						<li><b>stretch</b> - Растягивает элементы по поперечной оси — значение по умолчанию </li>
+						<li><b>flex-start</b> - Прижимает к началу поперечной оси</li>
+						<li><b>center</b> - Центрирует по поперечной оси</li>
+						<li><b>flex-end</b> - Прижимает к концу поперечной оси</li>
+						<li><b>baseline</b> - Выравнивает элементы по базовой линии текста</li>
+
+					</ul>
+				<br> 
+				flex-direction: <b>row</b><br>
+				<b>→ [A] [B] [C] → </b><br>
+				main axis  → горизонтальная<br>
+				cross axis ↓ вертикальная<br>
+				<br>
+				flex-direction: <b>column</b><br>
+				<b>
+					↓<br> 
+					[A]<br>
+					[B]<br>
+					[C]<br>
+					↓ <br> 
+				</b>
+				main axis  ↓ вертикальная<br>
+				cross axis → горизонтальная<br>
+				<br>
+				<b>margin</b>  - отступ СНАРУЖИ элемента <br>
+				<b>padding</b> - отступ ВНУТРИ элемента <br>
 			</p>
 		</div>
 		<div class="block-example">
-			<h2>Blok &lt;div&gt;</h2>
+			<h3>Размер задн в % относительно родителя</h3>		
 			<div class="section_horisontal">
 				<div style="height: 250px; width: 250px; background-color: #bbbbaa;">
-					<p>height=250p X width=250px</p> <br>
+					<p> height=250p width=250px</p>
 					<div style="height: 70%; width: 70%; background-color: var(--menu-color);">
-						<p>70% x 70%</p>
+						<p>70% x 70% <br>
+							
+						</p>
 					</div>
 				</div>
 				<div style="height: 150px; width: 150px; background-color: #bbbbaa;">
-					<p>150 x 150</p><br>
+					<p>150 x 150</p>
 					<div style="height: 70%; width: 70%; background-color: var(--menu-color)">
 						<p>70% x 70%</p>
 					</div>
@@ -1158,6 +1207,7 @@
 			</div>
 			<br>
 
+			<h3>Использование сетки <b>&lt;grid&gt;</b> и ее областей</h3>		
 			<div class="section_horisontal"
 				style="
 					display: grid;
@@ -1169,22 +1219,83 @@
 						'a a c';
 					aspect-ratio: 3 / 2;
 					width: 100%;
+					color: white;
 
 				"
 			>
-				<div class="item1" style="  grid-area: a;  background: gray;" 	>Item1</div>
-				<div class="item2" style="  grid-area: b;  background: purple;">Item2</div>
-				<div class="item3" style="  grid-area: c;  background: blue;"	>Item3</div>
+				<div class="item1" style="  grid-area: a;  background: gray;" 	>
+					display: grid; <br>
+					grid-template-columns: repeat(3, 1fr); <br>
+					grid-template-rows: 100px 100px; <br>
+					grid-template-rows: repeat(2, 1fr); <br>
+					grid-template-areas: <br>
+						'<b>a a</b> b' <br>
+						'<b>a a</b> c'; <br>
+					aspect-ratio: 3 / 2; <br>
+					width: 100%; <br>
+					<br>
+					<b>Item 1:</b> <br>
+					class="item1"; <br>
+					grid-area: <b>a</b> <br>
+				</div>
+				<div class="item2" style="  grid-area: b;  background: purple;">
+					grid-template-areas: <br>
+						'a a <b>b</b>' <br>
+						'a a c'; <br>
+					<br>
+					<b>Item 2:</b> <br>
+					class="item2"; <br>
+					grid-area: <b>b</b> <br>
+				</div>
+				<div class="item3" style="  grid-area: c;  background: blue;"	>
+					grid-template-areas: <br>
+						'a a b' <br>
+						'a a <b>c</b>'; <br>					
+					<br>
+					<b>Item 3:</b> <br>
+					class="item3"; <br>
+					grid-area: <b>c</b> <br>
+				</div>
 			</div>
 
+			<h3>Использование <b>&lt;flex&gt;</b> выравнивание и задание минимальных размеров</h3>		
 			<div class="section_horisontal">
-				<div style="border: 1px solid gray; text-align: center;">
+				<div style="
+					border: 1px solid gray; 
+					background-color: lightyellow; 
+					
+					display: flex;
+					justify-content: center;
+					align-items: flex-start;
+					min-width: 200px; max-width: 300px;  
+					min-height: 200px; max-height: 300px;  
+					">
+
 					<img src="assets/images/Logo_2.png" width="100" height="100" alt="Logo2">
 				</div>
-				<div style="background-color: #var(--menu-color)";">
-					<p>minimalniy i maksimalniy razmer etogo elementa ogranichen:</p><br>
-					<p>min-width = 250px</p><br>
-					<p>max-width = 650px</p><br>
+				<div style="
+					border: 1px solid gray; 
+					background-color: lightgray;
+					
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					min-width: 350px; 
+					max-width: 650px;
+					">
+					
+					<p>	
+						Для 1 flex-блока (желтый) <b>&lt;div&gt;</b> :<br>
+						<b>justify-content: center;</b> - задаем выравниваем по центру относително вертикалной оси  <br>
+						<b>align-items: center;</b> - относително горизонтальной оси<br>
+						<b>min-width: 200px; min-height: 200px;</b> -  и мин. размер 200px <br>
+					</p>
+					<br>
+					<p> Для 2 flex-блока (серый) минимальный и максимальный размер ограничен:<br>
+						<b>flex-direction: column;</b> - дети располагаются вертикально<br>
+						<b>justify-content: center</b> - центрирование по главной (теперь горизонтальной) оси<br>
+						<b>min-width: 450px; >max-width: 650px;</b> <br>
+					</p>
 				</div>
 			</div>
 

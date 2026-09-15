@@ -1185,9 +1185,6 @@
 				</b>
 				main axis  ↓ вертикальная<br>
 				cross axis → горизонтальная<br>
-				<br>
-				<b>margin</b>  - отступ СНАРУЖИ элемента <br>
-				<b>padding</b> - отступ ВНУТРИ элемента <br>
 			</p>
 		</div>
 		<div class="block-example">
@@ -1210,6 +1207,7 @@
 			</div>
 			<br>
 
+			<br>
 			<h3>Использование сетки <b>&lt;grid&gt;</b> и ее областей</h3>		
 			<div class="section_horisontal"
 				style="
@@ -1261,6 +1259,7 @@
 				</div>
 			</div>
 
+			<br>
 			<h3>Использование <b>&lt;flex&gt;</b> выравнивание и задание минимальных размеров</h3>		
 			<div class="section_horisontal">
 				<div style="
@@ -1301,8 +1300,207 @@
 					</p>
 				</div>
 			</div>
-
 		</div>
+
+		<div class="block-description">
+			<h3>Otstupy:</h3> 				
+			<b>margin</b>  - vneshnie otstupy <br>
+			<b>padding</b> - vnutrennie otstupy <br>
+			<b>box-sizing: content-box</b><br>
+			<b>box-sizing: border-box</b>
+		</div>
+		<div class="block-example">
+			<p>
+				<strong>Общие параметры:</strong><br>
+				width: 300px;<br>
+				height: 300px;<br>
+				margin: 10px;<br>
+				border: 1px;<br>
+				padding: 5px;
+				<br><br>
+				<strong>box-sizing: <b>content-box</b></strong> (по умолчанию) -
+				padding, border и margin добавляются к заданному размеру content (300px).
+				<br> content-box = margin + border + padding + <b>content</b> + padding + border + margin
+				<br> content-box = 10 + 1 + 5 + <b>300</b> + 5 + 1 + 10 = <b>332px</b>
+			</p>
+			<br>
+			<!-- box-sizing: content-box -->
+			<div style="
+				display: flex;
+				width: 484px;
+				justify-content: space-between;
+				font-size: 11px;
+				margin: 0 auto;
+			">
+				<span>←</span> 10 + [1 + 5 + 300 + 5 + 1] + 10 <span>→</span>
+			</div>
+			<div style="
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			">
+				<!-- margin: 10px -->
+				<div style="
+					background-color: #f6c58f;
+					padding: 50px;
+					position: relative;
+				">
+					<span style="
+						position: absolute;
+						top: 100px;
+						left: 2px;
+						font-size: 11px;
+					">
+						margin <br> ← 10px →
+					</span>
+
+					<!-- border: 1px -->
+					<div style="
+						width: 300px;
+						height: 300px;
+						padding: 42px;
+						border: 1px solid black;
+						background-color: #b8d99a;
+						box-sizing: content-box;
+					">
+						<span style="
+							position: absolute;
+							top: 20px;
+							left: 30px;
+							font-size: 11px;
+						">
+							border <br>  → 1px ←
+						</span>
+
+						<!-- content -->
+						<div style="
+							width: 300px;
+							height: 300px;
+							background-color: #8fc5e8;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						">
+							<span style="
+								position: absolute;
+								top: 200px;
+								left: 50px;
+								font-size: 11px;
+							">
+								padding <br> ← 5px →
+							</span>
+
+							<div style="display: flex; width: 100%; justify-content: space-between;">
+								<span>←</span> <strong>content 300 × 300px</strong> <span>→</span>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+	<!-- box-sizing: border-box-->
+	 		<br><br>
+			<p>
+				<strong>box-sizing: <b>border-box</b></strong> —
+				padding, border vhodat v sostav content (300px), a margin добавляются к заданному размеру.
+				<br> <b>border-box</b> = border + padding + <b>content</b> + padding + border
+				<br> Obshiy razmer = margin + [<b>border-box</b>] + margin
+				<br> border-box = 1 + 5 + 288 + 5 + 1 = <b>300px</b>
+				<br> Obshiy razmer  10 + [<b>300px</b>] + 10 = <b>320px</b>
+				<br><br>
+			</p>
+			<!-- box-sizing: border-box-->
+			<div style="
+				display: flex;
+				width: 484px;
+				justify-content: space-between;
+				font-size: 11px;
+				margin: 0 auto;
+			">
+				<span>←</span> 10 + [300px] + 10 <span>→</span>
+			</div>
+			<div style="
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			">
+				<!-- margin: 10px -->
+				<div style="
+					background-color: #f6c58f;
+					padding: 50px;
+					position: relative;
+				">
+					<span style="
+						position: absolute;
+						top: 60px;
+						left: 2px;
+						font-size: 11px;
+					">
+						margin <br> ← 10px →
+					</span>
+
+					<!-- border: 1px -->
+					<div style="
+						width: 300px;
+						height: 300px;
+						padding: 42px;
+						border: 1px solid black;
+						background-color: #b8d99a;
+						box-sizing: content-box;
+					">
+						<span style="
+							position: absolute;
+							top: 20px;
+							left: 30px;
+							font-size: 11px;
+						">
+							border <br>  → 1px ←
+						</span>
+
+						<!-- content -->
+						<div style="
+							width: 300px;
+							height: 300px;
+							background-color: #8fc5e8;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							text-align: center;
+						">
+							<span style="
+								position: absolute;
+								top: 100px;
+								left: 50px;
+								font-size: 11px;
+							">
+								padding <br> ← 5px →
+							</span>
+
+							<div style="display: flex; width: 100%; justify-content: space-between;">
+								<span style="
+									position: absolute;
+									top: 150px;
+									left: 50px;
+									font-size: 11px;
+								">
+									border-box <br> ← 300px →
+								</span>
+								<span>←</span> <strong>content 300 × 300px</strong> <span>→</span>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		
 				
 	</section>
 
@@ -1311,7 +1509,7 @@
 <!-- *********************** -->
 	<!-- SHABLON -->
 	<section class="section-reference">
-		<h2>Shablon sekcii</h2>	
+		<h2>zagolovok sekcii</h2>	
 		
 		<div class="block-description">
 			<p>

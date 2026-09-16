@@ -40,7 +40,8 @@ body {
 
 header {
     position: fixed; /* чтобы заголовок не сдвигался */
-    top: 0; /* отступа сверху  */
+    z-index: 1000;   /* чтобы было поверх всего */
+    top: 0;          /* отступа сверху  */
     left: 0; 
     right: 0;
     width: 100%;
@@ -72,12 +73,12 @@ a:hover {
 /* ********************** */
 /* Формат меню */
 .main-menu {
+    position: relative;
     display: flex;          /* делаем горизонтально */
     width: 100%;
     justify-content: space-between;
     align-items: center;
 
-    z-index: 1000; /* чтобы было поверх всего */
     background: var(--menu-background-color1);
 }
 

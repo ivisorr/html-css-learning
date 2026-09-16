@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- viewport нужен, чтобы сайт нормально отображался на телефонах. --> 
 	
 	<title>My HTML/CSS test page</title>
+	<link rel="icon" href="assets/images/logo_4.png" type="image/png"> <!--  иконка сайта в браузере -->
 
 	<link rel="stylesheet" href="css/styles.css">
 
@@ -1303,11 +1304,16 @@
 		</div>
 
 		<div class="block-description">
-			<h3>Otstupy:</h3> 				
-			<b>margin</b>  - vneshnie otstupy <br>
-			<b>padding</b> - vnutrennie otstupy <br>
-			<b>box-sizing: content-box</b><br>
-			<b>box-sizing: border-box</b>
+			<h3>Отступы:</h3> 				
+			<b>margin</b>  - внешние отступы <br>
+			<b>padding</b> - внутренние отступы <br>
+			значения перечисляются по часовой стрелке:<br> 
+			верх, правая сторона, низ, левая сторона:<br>
+			margin: 1px 2px 3px 4px; <br>
+			padding: 10px 5px 3px 1px;<br>
+			<br>
+			<b>box-sizing: content-box</b> - к размеру контента прибавляется все остальное<br>
+			<b>box-sizing: border-box</b> - размер контента включает padding и border, а margin  прибавляется
 		</div>
 		<div class="block-example">
 			<p>
@@ -1315,16 +1321,17 @@
 				width: 300px;<br>
 				height: 300px;<br>
 				margin: 10px;<br>
+				padding: 5px;<br>
 				border: 1px;<br>
-				padding: 5px;
-				<br><br>
+				<br>
 				<strong>box-sizing: <b>content-box</b></strong> (по умолчанию) -
 				padding, border и margin добавляются к заданному размеру content (300px).
-				<br> content-box = margin + border + padding + <b>content</b> + padding + border + margin
-				<br> content-box = 10 + 1 + 5 + <b>300</b> + 5 + 1 + 10 = <b>332px</b>
+				<br> <b>content-box</b> = margin + border + padding + <b>content</b> + padding + border + margin
+				<br> <b>content-box</b> = 10 + 1 + 5 + <b>300</b> + 5 + 1 + 10 = <b>332px</b>
+				<br> Общий размер = <b>content-box</b>
 			</p>
 			<br>
-			<!-- box-sizing: content-box -->
+		<!-- box-sizing: content-box -->
 			<div style="
 				display: flex;
 				width: 484px;
@@ -1391,27 +1398,30 @@
 								padding <br> ← 5px →
 							</span>
 
-							<div style="display: flex; width: 100%; justify-content: space-between;">
-								<span>←</span> <strong>content 300 × 300px</strong> <span>→</span>
+							<div style="
+								display: flex; 
+								width: 100%; 
+								justify-content: space-between;
+								font-size: 11px;
+		">
+								<span>←</span> <strong>content 300px</strong> <span>→</span>
 							</div>
 						</div>
-
 					</div>
-
 				</div>
-
 			</div>
 
 
-	<!-- box-sizing: border-box-->
+		<!-- box-sizing: border-box-->
 	 		<br><br>
 			<p>
-				<strong>box-sizing: <b>border-box</b></strong> —
-				padding, border vhodat v sostav content (300px), a margin добавляются к заданному размеру.
+				<strong>box-sizing: <b>border-box</b></strong> -
+				padding, border входить в состав контента (300px), 
+				а margin добавляются к заданному размеру.
 				<br> <b>border-box</b> = border + padding + <b>content</b> + padding + border
-				<br> Obshiy razmer = margin + [<b>border-box</b>] + margin
-				<br> border-box = 1 + 5 + 288 + 5 + 1 = <b>300px</b>
-				<br> Obshiy razmer  10 + [<b>300px</b>] + 10 = <b>320px</b>
+				<br> Общий размер = margin + [<b>border-box</b>] + margin
+				<br> <b>border-box</b> = 1 + 5 + 288 + 5 + 1 = <b>300px</b>
+				<br> Общий размер  10 + [<b>300px</b>] + 10 = <b>320px</b>
 				<br><br>
 			</p>
 			<!-- box-sizing: border-box-->
@@ -1437,14 +1447,22 @@
 				">
 					<span style="
 						position: absolute;
-						top: 60px;
+						top: 20px;
+						left: 30px;
+						font-size: 11px;
+					">
+						border <br>  → 1px ←
+					</span>
+					<span style="
+						position: absolute;
+						top: 100px;
 						left: 2px;
 						font-size: 11px;
 					">
 						margin <br> ← 10px →
 					</span>
 
-					<!-- border: 1px -->
+					<!-- border-box -->
 					<div style="
 						width: 300px;
 						height: 300px;
@@ -1452,15 +1470,21 @@
 						border: 1px solid black;
 						background-color: #b8d99a;
 						box-sizing: content-box;
+						position: relative;
 					">
-						<span style="
+						<div style="
 							position: absolute;
 							top: 20px;
-							left: 30px;
+							left: 0;
+							right: 0;
+							display: flex;
+							justify-content: space-between;
 							font-size: 11px;
 						">
-							border <br>  → 1px ←
-						</span>
+							<span><strong>←</strong></span>
+							<span><strong>border-box 300px</strong></span>
+							<span><strong>→</strong></span>
+						</div>				
 
 						<!-- content -->
 						<div style="
@@ -1471,26 +1495,24 @@
 							justify-content: center;
 							align-items: center;
 							text-align: center;
+							font-size: 11px;
 						">
 							<span style="
 								position: absolute;
 								top: 100px;
-								left: 50px;
+								left: 0px;
 								font-size: 11px;
 							">
 								padding <br> ← 5px →
 							</span>
 
-							<div style="display: flex; width: 100%; justify-content: space-between;">
-								<span style="
-									position: absolute;
-									top: 150px;
-									left: 50px;
-									font-size: 11px;
-								">
-									border-box <br> ← 300px →
-								</span>
-								<span>←</span> <strong>content 300 × 300px</strong> <span>→</span>
+							<div style="
+								display: flex; 
+								width: 100%; 
+								justify-content: space-between;
+								font-size: 11px;
+							">
+								<span>←</span> <strong>content 288px</strong> <span>→</span>
 							</div>
 						</div>
 
@@ -1499,9 +1521,33 @@
 				</div>
 
 			</div>
-
-		
+	
+			<br><br>
+			<p>
+				<b>border-image:</b> позволяет использовать изображение как рамку элемента.<br>
+				Изображение делится на 9 квадратов и каждый квадрат будет углом и линиями (кроме центрального)<br>
+				квадрат отмеряетса от внешней границы рисунка (50) для него задается поведение (stretch - растягивать)<br>
+				<br>
+				<strong>border-image: url('assets/images/logo_2.png') 50 stretch;</strong> 
+				<strong>border: 8px solid transparent;</strong>
 				
+			</p>
+			<br>
+			<div style="
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: lightyellow;
+				border: 8px solid transparent;
+				border-image: url('assets/images/logo_2.png') 50 stretch;
+				min-width: 400px;
+				max-width: 800px;
+				height: 100px;
+				margin: 0 auto;
+			">
+				Пример border-image
+			</div>
+
 	</section>
 
 

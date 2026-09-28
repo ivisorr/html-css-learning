@@ -192,12 +192,8 @@ a:hover {
 }
 
 @keyframes logo-rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 /* Формат меню */
 /* ********************** */
@@ -380,6 +376,36 @@ textarea {
 
 
 /* ********************** */
+/* Формат списка search */ 
+.search-list li {
+	display: flex;
+	/* align-items: center; */
+	gap: 6px;
+}
+
+.search-list li::before {
+	content: "";
+	width: 25px;
+	height: 25px;
+	/* background-image: url("../assets/images/solar_sign.svg"); */
+	background-image: url("../assets/images/logo_7.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	flex-shrink: 0;
+    animation: rotate-logo 10s linear infinite;
+}
+
+@keyframes rotate-logo {
+	from { transform: rotate(0deg); }
+	to   { transform: rotate(360deg); }
+}
+/* Формат списка search */ 
+/* ********************** */
+
+
+
+/* ********************** */
 /* Формат списка атрибутов тегов */ 
 .attributes {
     list-style: none;
@@ -387,4 +413,20 @@ textarea {
     padding-left: 20px;
 }
 /* Формат списка атрибутов тегов */ 
+/* ********************** */
+
+
+
+/* ********************** */
+/* Blok-kvadrat v primerah */ 
+.square-block {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 5px;
+    background: white;
+    height: 150px;
+    width: 150px;
+}
+/* Blok-kvadrat v primerah */ 
 /* ********************** */

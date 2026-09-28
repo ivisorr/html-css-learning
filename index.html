@@ -539,7 +539,7 @@
 			
 			<hr>
 			<h3>Поисковики:</h3>
-			<ul>
+				<ul class="search-list"> 
 				<li> <a href="https://www.google.com/">	Google</a> </li>
 				<li> <a href="https://duckduckgo.com/">	DuckDuckGo </a> </li>
 				<li> <a href="https://www.bing.com/">	Bing</a> </li>
@@ -1323,15 +1323,17 @@
 				margin: 10px;<br>
 				padding: 5px;<br>
 				border: 1px;<br>
-				<br>
+			</p>
+	 		<br>
+
+		<!-- box-sizing: content-box -->
+			<p>
 				<strong>box-sizing: <b>content-box</b></strong> (по умолчанию) -
 				padding, border и margin добавляются к заданному размеру content (300px).
 				<br> <b>content-box</b> = margin + border + padding + <b>content</b> + padding + border + margin
 				<br> <b>content-box</b> = 10 + 1 + 5 + <b>300</b> + 5 + 1 + 10 = <b>332px</b>
 				<br> Общий размер = <b>content-box</b>
 			</p>
-			<br>
-		<!-- box-sizing: content-box -->
 			<div style="
 				display: flex;
 				width: 484px;
@@ -1366,7 +1368,6 @@
 						width: 300px;
 						height: 300px;
 						padding: 42px;
-						border: 1px solid black;
 						background-color: #b8d99a;
 						box-sizing: content-box;
 					">
@@ -1388,6 +1389,7 @@
 							justify-content: center;
 							align-items: center;
 							text-align: center;
+							border: 1px solid black;
 						">
 							<span style="
 								position: absolute;
@@ -1410,10 +1412,9 @@
 					</div>
 				</div>
 			</div>
-
+	 		<br><br>
 
 		<!-- box-sizing: border-box-->
-	 		<br><br>
 			<p>
 				<strong>box-sizing: <b>border-box</b></strong> -
 				padding, border входить в состав контента (300px), 
@@ -1422,9 +1423,7 @@
 				<br> Общий размер = margin + [<b>border-box</b>] + margin
 				<br> <b>border-box</b> = 1 + 5 + 288 + 5 + 1 = <b>300px</b>
 				<br> Общий размер  10 + [<b>300px</b>] + 10 = <b>320px</b>
-				<br><br>
 			</p>
-			<!-- box-sizing: border-box-->
 			<div style="
 				display: flex;
 				width: 484px;
@@ -1521,18 +1520,18 @@
 				</div>
 
 			</div>
-	
 			<br><br>
+
+		<!-- border-image: -->
 			<p>
 				<b>border-image:</b> позволяет использовать изображение как рамку элемента.<br>
+				<b>border-image: url('assets/images/logo_2.png') 50 stretch;</b> <br>
 				Изображение делится на 9 квадратов и каждый квадрат будет углом и линиями (кроме центрального)<br>
 				квадрат отмеряетса от внешней границы рисунка (50) для него задается поведение (stretch - растягивать)<br>
+				<b>border: 8px solid transparent;</b> 
+				- задает толщину рамки (8px) и прозрачный цвет, чтобы не перекрывать изображение рамки.<br>
 				<br>
-				<strong>border-image: url('assets/images/logo_2.png') 50 stretch;</strong> 
-				<strong>border: 8px solid transparent;</strong>
-				
 			</p>
-			<br>
 			<div style="
 				display: flex;
 				justify-content: center;
@@ -1547,6 +1546,61 @@
 			">
 				Пример border-image
 			</div>
+			<br><br>
+
+		<!-- box-shadow: -->
+			<p>
+				<b>box-shadow: offset-x offset-y blur spread color; </b> - добавляет тень к элементу.<br>
+				<ul class="attributes">
+					<li><b>offset-x</b> - смещение по горизонтали</li>
+					<li><b>offset-y</b> - смещение по вертикали</li>
+					<li><b>blur</b> - размытие</li>
+					<li><b>spread</b> - увеличение/уменьшение тени</li>
+					<li><b>color</b> - цвет</li>
+				</ul>
+			</p>
+			<div style="
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				">
+				<div class="square-block" style="
+					box-shadow: -5px -5px gray;
+					border-radius: 25px 5px 25px 5px;
+				">
+					box-shadow: -5px -5px gray;<br>
+					border-radius: 25px 5px 25px 5px;
+				</div>
+				<div class="square-block" style="
+					box-shadow: 5px 5px 5px gray;
+					border-radius: 15px 15px 15px 15px;
+				">
+					box-shadow: 5px 5px 5px gray;<br>
+					border-radius: 15px 15px 15px 15px;
+				</div>
+				<div class="square-block" style="
+					box-shadow: 5px 5px 5px 5px gray;
+				">
+					box-shadow: 5px 5px 5px 5px gray;
+				</div>
+				<div class="square-block" style="
+					box-shadow: 0 0 10px gray;
+					border-top-left-radius: 90px 30px;
+				">
+					box-shadow: 0 0 10px gray;
+				</div>
+				<div class="square-block" style="
+					background: yellow;
+					box-shadow: inset 2px -7px 10px gray;
+					border-radius: 5px 85px 5px 85px;
+				">
+					box-shadow: inset 1px -5px 5px gray;<br>
+					border-radius: 5px 85px 5px 85px;
+				</div>
+			</div>
+			<br>
+
+		</div>
 
 	</section>
 

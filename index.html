@@ -1192,18 +1192,18 @@
 			<h3>Размер задн в % относительно родителя</h3>		
 			<div class="section_horisontal">
 				<div style="height: 250px; width: 250px; background-color: #bbbbaa;">
-					<p> height=250p width=250px</p>
 					<div style="height: 70%; width: 70%; background-color: var(--menu-color);">
 						<p>70% x 70% <br>
 							
 						</p>
 					</div>
+					<p> height=250p width=250px</p>
 				</div>
 				<div style="height: 150px; width: 150px; background-color: #bbbbaa;">
-					<p>150 x 150</p>
 					<div style="height: 70%; width: 70%; background-color: var(--menu-color)">
 						<p>70% x 70%</p>
 					</div>
+					<p>150 x 150</p>
 				</div>
 			</div>
 			<br>
@@ -1225,7 +1225,7 @@
 
 				"
 			>
-				<div class="item1" style="  grid-area: a;  background: gray;" 	>
+				<div class="block_horisontal" class="item1" style="  grid-area: a;  background: gray;" 	>
 					display: grid; <br>
 					grid-template-columns: repeat(3, 1fr); <br>
 					grid-template-rows: 100px 100px; <br>
@@ -1240,7 +1240,7 @@
 					class="item1"; <br>
 					grid-area: <b>a</b> <br>
 				</div>
-				<div class="item2" style="  grid-area: b;  background: purple;">
+				<div class="block_horisontal" class="item2" style="  grid-area: b;  background: purple;">
 					grid-template-areas: <br>
 						'a a <b>b</b>' <br>
 						'a a c'; <br>
@@ -1249,7 +1249,7 @@
 					class="item2"; <br>
 					grid-area: <b>b</b> <br>
 				</div>
-				<div class="item3" style="  grid-area: c;  background: blue;"	>
+				<div class="block_horisontal" class="item3" style="  grid-area: c;  background: blue;"	>
 					grid-template-areas: <br>
 						'a a b' <br>
 						'a a <b>c</b>'; <br>					
@@ -1263,7 +1263,7 @@
 			<br>
 			<h3>Использование <b>&lt;flex&gt;</b> выравнивание и задание минимальных размеров</h3>		
 			<div class="section_horisontal">
-				<div style="
+				<div class="block_horisontal" style="
 					border: 1px solid gray; 
 					background-color: lightyellow; 
 					
@@ -1276,7 +1276,7 @@
 
 					<img src="assets/images/Logo_2.png" width="100" height="100" alt="Logo2">
 				</div>
-				<div style="
+				<div class="block_horisontal" style="
 					border: 1px solid gray; 
 					background-color: lightgray;
 					
@@ -1600,6 +1600,55 @@
 			</div>
 			<br>
 
+		<!-- Interaktivniy blok -->
+			<h2>Interaktivniy blok</h2>
+			<div class="section_horisontal">
+				<div class="block_horisontal">
+					<strong>Razmeri:</strong>
+					<br>
+					<div class="settings">
+						<label> Width: </label> 
+						<input type="number" id="block_Width" value="200">
+						
+						<label> Height: </label> 
+						<input type="number" id="block_Height" value="200">
+
+						<label> Background color:</label> 
+						<input type="color" id="block_bgColor" value="#FFFFFF">
+					</div>
+				</div>
+				<div class="block_horisontal">
+					<strong>Ramka:</strong>
+					<br>
+					<div class="settings">
+						<label> Border width: </label> 
+						<input type="number" id="border_Width" value="3">
+						
+						<label> Border color:</label> 
+						<input type="color" id="border_Color" value="#c22e2e">
+
+						<label> Left top corner radius: </label> 
+						<input type="number" id="border_LeftTopRadius" value="30">
+
+						<label> Right top corner radius: </label> 
+						<input type="number" id="border_RightTopRadius" value="0">
+						
+						<label> Right bottom corner radius: </label> 
+						<input type="number" id="border_RightBottomRadius" value="30">
+
+						<label> Left bottom corner radius: </label> 
+						<input type="number" id="border_LeftBottomRadius" value="0">				
+					</div>
+				</div>
+				<div class="block_horisontal" style="
+					display: flex;
+					align-items: center;
+					justify-content: center;">
+					<div id="blockExample" >
+						<!-- Interaktivniy Blok -->
+					</div>
+				</div>
+			</div>
 		</div>
 
 	</section>

@@ -224,6 +224,7 @@ pre {
     min-width: 0;
     box-sizing: border-box;
     margin-top: 0 !important; /* без этого "align-items: flex-start;" не срабатывает */
+    padding: 10px;              /*  отступы */
 }		
 
 .section-reference {
@@ -429,4 +430,22 @@ textarea {
     width: 150px;
 }
 /* Blok-kvadrat v primerah */ 
+/* ********************** */
+
+/* ********************** */
+/* block nastroek interaktivnih parametроv */ 
+.settings {
+    display: grid;
+    grid-template-columns: max-content minmax(40px, max-content);
+    gap: 8px 12px;
+    align-items: center;
+}
+
+.settings input {
+    field-sizing: content;
+    min-width: 40px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+/* block nastroek interaktivnih parametроv */ 
 /* ********************** */

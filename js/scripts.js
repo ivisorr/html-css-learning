@@ -513,3 +513,101 @@
 }
 // ************************************
 // #endregion  ШРИФT
+
+
+// #region  Interactivniy blok
+// ************************************
+{
+    const blockExample = document.getElementById("blockExample"); // bloka - primer
+    const block_Width = document.getElementById("block_Width"); // pole dlya vvod siriny
+    const block_Height = document.getElementById("block_Height"); // pole dlya vvod vysoty
+    const block_bgColor = document.getElementById("block_bgColor"); // pole dlya vvod cveta fona
+    const border_Width = document.getElementById("border_Width"); // pole dlya vvod razmera ramki
+    const border_Color = document.getElementById("border_Color"); // pole dlya vvod cveta ramki
+    const border_LeftTopRadius = document.getElementById("border_LeftTopRadius"); // pole dlya vvod radiusa levoj verhnij roga
+    const border_RightTopRadius = document.getElementById("border_RightTopRadius"); // pole dlya vvod radiusa pravoj verhnij roga
+    const border_LeftBottomRadius = document.getElementById("border_LeftBottomRadius"); // pole dlya vvod radiusa levoj niznej roga
+    const border_RightBottomRadius = document.getElementById("border_RightBottomRadius"); // pole dlya vvod radiusa pravoj niznej roga
+
+    // ustanavlivaet znacheniya atributov blockExample iz poley formi
+    function setBlockExampleValues() {
+        blockExample.style.width = block_Width.value + "px";
+        blockExample.style.height = block_Height.value + "px";
+        blockExample.style.backgroundColor = block_bgColor.value;
+
+        blockExample.style.borderWidth = border_Width.value + "px";
+        blockExample.style.borderColor = border_Color.value;
+        blockExample.style.borderStyle = "solid";
+
+        blockExample.style.borderTopLeftRadius = border_LeftTopRadius.value + "px";
+        blockExample.style.borderTopRightRadius = border_RightTopRadius.value + "px";
+        blockExample.style.borderBottomLeftRadius = border_LeftBottomRadius.value + "px";
+        blockExample.style.borderBottomRightRadius = border_RightBottomRadius.value + "px";
+    }
+
+    setBlockExampleValues(); // Инициализация
+
+    // Назначение обработчиков 
+    block_bgColor.addEventListener("input", setBlockExampleValues);
+    block_Width.addEventListener("input", setBlockExampleValues);
+    block_Height.addEventListener("input", setBlockExampleValues);
+    border_Width.addEventListener("input", setBlockExampleValues);
+    border_Color.addEventListener("input", setBlockExampleValues);
+    border_LeftTopRadius.addEventListener("input", setBlockExampleValues);
+    border_RightTopRadius.addEventListener("input", setBlockExampleValues);
+    border_LeftBottomRadius.addEventListener("input", setBlockExampleValues);
+    border_RightBottomRadius.addEventListener("input", setBlockExampleValues);
+
+    // const blockExample = document.getElementById("blockExample");
+
+    // const settings = document.querySelectorAll(".settings input");
+
+    // function setBlockExampleValues() {
+
+    //     settings.forEach(input => {
+
+    //         const cssProperty = input.dataset.css;
+    //         const unit = input.dataset.unit || "";
+
+    //         blockExample.style[cssProperty] = input.value + unit;
+    //     });
+
+    //     blockExample.style.borderStyle = "solid";
+    // }
+
+    // setBlockExampleValues();
+
+    // settings.forEach(input => {
+    //     input.addEventListener("input", setBlockExampleValues);
+    // });
+
+{/* <input type="number"
+       value="100"
+       data-css="width"
+       data-unit="px">
+
+<input type="number"
+       value="100"
+       data-css="height"
+       data-unit="px">
+
+<input type="color"
+       value="#ffffff"
+       data-css="backgroundColor">
+
+<input type="number"
+       value="1"
+       data-css="borderWidth"
+       data-unit="px">
+
+<input type="color"
+       value="#000000"
+       data-css="borderColor">
+
+<input type="number"
+       value="0"
+       data-css="borderTopLeftRadius"
+       data-unit="px"></input> */}
+}
+// ************************************
+// #endregion  Interactivniy blok

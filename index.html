@@ -1599,52 +1599,82 @@
 				</div>
 			</div>
 			<br>
+		</div>
 
 		<!-- Interaktivniy blok -->
+		<div class="block-example">
 			<h2>Interaktivniy blok</h2>
 			<div class="section_horisontal">
+				<!-- Atributy bloka (blockInteractive) -->
 				<div class="block_horisontal">
-					<strong>Razmeri:</strong>
+					<strong>Blok:</strong>
 					<br>
-					<div class="settings">
+					<div class="settings" id="blockAtributes">
 						<label> Width: </label> 
-						<input type="number" id="block_Width" value="200">
+						<input data-css="width" type="number" value="200" data-unit="px">
 						
 						<label> Height: </label> 
-						<input type="number" id="block_Height" value="200">
+						<input data-css="height" type="number" value="200" data-unit="px">
 
 						<label> Background color:</label> 
-						<input type="color" id="block_bgColor" value="#FFFFFF">
+						<input data-css="backgroundColor" type="color" value="#c3f047">
 					</div>
 				</div>
+				<!-- Atributy teni (blockInteractive) -->
+				<div class="block_horisontal">
+					<strong>Teni:</strong>
+					<br>
+					<div class="settings" id="shadowAtributes">
+						<label> Vo vnutr: </label> 
+						<input data-css="shadowInset" type="checkbox" value="inset">
+
+						<label> Ten po X : </label> 
+						<input data-css="shadowX" type="number" value="-10" data-unit="px">
+						
+						<label> Ten po Y: </label> 
+						<input data-css="shadowY" type="number" value="-10" data-unit="px">
+
+						<label> Razmitie: </label> 
+						<input data-css="shadowBlur" type="number" value="25" data-unit="px">
+
+						<label> Rasprostranenie: </label> 
+						<input data-css="shadowSpread" type="number" value="1" data-unit="px">
+
+						<label> Color:</label> 
+						<input data-css="shadowColor" type="color" value="#7e892f">
+					</div>
+				</div>
+				<!-- Atributy ramki (blockInteractive) -->
 				<div class="block_horisontal">
 					<strong>Ramka:</strong>
 					<br>
-					<div class="settings">
+					<div class="settings" id="frameAtributes">
 						<label> Border width: </label> 
-						<input type="number" id="border_Width" value="3">
+						<input data-css="borderWidth" type="number" value="0" data-unit="px">
 						
 						<label> Border color:</label> 
-						<input type="color" id="border_Color" value="#c22e2e">
+						<input data-css="borderColor" type="color" value="#c3f047">
 
 						<label> Left top corner radius: </label> 
-						<input type="number" id="border_LeftTopRadius" value="30">
+						<input data-css="borderTopLeftRadius" type="number" value="130" data-unit="px">
 
 						<label> Right top corner radius: </label> 
-						<input type="number" id="border_RightTopRadius" value="0">
+						<input data-css="borderTopRightRadius" type="number" value="15" data-unit="px">
 						
 						<label> Right bottom corner radius: </label> 
-						<input type="number" id="border_RightBottomRadius" value="30">
+						<input data-css="borderBottomRightRadius" type="number" value="130" data-unit="px">
 
 						<label> Left bottom corner radius: </label> 
-						<input type="number" id="border_LeftBottomRadius" value="0">				
+						<input data-css="borderBottomLeftRadius" type="number" value="15" data-unit="px">				
 					</div>
 				</div>
+
+				<!-- Interaktivniy Blok -->
 				<div class="block_horisontal" style="
 					display: flex;
 					align-items: center;
 					justify-content: center;">
-					<div id="blockExample" >
+					<div id="blockInteractive" >
 						<!-- Interaktivniy Blok -->
 					</div>
 				</div>

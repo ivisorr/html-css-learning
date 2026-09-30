@@ -215,12 +215,13 @@ pre {
 .section_horisontal {
     display: flex;              /* ставит блоки в одну строку */
     /* align-items: flex-start; /* прижимает блоки к верху */
+    flex-wrap: wrap;
     align-items: stretch;		/* выравнивает размер блоков по большему, по высоте */
     gap: 10px;                  /* расстояние между блоками */
 }		
 
 .block_horisontal {
-    flex: 1 1 0; /* оба блока займут одинаковую ширину */
+    flex: 1 1 250px; /* оба блока займут одинаковую ширину */
     min-width: 0;
     box-sizing: border-box;
     margin-top: 0 !important; /* без этого "align-items: flex-start;" не срабатывает */

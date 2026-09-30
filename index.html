@@ -1625,8 +1625,12 @@
 					<strong>Teni:</strong>
 					<br>
 					<div class="settings" id="shadowAtributes">
-						<label> Vo vnutr: </label> 
-						<input data-css="shadowInset" type="checkbox" value="inset">
+						<label> tip: </label>
+						<select id="shadowInset">
+							<option value="">Outside</option>
+							<option value="inset" selected>Inside</option>
+						</select> 
+						<!-- <input data-css="shadowInset" type="checkbox" value="inset"> -->
 
 						<label> Ten po X : </label> 
 						<input data-css="shadowX" type="number" value="-10" data-unit="px">

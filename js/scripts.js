@@ -520,7 +520,7 @@
 {
     const blockInteractive = document.getElementById("blockInteractive");
     const dynamicBlockAtributes = document.querySelectorAll("#blockAtributes input");
-    const dynamicShadowAtributes = document.querySelectorAll("#shadowAtributes input");
+    const dynamicShadowAtributes = document.querySelectorAll("#shadowAtributes input, #shadowAtributes select");
     const dynamicFrameAtributes = document.querySelectorAll("#frameAtributes input");
 
     // Ustanavlivaet znacheniya atributov BLOK (blockInteractive) 
@@ -544,6 +544,7 @@
             const unit = input.dataset.unit || "";
             boxShadow = boxShadow + " " + input.value + unit;
         });
+        // console.log("boxShadow:", boxShadow);
         blockInteractive.style.boxShadow = boxShadow;
     }
 
@@ -564,7 +565,7 @@
     // Инициализация
     setDynamicBlockAtributes();
     setDynamicFrameAtributes();
-    setDynamicShadowAtributes()
+    setDynamicShadowAtributes();
 
     // Назначение обработчиков 
     dynamicBlockAtributes.forEach(input =>  { input.addEventListener("input", setDynamicBlockAtributes); });

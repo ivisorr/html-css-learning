@@ -68,6 +68,10 @@ a:hover {
     font-weight: bold;
 }
 
+/* cursor */
+input, select, textarea {
+    cursor: url("../assets/images/cursor_pen_32.png") 2 29, auto;
+}
 
 
 /* ********************** */
@@ -230,7 +234,7 @@ pre {
 
 .section-reference {
     margin: 60px 5px;
-    padding: 30px;
+    padding: 40px;
     border: 1px solid var(--section-reference-frame-color);
     border-radius: 5px;
     background-color: var(--section-reference-color);
@@ -238,18 +242,20 @@ pre {
 }
 
 .block-description {
-    margin: 30px 0 10px;
+    margin: 40px 0 20px;
     padding: 20px 30px;
     border: 1px solid #ccc; 
     border-radius: 5px;
     background-color: var(--block-description-color);
+    box-shadow: 2px 3px 3px var(--section-reference-frame-color);
 }
 
 .block-example {
-    margin: 10px 0;
+    margin: 20px 0;
     padding: 30px;
     border: 1px solid #ccc;
     background-color: var(--block-example-color);
+    box-shadow: 2px 3px 3px var(--section-reference-frame-color);
 }
 /* Формат секций и блоков */
 /* ********************** */
@@ -434,19 +440,20 @@ textarea {
 /* ********************** */
 
 /* ********************** */
-/* block nastroek interaktivnih parametроv */ 
-.settings {
+/* block dlya par tipa: tekst: [pole vvoda] */ 
+.form-greed {
     display: grid;
     grid-template-columns: max-content minmax(40px, max-content);
     gap: 8px 12px;
     align-items: center;
 }
 
-.settings input {
+.form-greed input {
     field-sizing: content;
     min-width: 40px;
     max-width: 100%;
     box-sizing: border-box;
 }
-/* block nastroek interaktivnih parametроv */ 
+/* block dlya par tipa: tekst: [pole vvoda] */ 
 /* ********************** */
+

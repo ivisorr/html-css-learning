@@ -856,16 +856,18 @@
 					
 					<p>Пожалуйста, выберите любимый жанр музыки:
 						 <br>
-						 <input type="radio" name="genre" value="rock" checked="checked" /> Рок
-						 <input type="radio" name="genre" value="pop" /> Поп 
-						 <input type="radio" name="genre" value="techno" /> Электроника
+						 <input type="radio" name="genre" value="rock" checked="checked" > Рок
+						 <input type="radio" name="genre" value="pop" > Поп 
+						 <input type="radio" name="genre" value="techno" > Электроника
 					</p> <br>
 					 
-					<p>Пожалуйста, выберите, где вы слушаете музыку: <br />
-						 <input type="checkbox" name="service" value="house" checked="checked" /> Дома
-						 <input type="checkbox" name="service" value="work" /> На работе
-						 <input type="checkbox" name="service" value="inroad" /> В дороге
-					</p> <br>
+					<p>Пожалуйста, выберите, где вы слушаете музыку: 
+						<br>
+						<input type="checkbox" name="service" value="house" checked="checked" /> Дома
+						<input type="checkbox" name="service" value="work" /> На работе
+						<input type="checkbox" name="service" value="inroad" /> В дороге
+					</p> 
+					<br>
 					
 					<label>На каком устройстве вы слушаете музыку чаще всего?
 						<select name="devices">
@@ -1077,48 +1079,32 @@
 	<section id="font-settings" class="section-reference">
 		<h2>Формат Шрифта <b></b> </h2>	
 		
-		<div class="block-description">
-			<label>Шрифт (font-family):
-				<select id="font-family">
-					<!-- Option will be genereted by JS -->
-				</select>
-			</label>
-			<br><br>
-			<label>Стиль: (font-style):
-				<select id="font-style">
-					<!-- Option will be genereted by JS -->
-				</select>
-			</label>
-			<br><br>
-			<label>Регистр (text-transform):
-				<select id="text-transform">
-					<!-- Option will be genereted by JS -->
-				</select>
-			</label>
-			<br><br>
-			<label>Размер (font-size):
-				<input
-					type="range"
-					id="font-size"
-					min="10"
-					max="72"
-					value="16"
-				>
-				<span id="font-size-value"><!-- will be genereted by JS --></span>	
-			</label>
-			<br><br>
-			<label>Жирность: (font-weight):
-				<select id="font-weight">
-					<!-- Option will be genereted by JS -->
-				</select>
-			</label>
+		<div class="block-description form-greed">
+			<label for="font-family">Шрифт (font-family):</label>
+			<select id="font-family"> <!-- Option will be genereted by JS --> </select>
+
+			<label for="font-style">Стиль: (font-style):</label>
+			<select id="font-style"> <!-- Option will be genereted by JS --> </select>
+			
+			<label for="text-transform">Регистр (text-transform):</label>
+			<select id="text-transform"> <!-- Option will be genereted by JS --> </select>
+
+			<label for="font-size">Размер (font-size):</label>
+			<div>
+				<input type="range" id="font-size" min="10" max="72" value="16"	>
+				<span id="font-size-value"><!-- will be genereted by JS --></span>
+			</div>	
+
+			<label for="font-weight">Жирность: (font-weight):</label>
+			<select id="font-weight"> <!-- Option will be genereted by JS --> </select>
+			
 			<!-- <button class="button-custom" id="apply-font" type="button"> Применить </button> -->
 		</div>
 		<div class="block-example" id="font-example">
 			<h2> Primer teksta dlya demonstracii izmeneniya nasroek shrifa</h2>
 			<br>
 			<p>	Tekushie nastroiki: </p>
-			<p id="font-settings-output">
+			<p id="font-settings-output" class="form-greed">
 				<!-- Шрифт (font-family):<br>
 				Стиль: (font-style):<br> 
 				Регистр (text-transform):<br>
@@ -1609,7 +1595,7 @@
 				<div class="block_horisontal">
 					<strong>Blok:</strong>
 					<br>
-					<div class="settings" id="blockAtributes">
+					<div class="form-greed" id="blockAtributes">
 						<label> Width: </label> 
 						<input data-css="width" type="number" value="200" data-unit="px">
 						
@@ -1624,7 +1610,7 @@
 				<div class="block_horisontal">
 					<strong>Teni:</strong>
 					<br>
-					<div class="settings" id="shadowAtributes">
+					<div class="form-greed" id="shadowAtributes">
 						<label> tip: </label>
 						<select id="shadowInset">
 							<option value="">Outside</option>
@@ -1652,7 +1638,7 @@
 				<div class="block_horisontal">
 					<strong>Ramka:</strong>
 					<br>
-					<div class="settings" id="frameAtributes">
+					<div class="form-greed" id="frameAtributes">
 						<label> Border width: </label> 
 						<input data-css="borderWidth" type="number" value="0" data-unit="px">
 						
@@ -1689,6 +1675,8 @@
 
 
 
+
+
 <!-- *********************** -->
 	<!-- SHABLON -->
 	<section class="section-reference">
@@ -1701,6 +1689,26 @@
 		</div>
 		<div class="block-example">
 			<h2>Primer &lt;h2&gt;</h2>
+			<form action="example.php" method="post">
+			<div class="form-greed">
+				<label for="name" class="title">Имя:</label>
+				<input type="text" id="name" name="name">
+
+				<label for="email" class="title">Email:</label>
+				<input type="email" id="email" name="email">
+
+				<span class="title">Пол:</span>
+				<div>
+					<input type="radio" name="gender" id="male" value="M" checked">
+					<label for="male">М</label>
+					
+					<input type="radio" name="gender" id="female" value="F">
+					<label for="female">Ж</label><br/>
+				</div>
+				<span>	</span>
+				<input type="submit" value="Регистрация" id="submit">
+			</div>
+			</form>			
 		</div>
 				
 	</section>

@@ -457,3 +457,20 @@ textarea {
 /* block dlya par tipa: tekst: [pole vvoda] */ 
 /* ********************** */
 
+
+/* ********************** */
+/* Prilipshaya iconka vnizu */
+.fixIcon {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    animation: rotate-logo 10s linear infinite;
+}
+
+@keyframes rotate-logo {
+	from { transform: rotate(0deg); }
+	to   { transform: rotate(360deg); }
+}
+/* Prilipshaya iconka vnizu */
+/* ********************** */

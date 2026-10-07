@@ -40,6 +40,7 @@
 				<li><a href="#video">Видео</a></li>
 				<li><a href="#font-settings">Шрифт</a></li>
 				<li><a href="#blocks">Блоки</a></li>
+				<li><a href="#background">Фон</a></li>
 			</ul>
 			<a href="#" class="line-logo"> <img src="assets/images/solar_sign.svg" alt="Logo"> </a>
 		</nav>
@@ -67,6 +68,7 @@
 		        <li><a href="#audio">Аудио</a></li>
 				<li><a href="#video">Видео</a></li>	        
 				<li><a href="#blocks">Блоки</a></li>
+				<li><a href="#background">Фон</a></li>
 			</ul>
 	    </nav>
 	</aside>
@@ -1674,6 +1676,98 @@
 	</section>
 
 
+<!-- *********************** -->
+	<!-- BACKGROUND -->
+	<section  id="background" class="section-reference">
+		<h2>Background</h2>	
+		
+		<div class="block-description">
+			<ul class="attributes">
+				<li><b>background-image: url("</b>путь к файлу<b>");</b> - <strong>изображение</strong> </li>
+				<br>
+				<li><b>background-color: white;</b> - <strong>цвет фона</strong> </li>
+				<br>	
+				<li><b>background-repeat: repeat;</b> - повторение изображения фона </li>
+				<ul class="attributes">
+					<li><b>repeat</b> - повторять по горизонтали и вертикали </li>
+					<li><b>repeat-x</b> - повторять только по горизонтали </li>
+					<li><b>repeat-y</b> - повторять только по вертикали </li>
+					<li><b>space</b> - повторять с равными промежутками </li>
+					<li><b>round</b> - повторять, подгоняя изображения по размеру </li>
+				</ul>
+				<br>
+				<li><b>background-position: center;</b> - <strong>позиция изображения фона</strong> </li>
+				<ul class="attributes">
+					<li><b>center</b> - по центру </li>
+					<li><b>top</b> - сверху </li>
+					<li><b>bottom</b> - снизу </li>
+					<li><b>left</b> - слева </li>
+					<li><b>right</b> - справа </li>
+					<li><b>top left</b> - сверху слева</li>
+					<li><b>top right</b> - сверху справа</li>
+					<li><b>bottom left</b> - снизу слева</li>
+					<li><b>bottom right</b> - снизу справа</li>
+					<li><b>20px 10px</b> - 20px слева, 10px сверху</li>
+					<li><b>50% 50%</b> - по центру в процентах</li>
+				</ul>
+				<br>
+				<li><b>background-size: cover;</b> - <strong>размер изображения фона</strong> </li>
+				<ul class="attributes">
+					<li><b>cover</b> - заполнить весь блок, часть картинки может обрезаться</li>
+					<li><b>contain</b> - показать картинку целиком, могут остаться пустые области</li>
+					<li><b>auto</b> - исходный размер</li>
+					<li><b>100px 80px</b> - задать ширину и высоту</li>
+					<li><b>50%</b> - ширина 50%, высота автоматически</li>
+					<li><b>100% 100%</b> - растянуть точно по размеру блока</li>
+				</ul>
+				<br>
+				<li><b>background-attachment: scroll;</b> - <strong>поведение фона при прокрутке</strong> </li>
+				<ul class="attributes">
+					<li><b>scroll</b> - фон прокручивается вместе со страницей</li>
+					<li><b>fixed</b> - фон остаётся неподвижным</li>
+					<li><b>local</b> - фон прокручивается вместе с содержимым элемента</li>
+				</ul>
+				<br>
+				<li><b>background-origin: padding-box;</b> - <strong>позиция фона</strong> </li>
+				<ul class="attributes">
+					<li><b>padding-box</b> - позиция фона считается от области padding</li>
+					<li><b>border-box</b> - позиция фона считается от внешнего края border</li>
+					<li><b>content-box</b> - позиция фона считается от области	 content</li>
+				</ul>
+				<br>
+				<li><b>background-clip: border-box;</b> - <strong>обрезка фона</strong> </li>
+				<ul class="attributes">
+					<li><b>border-box</b> - фон рисуется под border</li>
+					<li><b>padding-box</b> - фон доходит только до padding</li>
+					<li><b>content-box</b> - фон только внутри content</li>
+				</ul>
+			</ul>
+			<br>
+			<p> <strong>Cокращённо: </strong> <b>background: url("../assets/images/image.jpg") center / cover no-repeat;</b></p>
+			<br>
+		</div>
+		<div class="block-example">
+			<h2 >Пример блоков с фоном</h2>
+			<div style="gap: 20px; display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
+				<div class="block-background-image" style="width: 500px; height: 200px;">
+					background-image: url("background_1.png");<br>
+					background-repeat: no-repeat;<br>
+					background-position: center;<br>
+					background-size: cover;<br>
+					background-attachment: <strong>fixed</strong>;<br>
+				</div>
+				<div class="block-background-image" style="background-attachment: scroll; border-radius: 120px; width: 500px; height: 200px;">
+					background-image: url("background_1.png");<br>
+					background-repeat: no-repeat;<br>
+					background-position: center;<br>
+					background-size: cover;<br>
+					background-attachment: <strong>scroll</strong>;<br>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
 
 
 
@@ -1705,10 +1799,12 @@
 					<input type="radio" name="gender" id="female" value="F">
 					<label for="female">Ж</label><br/>
 				</div>
-				<span>	</span>
-				<input type="submit" value="Регистрация" id="submit">
+
+				<input type="submit" class="button-custom" value="Регистрация" id="submit">
+				<button class="button-custom"> Регистрация </button>
 			</div>
-			</form>			
+			</form>
+	
 		</div>
 				
 	</section>

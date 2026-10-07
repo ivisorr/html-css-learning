@@ -257,6 +257,18 @@ pre {
     background-color: var(--block-example-color);
     box-shadow: 2px 3px 3px var(--section-reference-frame-color);
 }
+
+.block-background-image {
+    /* background-color: white; */
+    background-image: url("../assets/images/background_1.jfif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; 
+
+    color: white;
+    padding: 30px;
+}
 /* Формат секций и блоков */
 /* ********************** */
 
@@ -344,14 +356,29 @@ b {
     border-radius: 2px;
     border-color: gray;			
     transition: background 0.5s;
-    padding: 5px 10px;
+    padding: 10px 15px;
     box-shadow: 1px 2px 3px var(--menu-shadow);
 }
 
 .button-custom:hover {
+    /* color: white;
     background: var(--menu-color);
-    color: white;
     border-color: var(--menu-background-color);
+    color: var(--menu-color); */
+    color: var(--menu-color);
+    border-color: var(--menu-color);
+    background: white;
+    font-weight: 600;
+
+    animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+    0%   { transform: rotate(0deg); }
+    25%  { transform: rotate(3deg); }
+    50%  { transform: rotate(-3deg);}
+    75%  { transform: rotate(2deg); }
+    100% { transform: rotate(0deg); }
 }
 /* Оформление кнопок */ 
 /* ********************** */

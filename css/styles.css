@@ -25,7 +25,7 @@
     --asaide-size: 180px;
 
     --logo-size: 25px;
-    --logo-offset: calc(-1 * var(--logo-size) / 2);
+    --logo-offset: calc(-1 * var(--logo-size) / 1.2);
 
     --line-logo-size: 60px; /* высота вращающегося логотипа */
     --line-logo-offset: calc(-1 * ( var(--line-logo-size) - var(--menu-height) ) / 2); /* вертикальные отступы вращающегося логотипа */
@@ -128,17 +128,21 @@ aside {
 .menu-toggle {
     /* height: 100%; */
     height: var(--menu-height);
-    width: 60px;
+    width: 100%;
+    text-align: left;
+    font: inherit;
     color: var(--menu-color);
     background: var(--menu-background-color1);
     text-decoration: none; /* чтобы не было подчеркивания */
     text-shadow: 0 2px 2px black;
+    border: none;
     display: none; /* скрываем кнопку по умолчанию */
 }
 
 .menu-toggle:hover {
     background: var(--menu-color);       /* эффект при наведении */
     color: white;
+    font-weight: 700;
 	text-shadow: 0 2px 2px var(--menu-shadow);
 	box-shadow: 0 5px 5px var(--menu-shadow);
 }

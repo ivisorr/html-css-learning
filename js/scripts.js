@@ -6,6 +6,19 @@
 // JavaScript dlya - index.html 
 // ************************************
 
+// #region  Menu button
+// ************************************
+{
+    const menuButton = document.querySelector(".menu-toggle");
+    const menuList = document.querySelector(".main-menu ul");
+
+    menuButton.addEventListener("click", () => {
+        menuList.classList.toggle("open");
+    });
+}
+// ************************************
+// #endregion  Menu button
+
 
 // #region  Атрибуты элементов
 // ************************************

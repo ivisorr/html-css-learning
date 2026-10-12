@@ -27,6 +27,10 @@
 
 		<nav  class="main-menu">
 			<a href="#" class="line-logo"> <img src="assets/images/solar_sign.svg" alt="Logo"> </a>
+			<button class="menu-toggle" type="button">
+				☰
+			</button>
+
 			<ul>
 				<li><a href="#formatirovanie">Форматирование</a></li>
 				<li><a href="#specsimvoly">Спецсимволы</a></li>
@@ -52,983 +56,980 @@
 		</div>
 	</header>
 
-
-	<!-- МЕНЮ СЛЕВА (боковое)  -->
-	<aside>
-	    <nav>
-	        <ul>
-		        <li><a href="#formatirovanie">Форматирование</a></li>
-		        <li><a href="#specsimvoly">Спецсимволы</a></li>
-		        <li><a href="#SVG-icon">SVG-iconki</a></li>
-		        <li><a href="#span">SPAN</a></li>
-		        <li><a href="#spiski">Списки</a></li>
-		        <li><a href="#tablici">Таблицы</a></li>
-		        <li><a href="#forms">Формы</a></li>
-		        <li><a href="#iframes">IFRAME</a></li>
-		        <li><a href="#audio">Аудио</a></li>
-				<li><a href="#video">Видео</a></li>	        
-				<li><a href="#blocks">Блоки</a></li>
-				<li><a href="#background">Фон</a></li>
-			</ul>
-	    </nav>
-	</aside>
-	
-
-	<!-- ************************************ -->
-	<!-- Полезные ссылки -->
-	<section id="zagolovki" class="section-reference">
-		<h2>Полезные ссылки</h2>
-		<div class="section_horisontal">
-			<div class="block-description block_horisontal">
-				<h5>Paletton: 
-					<a href="https://paletton.com/" target="_blank">
-						https://paletton.com/
-					</a>
-				</h5>
-			</div>
-			<div class="block-example  block_horisontal">
-				Удобный инструмент для выбора цвета
-			</div>
-		</div>
-
-		<div class="section_horisontal">
-			<div class="block-description block_horisontal">
-				<h5>HTML: The Living Standard:
-					<a href="https://html.spec.whatwg.org/dev/indices.html" target="_blank">
-						https://html.spec.whatwg.org/dev/indices.html
-					</a>
-				</h5>
-			</div>
-			<div class="block-example  block_horisontal">
-				Описание атрибутов HTML-элементов
-			</div>
-		</div>
-
-		<div class="section_horisontal">
-			<div class="block-description block_horisontal">
-				<h5>Dev Docs <br>
-					<a href="https://devdocs.io/?utm_source=chatgpt.com" target="_blank">
-						https://devdocs.io/?utm_source=chatgpt.com
-					</a>
-				</h5>
-			</div>
-			<div class="block-example  block_horisontal">
-				Universalniy kompaktniy Helpnik po raznim yazikam v t.c. HTML, CSS,  JS
-			</div>
-		</div>
-
-		<div class="section_horisontal">
-			<div class="block-description block_horisontal">
-				<h5> MDN Learn web development<br>
-					<a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" target="_blank">
-						https://developer.mozilla.org/en-US/docs/Learn_web_development
-					</a>
-				</h5>
-			</div>
-			<div class="block-example  block_horisontal">
-				Onlain  MDN uchebnik po web razrabotke
-			</div>
-		</div>
-		
-	</section>
-	
-
-	<!-- *********************** -->
-	<!-- Atributi Elementa -->
-	<section id="atributi-elementa" class="section-reference">
-		<h2>Атрибуты элемента</h2>	
-		
-		<div class="block-description">
-			<p>
-				Структурные данные загружаются из: <br>
-				<b> https://html.spec.whatwg.org/dev/indices.html </b><br>
-				Затем эти данные используются для заполнения элемента <b>&lt;select&gt;</b>.<br>
-				При выборе элемента заполняется таблица атрибутов.
-			</p>
-		</div>
-
-		<div class="block-example">
-			<div class="section_horisontal">
-				<div class="block_horisontal">
-					<span>Элемент:</span> 
-				</div>
-				<div class="block_horisontal">
-					<select id="element_HTML">
-						<option>...downloading</option>
-					</select>
-				</div>
-			</div>
-
-			<div class="section_horisontal">
-				<div class="block_horisontal">
-					<span>Описание:</span> 
-				</div>
-				<div class="block_horisontal">
-					<span id="elementDescription"> ... oписание</span> 
-				</div>
-			</div>
-
-			<div class="section_horisontal">
-				<div class="block_horisontal">
-					<span>Ссылка:</span> 
-				</div>
-				<div class="block_horisontal">
-					<a id="elementURL" href=""> </a>
-				</div>
-			</div>
-			<br>
-
-			<table>
-				<thead>
-					<tr>
-						<th>Имя атрибута</th>
-						<th>Описание</th>
-						<th>Тип значения</th>
-						<th>Ссылка</th>
-					</tr>
-				</thead>
-				<tbody id="attributes-table-body">
-					<!-- Заполняется в JS после выбора элемента с сайта  -->
-				</tbody>
-			</table>
-		</div>
-				
-	</section>
-
-
-	<!-- ************************************ -->
-	<!-- Заголовки -->
-	<section id="zagolovki" class="section-reference">
-		<h2>Заголовки <b>&lt;h1&gt; &lt;h2&gt; ...</b>  </h2>	
-		
-		<div class="block-description">
-			<p>
-				<b>&lt;h1&gt;</b> - Этот текст может быть введением к тексту,
-				помещенному  далее на странице. В случае если текст достаточно
-				длинный, он может быть разделен на несколькоразделов
-				с подзаголовками.
-				Часто при написании длинных статей используют
-				подзаголовки, помогающие читателям следить за
-				структурой всего написанного. Иногда используются и
-				подзаголовки более низкого уровня.
-			</p>
-		</div>
-		<div class="block-example">
-			<h1>Это основной заголовок - <b>&lt;h1&gt;</b></h1>
-			<h2>Это подзаголовок - <b>&lt;h2&gt;</b></h2>
-		</div>
-				
-	</section>
-	
-
-	<!-- ************************************ -->
-	<!-- Форматирпование -->
-	<section id="formatirovanie" class="section-reference">
-		<h2>Различные виды форматирования.</h2>	
-		
-		<div class="section_horisontal">
-			<div class="block-description block_horisontal">
-				<p> 
-					<b>&lt;blockquote&gt;</b> - Это цитата с указанием источника, но не его виндно (только поисковикам).
-				</p>
-			</div>
-			<div class="block-example  block_horisontal">
-				<blockquote cite="https://unity-hub.org/"> <!-- cite указывает источник цитаты, но обычно не показывается пользователю на странице. Он больше для браузера, поисковиков и семантики. -->
-					Это цитата c unity-hub.
-				</blockquote>
-			</div>
-		</div>
-
-		<div class="section_horisontal">
-			<div class="block-description block_horisontal">
-				<p> 
-					<b>&lt;del&gt;</b> - зачеркнутый текст 
-					<br> используется для удаленного текста. <br> 
-					&lt;del datetime="2026-07-12" cite="https://example.com/changes"&gt;
-				</p>
-			</div>
-			<div class="block-example  block_horisontal">
-				<p> 
-					Это была <del datetime="2026-07-12">худшая</del> из идей
-				</p>
-			</div>
-		</div>
-
-		<div class="section_horisontal">
-			<div class="block-description block_horisontal">
-				<p> 
-					<b>&lt;ins&gt;</b> - подчеркнутый текст
-				</p>
-			</div>
-			<div class="block-example  block_horisontal">
-				<p> 
-					Это была <ins>лучшая</ins> из идей
-				</p>
-			</div>
-		</div>
-
-		<div class="section_horisontal">
-			<div class="block-description block_horisontal">
-				<p> 
-					<b>&lt;span&gt;</b> - подсказка
-					<br> При наведении появится всплывающий текст - "Это подсказка"
-				</p>
-			</div>
-			<div class="block-example  block_horisontal">
-				<span title="Это подсказка"> 
-					Наведите курсор сюда и появится текст поддсказки
-				</span>
-			</div>
-		</div>
-		
-		<div class="section_horisontal">
-			<div class="block-description block_horisontal">
-				<p> 
-					<b>&lt;abbr&gt;</b> - аббривиатура
-				</p>
-			</div>
-			<div class="block-example  block_horisontal">
-				<p>
-					Наведите курсор на слово
-					<abbr title="Национальное агентство по аэронавтике и исследованию космического пространства">
-						NASA
-					</abbr> 
-					и появится полный текст
-				</p>
-			</div>
-		</div>
-		
-		<div class="section_horisontal">
-			<div class="block-description block_horisontal">
-				<p> <b>&lt;s&gt;</b> - зачеркнутый текст 
-					<br> используется для неактуальной информации текста. <br> 
-				</p>
-			</div>
-			<div class="block-example  block_horisontal">
-				<p>
-					Ноутбук Samsung:<br>
-					Старая цена: <s>31 900 руб.</s><br>
-					Новая цена: всего 11 999 руб.'
-				</p>
-			</div>
-		</div>
-		
-		<div class="section_horisontal">
-			<div class="block-description block_horisontal">
-				<p> 
-					<b>&lt;address&gt;</b> - адрес
-					<br> <b>&lt;a</b> href="mailto:email@mywebsite.ru"<b>&gt;</b> email@mywebsite.ru<b>&lt;/a&gt;</b>
-					 - email co ssilkoy na otpravku pochty
-				</p>
-			</div>
-			<div class="block-example  block_horisontal">
-				<address>
-					<p> 
-						<a href="mailto:email@mywebsite.ru">email@mywebsite.ru</a> 
-						<br>г. Ухань, ул. Ковида, д. 25.
-					</p>
-				</address>
-			</div>
-		</div>
-		
-	</section>
-	
-
-	<!-- *********************** -->
-	<!-- Спецсимволы	< > & " ' © -->
-	<section id="specsimvoly" class="section-reference">
-		<h2>Kак вывести на экран специальные символы</h2>	
-		
-		<div class="block-description">
-				<!-- 			<tableclass="limit-max-width"  max-width="600" cellpadding="10" cellspacing="2" border="1" > -->
- 			<table class="limit-max-width">
-				<tbody>
-					<tr>	<td >&amp;lt;</td>		<td style="text-align: center;"> &lt; </td>		<td>левая угловая скобка</td>	</tr>
-					<tr>	<td>&amp;gt;</td>		<td style="text-align: center;"> &gt; </td>		<td>правая угловая скобка</td>	</tr>
-					<tr>	<td>&amp;amp;</td>		<td style="text-align: center;"> &amp; </td>	<td>амперсанд</td>				</tr>
-					<tr>	<td>&amp;quot;</td>		<td style="text-align: center;"> &quot; </td>	<td>двойная кавычка</td>		</tr>
-					<tr>	<td>&amp;apos;</td>		<td style="text-align: center;"> &apos; </td>	<td>одинарная кавычка</td>		</tr>
-					<tr>	<td>&amp;copy;</td>		<td style="text-align: center;"> &copy; </td>	<td>знак copyright</td>			</tr>
-					<tr>	<td>&amp;nbsp;</td>		<td style="text-align: center;"> &nbsp; </td>	<td>неразрывный пробел</td>		</tr>
-					<tr>	<td>&amp;#9993;</td>	<td style="text-align: center;"> &#9993; </td>	<td>email</td>					</tr>
-					<tr>	<td>&amp;#9742;</td>	<td style="text-align: center;"> &#9742; </td>	<td>phone number</td>			</tr>
-					<tr>	<td>&amp;#9743;</td>	<td style="text-align: center;"> &#9742; </td>	<td>phone number</td>			</tr>					
-					<tr>	<td>&amp;#128205;</td>	<td style="text-align: center;"> &#128205; </td><td>address</td>				</tr>
-					<tr>	<td>&amp;#127760;</td>	<td style="text-align: center;"> &#127760; </td><td>website</td>				</tr>
-					<tr>	<td><a href="https://www.toptal.com/designers/htmlarrows/symbols/?utm_source=chatgpt.com">Site with sybols - toptal.com</a></td>	<td style="text-align: center;"> </td><td>ssilka na vse simvoli</td></tr>
-				</tbody>
-			</table>
-		</div>
-		<div class="block-example">
-			<h3> Пример 1: </h3>
-			<p>
-				HTML-тег: &lt;meta&gt;<br>
-				Copyright: &copy; 2026 TSOS Unity Hub<br>
-				5 &gt; 3<br>
-				3 &lt; 5<br>
-				Tom &amp; Jerry
-			</p>
-			
-			<hr>
-			<h3>Пример 2: </h3>
-			<p>
-				&#9993; info@example.com<br>
-				&#9742; 01788 123456<br>
-				&#128205; Rugby Town Hall, Rugby<br>
-				&#127760; www.example.com
-			</p>
-		</div>
-	</section>
-	
-	
-	<!-- *********************** -->
-	<!-- <SVG> - SVG-иконки -->
-	<section id="SVG-icon" class="section-reference">
-		<h2><b>&lt;svg&gt;</b> - вывести на экран специальные символы SVG-icon </h2>
-		
-		<div class="section_horisontal"> <!-- Google Map -->
-			<div class="block-description block_horisontal"> <!-- opisanie -->
-				<pre><code>
-  <b>&lt;svg</b> class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: var(--menu-color)"<b>&gt;</b>  
-    &lt;path d="M12 2C8.69 2 6 4.69 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.31-2.69-6-6-6zm0 8.5A2.5 2.5 0 1 1 12 5a2.5 2.5 0 0 1 0 5.5z"/&gt;
-  <b>&lt;/svg&gt;</b>
-				</code></pre>
-			</div>
-			<div class="block-example block_horisontal"> <!-- primeri -->
-				<a	href="https://www.google.com/maps/search/?api=1&query=Rugby+Town+Hall+Rugby" target="_blank" rel="noopener noreferrer">
-				<!-- noopener запрещает открытой странице управлять исходной страницей через JavaScript.
-					 noreferrer не передаёт открываемому сайту адрес страницы, с которой пользователь перешёл. -->
-					<svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: var(--menu-color)">
-						<path d="M12 2C8.69 2 6 4.69 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.31-2.69-6-6-6zm0 8.5A2.5 2.5 0 1 1 12 5a2.5 2.5 0 0 1 0 5.5z"/>
-					</svg>
-					- Google Map
-				</a>
-			</div>
-		</div>
-	
-		<div class="section_horisontal"> <!-- Address -->
-			<div class="block-description block_horisontal"> <!-- opisanie -->
-				<pre><code>
-  <b>&lt;svg</b> class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: blue" <b>&gt;</b>  
-    &lt;path d="M12 3 2 12h3v9h6v-6h2v6h6v-9h3L12 3zm5 16h-2v-6H9v6H7v-7.9l5-4.5 5 4.5V19z"/&gt;
-  <b>&lt;/svg&gt;</b>
-				</code></pre>
-			</div>
-			<div class="block-example block_horisontal"> <!-- primeri -->
-				<svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: blue">
-					<path d="M12 3 2 12h3v9h6v-6h2v6h6v-9h3L12 3zm5 16h-2v-6H9v6H7v-7.9l5-4.5 5 4.5V19z"/>
-				</svg>
-				- Адрес
-			</div>
-		</div>
-		
-		<div class="section_horisontal"> <!-- Phone -->
-			<div class="block-description block_horisontal"> <!-- opisanie -->
-				<pre><code>
-  <b>&lt;svg</b> class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: black" <b>&gt;</b>  
-    &lt;path d="M17 1H7C5.9 1 5 1.9 5 3v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14zm-4 3h-2v-1h2v1z"/&gt;
-  <b>&lt;/svg&gt;</b>
-				</code></pre>
-			</div>
-			<div class="block-example block_horisontal"> <!-- primeri -->
-				<svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: black">
-					<path d="M17 1H7C5.9 1 5 1.9 5 3v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14zm-4 3h-2v-1h2v1z"/>
-				</svg>
-				<a href="tel:+441788123456">- Телефон</a>
-			</div>
-		</div>
-		
-		<div class="section_horisontal"> <!-- Email -->
-			<div class="block-description block_horisontal"> <!-- opisanie -->
-				<pre><code>
-  <b>&lt;svg</b> class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: red" <b>&gt;</b>  
-    &lt;path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/&gt;
-  <b>&lt;/svg&gt;</b>
-				</code></pre>
-			</div>
-			<div class="block-example block_horisontal"> <!-- primeri -->
-				<svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: red">
-					<path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
-				</svg>
-				<a href="mailto:info@example.com"> - Почта</a>
-			</div>
-		</div>
-	
-		<div class="section_horisontal"> <!-- Website -->
-			<div class="block-description block_horisontal"> <!-- opisanie -->
-				<pre><code>
-  <b>&lt;svg</b> class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" <b>&gt;</b>  
-    &lt;path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.92 6h-2.95a15.7 15.7 0 0 0-1.38-3.56A8.05 8.05 0 0 1 18.92 8zM12 4c.83 1.2 1.47 2.54 1.85 4h-3.7C10.53 6.54 11.17 5.2 12 4zM4.26 14a7.8 7.8 0 0 1 0-4h3.38a16.6 16.6 0 0 0 0 4H4.26zm.82 2h2.95a15.7 15.7 0 0 0 1.38 3.56A8.05 8.05 0 0 1 5.08 16zM8.03 8H5.08a8.05 8.05 0 0 1 4.33-3.56A15.7 15.7 0 0 0 8.03 8zM12 20c-.83-1.2-1.47-2.54-1.85-4h3.7c-.38 1.46-1.02 2.8-1.85 4zm2.24-6H9.76a14.35 14.35 0 0 1 0-4h4.48a14.35 14.35 0 0 1 0 4zm.35 5.56A15.7 15.7 0 0 0 15.97 16h2.95a8.05 8.05 0 0 1-4.33 3.56zM16.36 14a16.6 16.6 0 0 0 0-4h3.38a7.8 7.8 0 0 1 0 4h-3.38z"/&gt;
-  <b>&lt;/svg&gt;</b>
-				</code></pre>
-			</div>
-			<div class="block-example block_horisontal"> <!-- primeri -->
-				<svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" >
-					<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.92 6h-2.95a15.7 15.7 0 0 0-1.38-3.56A8.05 8.05 0 0 1 18.92 8zM12 4c.83 1.2 1.47 2.54 1.85 4h-3.7C10.53 6.54 11.17 5.2 12 4zM4.26 14a7.8 7.8 0 0 1 0-4h3.38a16.6 16.6 0 0 0 0 4H4.26zm.82 2h2.95a15.7 15.7 0 0 0 1.38 3.56A8.05 8.05 0 0 1 5.08 16zM8.03 8H5.08a8.05 8.05 0 0 1 4.33-3.56A15.7 15.7 0 0 0 8.03 8zM12 20c-.83-1.2-1.47-2.54-1.85-4h3.7c-.38 1.46-1.02 2.8-1.85 4zm2.24-6H9.76a14.35 14.35 0 0 1 0-4h4.48a14.35 14.35 0 0 1 0 4zm.35 5.56A15.7 15.7 0 0 0 15.97 16h2.95a8.05 8.05 0 0 1-4.33 3.56zM16.36 14a16.6 16.6 0 0 0 0-4h3.38a7.8 7.8 0 0 1 0 4h-3.38z"/>
-				</svg>
-				<a href="https://unity-hub.org/">- Сайт</a>
-			</div>
-		</div>
-		
-	</section>
-
-
-	<!-- *********************** -->
-	<!-- <SPAN> - форматирование части строки -->
-	<section id="span"class="section-reference">
-		<h2>Использование <b>&lt;span&gt;</b></h2>	
-		
-		<div class="block-description">
-			<p>
-				Chast teksta vnutri lubogo elementa mojet bit zakluchena v <b>&lt;span&gt;</b> i otformatirovana proisvolnim sposobom
-			</p>
-		</div>
-		<div class="block-example">
-			<p>Текст с <span style="color: blue;">кусочком</span> внутри.</p>
-			<h2>Заголовок с <span style="color: blue;">выделенным</span> словом</h2>
-			<a href="#">Ссылка с <span style="color: teal;">выделенным текстом</span></a>
-			<ul><li>Пункт списка с <span style="color: red;">важной частью</span></li></ul>
-			<button>Нажми <span style="color: green;">сюда</span></button>
-		</div>
-				
-	</section>
-
-
-	<!-- *********************** -->
-	<!-- <OL> <UL> <DL> - Spiski-->
-	<section id="spiski" class="section-reference">
-		<h2>Списки</h2>	
-		
-		<div class="block-description">
-			<p>
-				<b>&lt;ol title="zagolovok"&gt;</b> - нумерованный список. 
-				<br>&nbsp;&nbsp; <b>&lt;li&gt;</b> - элемент списка. 
-				<br> Загоовок title не виден и появляется при наведении на єлемент списка.
-			</p>
-		</div>
-		<div class="block-example">
-			<ol title="Рецепт пюре"> 
-				<li> Порежьте картофель кубиками.</li>
-				<li> Варите картофель в соленой воде на медленном огне в течение 15-20 минут до размягчения.</li>
-				<li> Подогрейте и смешайте молоко, сливочное масло и мускатный орех.</li>
-				<li> Слейте воду из кастрюли и потолките картофель.</li>
-				<li> Перемешайте картофель со смесью из молока,	масла и мускатного ореха.</li>
-			</ol>
-		</div>
-				
-		<div class="block-description">
-			<p>
-				<b>&lt;ul&gt;</b> - список с маркерами. 
-				<br>&nbsp;&nbsp; <b>&lt;li&gt;</b> - элемент списка. 
-			</p>
-		</div>
-		<div class="block-example">
-			<ul>
-				<li>1 кг картофеля</li>
-				<li>100 мл молока</li>
-				<li>50 г соленого масла</li>
-				<li>Тертый мускатный орех
-					<ol> 
-						<li> Взять орех.</li>
-						<li> Взять терку.</li>
-						<li> Тереть мускатный орех.</li>
-						<li> Засыпать в блюдо.</li>
-						<li> Перемешать.</li>
-					</ol>
-				</li>
-				<li>Соль и перец по вкусу</li>
-			</ul>
-			
-			<hr>
-			<h3>Поисковики:</h3>
-				<ul class="search-list"> 
-				<li> <a href="https://www.google.com/">	Google</a> </li>
-				<li> <a href="https://duckduckgo.com/">	DuckDuckGo </a> </li>
-				<li> <a href="https://www.bing.com/">	Bing</a> </li>
-				<li> <a href="http://ya.ru">			Yandex</a> </li>
-			</ul>
-		</div>
-
-		<div class="block-description">
-			<p>
-				<b>&lt;dl&gt;</b> - текстовый список с расшифровкой. 
-				<br>&nbsp;&nbsp; <b>&lt;dt&gt;</b> - значение. 
-				<br>&nbsp;&nbsp;&nbsp;&nbsp; <b>&lt;dd&gt;</b> - расшифровка.
-			</p>
-		</div>
-		<div class="block-example">
-			<dl>
-				<dt> Сашими</dt>
-					<dd> Сырая рыба, нарезанная тонкими кусочками;
-					подается с такими приправами, как
-					нашинкованная японская редька (дайкон),
-					корень имбиря, васаби или соевый соус.</dd>
-				<dt> Весы</dt>
-					<dd> Прибор, используемый для определения точного
-					веса ингредиентов.</dd>
-					<dd> Зодиакальный знак, распространяющийся на
-					календаре с 23 сентября по 22 октября,
-					единственный в зодиаке неодушевленный
-					символ.</dd>
-				<dt> Ноу-хау</dt>
-					<dd> Мастерство, умение, практическая сметка,
-					высококвалифицированная работа; компетенция
-					и опыт, приобретаемые длительной
-					практикой.</dd>
-			</dl>
-		</div>
-
-	</section>
-
-
-	<!-- *********************** -->
-	<!-- <TABLE> - использование таблиц -->
-	<section id="tablici" class="section-reference">
-		<h2><b>&lt;table&gt;</b> - Использование таблиц </h2>	
-		
-		<!-- Заголовки -->
-		<div class="section_horisontal">
-			<div class="block_horisontal">
-				<h3>HTML</h3>
-			</div>
-			<div class="block_horisontal">
-				<h3>CSS</h3>
-			</div>
-		</div>
-		<!-- Описания -->
-		<div class="section_horisontal">
-			<div class="block-description block_horisontal">
-				<pre><code>
-<b>&lt;table&gt;</b> - Тег начала таблицы 
-
-  <b>&lt;thead&gt;</b> - Шапка
-    <b>&lt;tr&gt;</b> - Строка шапки
-      <b>&lt;th&gt;</b> - Заголовок колонки 1 (ячейка шапки)
-      <b>&lt;th&gt;</b> - Заголовок колонки 2 (ячейка шапки)
-      <b>&lt;th&gt;</b> ...
-    <b>&lt;/tr&gt;</b>
-  <b>&lt;/thead&gt;</b>
-
-  <b>&lt;tbody&gt;</b> - Тело таблицы
-    <b>&lt;tr&gt;</b> - Строка
-      <b>&lt;th&gt;</b> - Заголовок строки 1 (1 ячейка)
-      <b>&lt;td&gt;</b> - Ячейка 1
-      <b>&lt;td&gt;</b> ...
-    <b>&lt;/tr&gt;</b>
-  <b>&lt;/tbody&gt;</b>
-
-  <b>&lt;tfoot&gt;</b> - Подвал таблицы (итоги)
-    <b>&lt;tr&gt;</b> - Строка
-      <b>&lt;th&gt;</b> - Итог колонки 1 (ячейка подвала)
-      <b>&lt;th&gt;</b> - Итог колонки 2 (ячейка подвала)
-      <b>&lt;th&gt;</b> ...
-    <b>&lt;/tr&gt;</b>
-  <b>&lt;/tbody&gt;</b>
-  
-<b>&lt;/table&gt;</b>				
-				</code></pre>
-			</div>
-			<div class="block-description block_horisontal">
-				<pre><code>
-	/* ********************** */
-	/* Формат таблиц */ 
-	thead th, tfoot th {
-		background-color:  var(--menu-color);
-		color: white;
-	}
-
-	tbody td,
-	tbody th {
-		background-color: var(--menu-background-color);;
-		color: #222;
-	}
-
-	tbody th:first-child,
-	tbody td:first-child {
-		background-color: var(--menu-color);
-		color: white;
-	}
-
-	tbody tr > :nth-child(3){
-		background-color: white;
-		color: var(--menu-color);
-	}
-	/* Формат таблиц */ 
-	/* ********************** */				
-				</code></<pre>
-			</div>
-		</div>
-		<!-- Примеры -->
-		<div class="block-example">
-			<h3> Пример 1 </h3>
-			<table>
-				<thead>
-					<tr>
-						 <th bgcolor="var(--menu-color)" ></th>
-						 <th>TV1000</th>
-						 <th>ТНТ</th>
-						 <th>СТС</th>
-					 </tr>
-				</thead>
-				
-				<tbody>
-					<tr>
-						 <th>20:00-21:00</th>
-						 <td rowspan="2">Фильм</td>
-						 <td>Ток-шоу</td>
-						 <td>Юмор</td>
-					 </tr>
-					 <tr>
-						 <th>21:00-22:00</th>
-						 <td>шок-Тшоу</td>
-						 <td>Мультфильм</td>
-					 </tr>
-				</tbody>
-				
-				 <tfoot>
-					 <tr>
-						 <th></th>
-						 <th>*</th>
-						 <th>**</th>
-						 <th>***</th>
-					 </tr>
-				 </tfoot>
-			</table>
-	
-			<br>
-			<h3> Пример 2 (с объединением ячеек) </h3>
-			<table>
-				 <thead>
-					 <tr>
-						 <th>Оранжевая потому что <span style="color: black;">&lt;th&gt;</span> и для нее задан стиль CSS</th>
-						 <th scope="col">Хостинг "Домашний начальный"</th>
-						 <th scope="col">Хостинг "Домашний Премиум"</th>
-					 </tr>
-				 </thead>
-				 <tbody>
-					 <tr>
-						 <th scope="row">Дисковое пространство</th>
-						 <td>1 Гб</td>
-						 <td>3 Гб</td>
-					 </tr>
-					 <tr>
-						 <th scope="row">Трафик</th>
-						 <td>15 Гб/мес</td>
-						 <td>50 Гб/мес</td>
-					 </tr>
-				 </tbody>
-				 <tfoot>
-					 <tr>
-						<!-- для tfoot td не задан формат, поетому они белые -->
-						 <td>Белая потому что <b>&lt;td&gt;</b> и для него есть стиль в CSS</td>
-						 <td colspan="2">Закажи сейчас и сэкономь 10%!</td>
-						 <th></th> <!-- а эта ячейка будет цветная потому что она <th> (для нее в CSS яадан формат). Колонка выше без форматат - потому белая -->
-					 </tr>
-				 </tfoot>
-			</table>
-			<br>
-			<p> Последдняя ячейка будет цветная потому что она &lt;th&gt; (для нее в CSS задан формат).<br> 
-				Белое пространство выше без формата - потому что оно добавлено автоматически<br> 
-				т.к. в пердыдущих строках в этой колонке нет ячеек.<br>
-			</p>
-		</div>
-				
-	</section>
-
-
-	<!-- *********************** -->
-	<!-- <FORM> - использование форм -->
-	<!-- отправка и вывод передаваемых полей (элеиментов формы) выполняется с помощю JS (в отдельном файле) -->
-	<section id="forms" class="section-reference">
-		<h2> <b>&lt;form&gt;</b> - Использование форм</h2>
-		
-		<div class="block-description"> <!-- opisanie -->
-			<pre><code>
-<b>&lt;form</b> - форма
-  <b>id="myTestForm"</b> - ID формы ( параметр для CSS и JS)
-  <b>method="post"</b> - get/post метод отправки данных формы. 
-    GET - как параметр адресной строки.
-    POST - в теле HTTP-запроса вида:
-      заголовки                 <i>Content-Type: application/x-www-form-urlencoded</i>
-        +                       +
-      тело запроса с данными    <i>username=Ivan&email=test@example.com</i>
-  <b>action="http://my.local/result.php"</b> - web-адресполучателя данных
-<b>&gt;</b>
-
-  <b>&lt;fieldset&gt; &lt;/fieldset&gt;</b> - объединяет атрибуты формы в набор (на экране в рамке)
-  <b>&lt;legend&gt;</b>"Zagolovok"<b>&lt;/legend&gt;</b> - звголовок набора (рамки)
-
-  <b>&lt;label for="comments"&gt;</b>Что вы думаете об этом выступлении?<b>&lt;/label&gt;</b> - заголовок элемента. 
-    Связь через id элемента: <b>for="comments"</b> (Для textarea задан <b>id="comments"</b>)
-  <b>&lt;textarea</b> - многосмтрочноке поле ввода.
-    <b>id="comments"</b> - идентификатор (для обращениея в форме, например для <b>lable</b>)
-    <b>name="comment"</b> - Имя параметра (поля)ю Передается при отправке формы (POST). 
-      Отправится: comment="Текст введенный пользователем в поле"
-    <b>cols="60"</b> - ширина поля на экране (длина строки). В примере заданно через CSS для масштабирования.
-    <b>rows="4"</b> - высота в строках.
-    <b>placeholder="Введите свой комментарий..."</b> - текст-подсказка доввода.
-  <b>&gt;
-  &lt;/textarea&gt;</b>
-
-  <b>&lt;label&gt; Пожалуйста введите имя:</b> - другой вариант использования <b>lable</b> без <b>for="ID"</b>
-	<b>&lt;input id="username" type="text" name="username" /&gt;</b> - полеввода 
-  <b>&lt;/label&gt;</b>
-  
-  <b>&lt;input id="depart" type="date" name="depart" required="required" /&gt;</b> - ввод даты
-    <b>required="required</b> признак обязательности ввода
-  <b>&lt;input type="url" name="sait" value="https://yoursite.org" /&gt;</b> - ввод web-адреса
-  <b>&lt;input type="email" name="email" /&gt;</b> - ввод email
-
-  Радио-кнопки				
-  <b>&lt;input type="radio" name="genre" value="rock" checked="checked" /&gt;</b> Рок
-   ...
-  <b>&lt;input type="radio" name="genre" value="pop" /&gt;</b> Поп 
-
-  Check-boksy
-  <b>&lt;input type="checkbox" name="service" value="house" checked="checked" /&gt;</b> Дома
-   ...
-  <b>&lt;input type="checkbox" name="service" value="work" /&gt;</b> На работе
-
-  Селектрор со множественным выбором
-  <b>&lt;select name="devices"&gt;</b>
-    <b>&lt;option value="ipod"&gt;</b>iPod<b>&lt;/option&gt;</b>
-      ...
-    <b>&lt;option value="computer" selected&gt;</b>Компьютер<b>&lt;/option&gt;</b>
-  <b>&lt;/select&gt;</b>
-
-  Кнопки
-  <b>&lt;button type="submit" name="buttonAction" value="fetch"&gt;</b>Отправить (FETCH)<b>&lt;/button&gt;</b>
-  <b>&lt;button type="submit" name="buttonAction" value="post"&gt;</b>Отправить (POST)<b>&lt;/button&gt;</b>
-    
-<b>&lt;/form&gt;</b>				
-			</code></pre>
-			
-			<br>
-			<p>
-				После нажатия кнопки, форма отправляет поля (у которых задано "name" в параметрах)<br>
-				метод формы <b>method="post"</b> (по умолчанию - GET)<br>
-				по адресу <b>action="/php/result.php"</b><br>
-				оправленные данные получает файл /result.php в папке PHP на сервере<br>
-			</p>
-			<pre><code>
-    &lt?php // result.php
-    header('Content-Type: text/plain; charset=utf-8'); // Устанавливаем кодировку
-    // Проверяем, есть ли данные POST
-    if (!empty($_POST)) {
-        echo "Сервер получил данные:\n\n";
-        foreach ($_POST as $key => $value) { echo $key . " = " . $value . "\n";	}
-    } else {
-        echo "POST-параметры не получены.";
-    }
-    ?&rt
-			</code></pre>
-			<p>
-				<br>
-				В примере при откравке формы JS назначает в форме обработчик нажания кнопок (function(event))
-			</p>
-			<pre><code>
-    <b>form.addEventListener("submit", function(event) {</b>
-    // Этот код выполнится позже
-    <b>});</b>
-			</code></pre>
-			<p>
-				<b>function(event)</b> - выполняется при нажатии кнопки. В ней прописаны 2 варианта<br>
-				которые зависят от значения атрибута кнопки <b>value="..."</b><br>
-				<ul class="attributes">
-					<li><b>value="post"</b> обычная отправка через метод POST</li>
-					<li><b>value="fetch"</b> отправка методом FETCH (с выводом таблицы результатов на той же странице)</li>
+	<main>
+		<!-- >МЕНЮ СЛЕВА (боковое)  -->
+		<aside>
+			<nav>
+				<ul>
+					<li><a href="#formatirovanie">Форматирование</a></li>
+					<li><a href="#specsimvoly">Спецсимволы</a></li>
+					<li><a href="#SVG-icon">SVG-iconki</a></li>
+					<li><a href="#span">SPAN</a></li>
+					<li><a href="#spiski">Списки</a></li>
+					<li><a href="#tablici">Таблицы</a></li>
+					<li><a href="#forms">Формы</a></li>
+					<li><a href="#iframes">IFRAME</a></li>
+					<li><a href="#audio">Аудио</a></li>
+					<li><a href="#video">Видео</a></li>	        
+					<li><a href="#blocks">Блоки</a></li>
+					<li><a href="#background">Фон</a></li>
 				</ul>
-			</p>
-					
-		</div>
+			</nav>
+		</aside>
 		
-		<div class="block-example"> <!-- primeri -->
-			<form id="testForm" method="post" action="php/form-handler.php">
-				<label for="comments">Что вы думаете об этом выступлении?</label>
-				<br>
-				<textarea id="comments" name="comments" cols="60" rows="4" placeholder="Введите свой комментарий..." > </textarea>
-				
-				<br><br>
-				<label for="username">Imya:</label>
-				<input id="username" type="text" name="username" /> 
+	<div class="main-sections-container">
+
+		<!-- ************************************ -->
+		<!-- Полезные ссылки -->
+		<section id="zagolovki" class="section-reference">
+			<h2>Полезные ссылки</h2>
+			<div class="section_horisontal">
+				<div class="block-description block_horisontal">
+					<h5>Paletton: 
+						<a href="https://paletton.com/" target="_blank">
+							https://paletton.com/
+						</a>
+					</h5>
+				</div>
+				<div class="block-example  block_horisontal">
+					Удобный инструмент для выбора цвета
+				</div>
+			</div>
+
+			<div class="section_horisontal">
+				<div class="block-description block_horisontal">
+					<h5>HTML: The Living Standard:
+						<a href="https://html.spec.whatwg.org/dev/indices.html" target="_blank">
+							https://html.spec.whatwg.org/dev/indices.html
+						</a>
+					</h5>
+				</div>
+				<div class="block-example  block_horisontal">
+					Описание атрибутов HTML-элементов
+				</div>
+			</div>
+
+			<div class="section_horisontal">
+				<div class="block-description block_horisontal">
+					<h5>Dev Docs <br>
+						<a href="https://devdocs.io/?utm_source=chatgpt.com" target="_blank">
+							https://devdocs.io/?utm_source=chatgpt.com
+						</a>
+					</h5>
+				</div>
+				<div class="block-example  block_horisontal">
+					Universalniy kompaktniy Helpnik po raznim yazikam v t.c. HTML, CSS,  JS
+				</div>
+			</div>
+
+			<div class="section_horisontal">
+				<div class="block-description block_horisontal">
+					<h5> MDN Learn web development<br>
+						<a href="https://developer.mozilla.org/en-US/docs/Learn_web_development" target="_blank">
+							https://developer.mozilla.org/en-US/docs/Learn_web_development
+						</a>
+					</h5>
+				</div>
+				<div class="block-example  block_horisontal">
+					Onlain  MDN uchebnik po web razrabotke
+				</div>
+			</div>
 			
-				<br><br>
-				<fieldset>
-					<legend>Your preferences</legend>
-					
-					<p>Пожалуйста, выберите любимый жанр музыки:
-						 <br>
-						 <input type="radio" name="genre" value="rock" checked="checked" > Рок
-						 <input type="radio" name="genre" value="pop" > Поп 
-						 <input type="radio" name="genre" value="techno" > Электроника
-					</p> <br>
-					 
-					<p>Пожалуйста, выберите, где вы слушаете музыку: 
-						<br>
-						<input type="checkbox" name="service" value="house" checked="checked" /> Дома
-						<input type="checkbox" name="service" value="work" /> На работе
-						<input type="checkbox" name="service" value="inroad" /> В дороге
-					</p> 
-					<br>
-					
-					<label>На каком устройстве вы слушаете музыку чаще всего?
-						<select name="devices">
-							<option value="ipod">iPod</option>
-							<option value="radio">Радио</option>
-							<option value="computer" selected>Компьютер</option>
+		</section>
+		
+
+		<!-- *********************** -->
+		<!-- Atributi Elementa -->
+		<section id="atributi-elementa" class="section-reference">
+			<h2>Атрибуты элемента</h2>	
+			
+			<div class="block-description">
+				<p>
+					Структурные данные загружаются из: <br>
+					<b> https://html.spec.whatwg.org/dev/indices.html </b><br>
+					Затем эти данные используются для заполнения элемента <b>&lt;select&gt;</b>.<br>
+					При выборе элемента заполняется таблица атрибутов.
+				</p>
+			</div>
+
+			<div class="block-example">
+				<div class="section_horisontal">
+					<div class="block_horisontal">
+						<span>Элемент:</span> 
+					</div>
+					<div class="block_horisontal">
+						<select id="element_HTML">
+							<option>...downloading</option>
 						</select>
-					</label> <br>
+					</div>
+				</div>
 
-					<p> Играете ли вы на одном из инструментов,
-					 перечисленных ниже? <br>(Вы можете выбрать сразу
-					 несколько вариантов ответа, <br> нажав и удерживая
-					 клавишу <i>Ctrl</i> (Windows) или <i>Cmd</i> (OS X)).
-					 </p>  <br>
-					 <select name="instrumenty" size="3" multiple="multiple">
-						 <option value="gitara" selected="selected">Гитара</option>
-						 <option value="barabany">Барабаны</option>
-						 <option value="klavishnye" selected="selected">Клавишные</option>
-						 <option value="bas">Бас-гитара</option>
-					 </select>
+				<div class="section_horisontal">
+					<div class="block_horisontal">
+						<span>Описание:</span> 
+					</div>
+					<div class="block_horisontal">
+						<span id="elementDescription"> ... oписание</span> 
+					</div>
+				</div>
+
+				<div class="section_horisontal">
+					<div class="block_horisontal">
+						<span>Ссылка:</span> 
+					</div>
+					<div class="block_horisontal">
+						<a id="elementURL" href=""> </a>
+					</div>
+				</div>
+				<br>
+
+				<table>
+					<thead>
+						<tr>
+							<th>Имя атрибута</th>
+							<th>Описание</th>
+							<th>Тип значения</th>
+							<th>Ссылка</th>
+						</tr>
+					</thead>
+					<tbody id="attributes-table-body">
+						<!-- Заполняется в JS после выбора элемента с сайта  -->
+					</tbody>
+				</table>
+			</div>
 					
-					<br> <br>
-					<label for="depart">Дата вылета</label>
-					<input id="depart" type="date" name="depart" required="required" /> 
+		</section>
+
+
+		<!-- ************************************ -->
+		<!-- Заголовки -->
+		<section id="zagolovki" class="section-reference">
+			<h2> Заголовки <b>&lt;h1&gt; &lt;h2&gt; ...</b> </h2>
+			<div class="block-description">
+				<p>					
+					<b>&lt;h1&gt;</b> - Этот текст может быть введением к тексту,
+					помещенному  далее на странице. В случае если текст достаточно
+					длинный, он может быть разделен на несколькоразделов с подзаголовками.
+					Часто при написании длинных статей используют
+					подзаголовки, помогающие читателям следить за
+					структурой всего написанного. Иногда используются и
+					подзаголовки более низкого уровня.
+			</p>
+			</div>
+			<div class="block-example">
+				<h1>Это основной заголовок - <b>&lt;h1&gt;</b></h1>
+				<h2>Это подзаголовок - <b>&lt;h2&gt;</b></h2>
+			</div>
 					
-					 <!-- lable bez id -->
-					<br> <br>
-					<label>Пожалуйста введите адрес вашего сайта:
-						<input type="url" name="sait" value="https://yoursite.org" />
-					</label>
+		</section>
+		
+		<!-- ************************************ -->
+		<!-- Форматирование -->
+		<section id="formatirovanie" class="section-reference">
+			<h2>Различные виды форматирования.</h2>	
+			
+			<div class="section_horisontal">
+				<div class="block-description block_horisontal">
+					<p> 
+						<b>&lt;blockquote&gt;</b> - Это цитата с указанием источника, но не его виндно (только поисковикам).
+					</p>
+				</div>
+				<div class="block-example  block_horisontal">
+					<blockquote cite="https://unity-hub.org/"> <!-- cite указывает источник цитаты, но обычно не показывается пользователю на странице. Он больше для браузера, поисковиков и семантики. -->
+						Это цитата c unity-hub.
+					</blockquote>
+				</div>
+			</div>
+
+			<div class="section_horisontal">
+				<div class="block-description block_horisontal">
+					<p> 
+						<b>&lt;del&gt;</b> - зачеркнутый текст 
+						<br> используется для удаленного текста. <br> 
+						&lt;del datetime="2026-07-12" cite="https://example.com/changes"&gt;
+					</p>
+				</div>
+				<div class="block-example  block_horisontal">
+					<p> 
+						Это была <del datetime="2026-07-12">худшая</del> из идей
+					</p>
+				</div>
+			</div>
+
+			<div class="section_horisontal">
+				<div class="block-description block_horisontal">
+					<p> 
+						<b>&lt;ins&gt;</b> - подчеркнутый текст
+					</p>
+				</div>
+				<div class="block-example  block_horisontal">
+					<p> 
+						Это была <ins>лучшая</ins> из идей
+					</p>
+				</div>
+			</div>
+
+			<div class="section_horisontal">
+				<div class="block-description block_horisontal">
+					<p> 
+						<b>&lt;span&gt;</b> - подсказка
+						<br> При наведении появится всплывающий текст - "Это подсказка"
+					</p>
+				</div>
+				<div class="block-example  block_horisontal">
+					<span title="Это подсказка"> 
+						Наведите курсор сюда и появится текст поддсказки
+					</span>
+				</div>
+			</div>
+			
+			<div class="section_horisontal">
+				<div class="block-description block_horisontal">
+					<p> 
+						<b>&lt;abbr&gt;</b> - аббривиатура
+					</p>
+				</div>
+				<div class="block-example  block_horisontal">
+					<p>
+						Наведите курсор на слово
+						<abbr title="Национальное агентство по аэронавтике и исследованию космического пространства">
+							NASA
+						</abbr> 
+						и появится полный текст
+					</p>
+				</div>
+			</div>
+			
+			<div class="section_horisontal">
+				<div class="block-description block_horisontal">
+					<p> <b>&lt;s&gt;</b> - зачеркнутый текст 
+						<br> используется для неактуальной информации текста. <br> 
+					</p>
+				</div>
+				<div class="block-example  block_horisontal">
+					<p>
+						Ноутбук Samsung:<br>
+						Старая цена: <s>31 900 руб.</s><br>
+						Новая цена: всего 11 999 руб.'
+					</p>
+				</div>
+			</div>
+			
+			<div class="section_horisontal">
+				<div class="block-description block_horisontal">
+					<p> 
+						<b>&lt;address&gt;</b> - адрес
+						<br> <b>&lt;a</b> href="mailto:email@mywebsite.ru"<b>&gt;</b> email@mywebsite.ru<b>&lt;/a&gt;</b>
+						- email co ssilkoy na otpravku pochty
+					</p>
+				</div>
+				<div class="block-example  block_horisontal">
+					<address>
+						<p> 
+							<a href="mailto:email@mywebsite.ru">email@mywebsite.ru</a> 
+							<br>г. Ухань, ул. Ковида, д. 25.
+						</p>
+					</address>
+				</div>
+			</div>
+			
+		</section>
+		
+
+		<!-- ************************************ -->
+		<!-- Спецсимволы	< > & " ' © -->
+		<section id="specsimvoly" class="section-reference">
+			<h2>Kак вывести на экран специальные символы</h2>	
+			
+			<div class="block-description">
+					<!-- 			<tableclass="limit-max-width"  max-width="600" cellpadding="10" cellspacing="2" border="1" > -->
+				<table class="limit-max-width">
+					<tbody>
+						<tr>	<td >&amp;lt;</td>		<td style="text-align: center;"> &lt; </td>		<td>левая угловая скобка</td>	</tr>
+						<tr>	<td>&amp;gt;</td>		<td style="text-align: center;"> &gt; </td>		<td>правая угловая скобка</td>	</tr>
+						<tr>	<td>&amp;amp;</td>		<td style="text-align: center;"> &amp; </td>	<td>амперсанд</td>				</tr>
+						<tr>	<td>&amp;quot;</td>		<td style="text-align: center;"> &quot; </td>	<td>двойная кавычка</td>		</tr>
+						<tr>	<td>&amp;apos;</td>		<td style="text-align: center;"> &apos; </td>	<td>одинарная кавычка</td>		</tr>
+						<tr>	<td>&amp;copy;</td>		<td style="text-align: center;"> &copy; </td>	<td>знак copyright</td>			</tr>
+						<tr>	<td>&amp;nbsp;</td>		<td style="text-align: center;"> &nbsp; </td>	<td>неразрывный пробел</td>		</tr>
+						<tr>	<td>&amp;#9993;</td>	<td style="text-align: center;"> &#9993; </td>	<td>email</td>					</tr>
+						<tr>	<td>&amp;#9742;</td>	<td style="text-align: center;"> &#9742; </td>	<td>phone number</td>			</tr>
+						<tr>	<td>&amp;#9743;</td>	<td style="text-align: center;"> &#9742; </td>	<td>phone number</td>			</tr>					
+						<tr>	<td>&amp;#128205;</td>	<td style="text-align: center;"> &#128205; </td><td>address</td>				</tr>
+						<tr>	<td>&amp;#127760;</td>	<td style="text-align: center;"> &#127760; </td><td>website</td>				</tr>
+						<tr>	<td><a href="https://www.toptal.com/designers/htmlarrows/symbols/?utm_source=chatgpt.com">Site with sybols - toptal.com</a></td>	<td style="text-align: center;"> </td><td>ssilka na vse simvoli</td></tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="block-example">
+				<h3> Пример 1: </h3>
+				<p>
+					HTML-тег: &lt;meta&gt;<br>
+					Copyright: &copy; 2026 TSOS Unity Hub<br>
+					5 &gt; 3<br>
+					3 &lt; 5<br>
+					Tom &amp; Jerry
+				</p>
+				
+				<hr>
+				<h3>Пример 2: </h3>
+				<p>
+					&#9993; info@example.com<br>
+					&#9742; 01788 123456<br>
+					&#128205; Rugby Town Hall, Rugby<br>
+					&#127760; www.example.com
+				</p>
+			</div>
+		</section>
+		
+		
+		<!-- ************************************ -->
+		<!-- <SVG> - SVG-иконки -->
+		<section id="SVG-icon" class="section-reference">
+			<h2><b>&lt;svg&gt;</b> - вывести на экран специальные символы SVG-icon </h2>
+			
+			<div class="section_horisontal"> <!-- Google Map -->
+				<div class="block-description block_horisontal"> <!-- opisanie -->
+					<pre><code>
+	<b>&lt;svg</b> class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: var(--menu-color)"<b>&gt;</b>  
+		&lt;path d="M12 2C8.69 2 6 4.69 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.31-2.69-6-6-6zm0 8.5A2.5 2.5 0 1 1 12 5a2.5 2.5 0 0 1 0 5.5z"/&gt;
+	<b>&lt;/svg&gt;</b>
+					</code></pre>
+				</div>
+				<div class="block-example block_horisontal"> <!-- primeri -->
+					<a	href="https://www.google.com/maps/search/?api=1&query=Rugby+Town+Hall+Rugby" target="_blank" rel="noopener noreferrer">
+					<!-- noopener запрещает открытой странице управлять исходной страницей через JavaScript.
+						noreferrer не передаёт открываемому сайту адрес страницы, с которой пользователь перешёл. -->
+						<svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: var(--menu-color)">
+							<path d="M12 2C8.69 2 6 4.69 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.31-2.69-6-6-6zm0 8.5A2.5 2.5 0 1 1 12 5a2.5 2.5 0 0 1 0 5.5z"/>
+						</svg>
+						- Google Map
+					</a>
+				</div>
+			</div>
+		
+			<div class="section_horisontal"> <!-- Address -->
+				<div class="block-description block_horisontal"> <!-- opisanie -->
+					<pre><code>
+	<b>&lt;svg</b> class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: blue" <b>&gt;</b>  
+		&lt;path d="M12 3 2 12h3v9h6v-6h2v6h6v-9h3L12 3zm5 16h-2v-6H9v6H7v-7.9l5-4.5 5 4.5V19z"/&gt;
+	<b>&lt;/svg&gt;</b>
+					</code></pre>
+				</div>
+				<div class="block-example block_horisontal"> <!-- primeri -->
+					<svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: blue">
+						<path d="M12 3 2 12h3v9h6v-6h2v6h6v-9h3L12 3zm5 16h-2v-6H9v6H7v-7.9l5-4.5 5 4.5V19z"/>
+					</svg>
+					- Адрес
+				</div>
+			</div>
+			
+			<div class="section_horisontal"> <!-- Phone -->
+				<div class="block-description block_horisontal"> <!-- opisanie -->
+					<pre><code>
+	<b>&lt;svg</b> class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: black" <b>&gt;</b>  
+		&lt;path d="M17 1H7C5.9 1 5 1.9 5 3v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14zm-4 3h-2v-1h2v1z"/&gt;
+	<b>&lt;/svg&gt;</b>
+					</code></pre>
+				</div>
+				<div class="block-example block_horisontal"> <!-- primeri -->
+					<svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: black">
+						<path d="M17 1H7C5.9 1 5 1.9 5 3v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14zm-4 3h-2v-1h2v1z"/>
+					</svg>
+					<a href="tel:+441788123456">- Телефон</a>
+				</div>
+			</div>
+			
+			<div class="section_horisontal"> <!-- Email -->
+				<div class="block-description block_horisontal"> <!-- opisanie -->
+					<pre><code>
+	<b>&lt;svg</b> class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: red" <b>&gt;</b>  
+		&lt;path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/&gt;
+	<b>&lt;/svg&gt;</b>
+					</code></pre>
+				</div>
+				<div class="block-example block_horisontal"> <!-- primeri -->
+					<svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" style="fill: red">
+						<path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+					</svg>
+					<a href="mailto:info@example.com"> - Почта</a>
+				</div>
+			</div>
+		
+			<div class="section_horisontal"> <!-- Website -->
+				<div class="block-description block_horisontal"> <!-- opisanie -->
+					<pre><code>
+	<b>&lt;svg</b> class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" <b>&gt;</b>  
+		&lt;path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.92 6h-2.95a15.7 15.7 0 0 0-1.38-3.56A8.05 8.05 0 0 1 18.92 8zM12 4c.83 1.2 1.47 2.54 1.85 4h-3.7C10.53 6.54 11.17 5.2 12 4zM4.26 14a7.8 7.8 0 0 1 0-4h3.38a16.6 16.6 0 0 0 0 4H4.26zm.82 2h2.95a15.7 15.7 0 0 0 1.38 3.56A8.05 8.05 0 0 1 5.08 16zM8.03 8H5.08a8.05 8.05 0 0 1 4.33-3.56A15.7 15.7 0 0 0 8.03 8zM12 20c-.83-1.2-1.47-2.54-1.85-4h3.7c-.38 1.46-1.02 2.8-1.85 4zm2.24-6H9.76a14.35 14.35 0 0 1 0-4h4.48a14.35 14.35 0 0 1 0 4zm.35 5.56A15.7 15.7 0 0 0 15.97 16h2.95a8.05 8.05 0 0 1-4.33 3.56zM16.36 14a16.6 16.6 0 0 0 0-4h3.38a7.8 7.8 0 0 1 0 4h-3.38z"/&gt;
+	<b>&lt;/svg&gt;</b>
+					</code></pre>
+				</div>
+				<div class="block-example block_horisontal"> <!-- primeri -->
+					<svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true" >
+						<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.92 6h-2.95a15.7 15.7 0 0 0-1.38-3.56A8.05 8.05 0 0 1 18.92 8zM12 4c.83 1.2 1.47 2.54 1.85 4h-3.7C10.53 6.54 11.17 5.2 12 4zM4.26 14a7.8 7.8 0 0 1 0-4h3.38a16.6 16.6 0 0 0 0 4H4.26zm.82 2h2.95a15.7 15.7 0 0 0 1.38 3.56A8.05 8.05 0 0 1 5.08 16zM8.03 8H5.08a8.05 8.05 0 0 1 4.33-3.56A15.7 15.7 0 0 0 8.03 8zM12 20c-.83-1.2-1.47-2.54-1.85-4h3.7c-.38 1.46-1.02 2.8-1.85 4zm2.24-6H9.76a14.35 14.35 0 0 1 0-4h4.48a14.35 14.35 0 0 1 0 4zm.35 5.56A15.7 15.7 0 0 0 15.97 16h2.95a8.05 8.05 0 0 1-4.33 3.56zM16.36 14a16.6 16.6 0 0 0 0-4h3.38a7.8 7.8 0 0 1 0 4h-3.38z"/>
+					</svg>
+					<a href="https://unity-hub.org/">- Сайт</a>
+				</div>
+			</div>
+			
+		</section>
+
+
+		<!-- *********************** -->
+		<!-- <SPAN> - форматирование части строки -->
+		<section id="span"class="section-reference">
+			<h2>Использование <b>&lt;span&gt;</b></h2>	
+			
+			<div class="block-description">
+				<p>
+					Chast teksta vnutri lubogo elementa mojet bit zakluchena v <b>&lt;span&gt;</b> i otformatirovana proisvolnim sposobom
+				</p>
+			</div>
+			<div class="block-example">
+				<p>Текст с <span style="color: blue;">кусочком</span> внутри.</p>
+				<h2>Заголовок с <span style="color: blue;">выделенным</span> словом</h2>
+				<a href="#">Ссылка с <span style="color: teal;">выделенным текстом</span></a>
+				<ul><li>Пункт списка с <span style="color: red;">важной частью</span></li></ul>
+				<button>Нажми <span style="color: green;">сюда</span></button>
+			</div>
 					
-					<br> <br>
-					<label> Пожалуйста введите адрес электронной почты:
-						<input type="email" name="email" />
-					</label>
+		</section>
+
+
+		<!-- *********************** -->
+		<!-- <OL> <UL> <DL> - Spiski-->
+		<section id="spiski" class="section-reference">
+			<h2>Списки</h2>	
+			
+			<div class="block-description">
+				<p>
+					<b>&lt;ol title="zagolovok"&gt;</b> - нумерованный список. 
+					<br>&nbsp;&nbsp; <b>&lt;li&gt;</b> - элемент списка. 
+					<br> Загоовок title не виден и появляется при наведении на єлемент списка.
+				</p>
+			</div>
+			<div class="block-example">
+				<ol title="Рецепт пюре"> 
+					<li> Порежьте картофель кубиками.</li>
+					<li> Варите картофель в соленой воде на медленном огне в течение 15-20 минут до размягчения.</li>
+					<li> Подогрейте и смешайте молоко, сливочное масло и мускатный орех.</li>
+					<li> Слейте воду из кастрюли и потолките картофель.</li>
+					<li> Перемешайте картофель со смесью из молока,	масла и мускатного ореха.</li>
+				</ol>
+			</div>
 					
-					<br><br>
-					<label> 0-100%:
-						<input class="slider" type="range" name="volume" min="0" max="100" value="50" step="1">
-					</label>
-					<br><br>
-				</fieldset>
+			<div class="block-description">
+				<p>
+					<b>&lt;ul&gt;</b> - список с маркерами. 
+					<br>&nbsp;&nbsp; <b>&lt;li&gt;</b> - элемент списка. 
+				</p>
+			</div>
+			<div class="block-example">
+				<ul>
+					<li>1 кг картофеля</li>
+					<li>100 мл молока</li>
+					<li>50 г соленого масла</li>
+					<li>Тертый мускатный орех
+						<ol> 
+							<li> Взять орех.</li>
+							<li> Взять терку.</li>
+							<li> Тереть мускатный орех.</li>
+							<li> Засыпать в блюдо.</li>
+							<li> Перемешать.</li>
+						</ol>
+					</li>
+					<li>Соль и перец по вкусу</li>
+				</ul>
+				
+				<hr>
+				<h3>Поисковики:</h3>
+					<ul class="search-list"> 
+					<li> <a href="https://www.google.com/">	Google</a> </li>
+					<li> <a href="https://duckduckgo.com/">	DuckDuckGo </a> </li>
+					<li> <a href="https://www.bing.com/">	Bing</a> </li>
+					<li> <a href="http://ya.ru">			Yandex</a> </li>
+				</ul>
+			</div>
+
+			<div class="block-description">
+				<p>
+					<b>&lt;dl&gt;</b> - текстовый список с расшифровкой. 
+					<br>&nbsp;&nbsp; <b>&lt;dt&gt;</b> - значение. 
+					<br>&nbsp;&nbsp;&nbsp;&nbsp; <b>&lt;dd&gt;</b> - расшифровка.
+				</p>
+			</div>
+			<div class="block-example">
+				<dl>
+					<dt> Сашими</dt>
+						<dd> Сырая рыба, нарезанная тонкими кусочками;
+						подается с такими приправами, как
+						нашинкованная японская редька (дайкон),
+						корень имбиря, васаби или соевый соус.</dd>
+					<dt> Весы</dt>
+						<dd> Прибор, используемый для определения точного
+						веса ингредиентов.</dd>
+						<dd> Зодиакальный знак, распространяющийся на
+						календаре с 23 сентября по 22 октября,
+						единственный в зодиаке неодушевленный
+						символ.</dd>
+					<dt> Ноу-хау</dt>
+						<dd> Мастерство, умение, практическая сметка,
+						высококвалифицированная работа; компетенция
+						и опыт, приобретаемые длительной
+						практикой.</dd>
+				</dl>
+			</div>
+
+		</section>
+
+
+		<!-- *********************** -->
+		<!-- <TABLE> - использование таблиц -->
+		<section id="tablici" class="section-reference">
+			<h2><b>&lt;table&gt;</b> - Использование таблиц </h2>	
+			
+			<!-- Заголовки -->
+			<div class="section_horisontal">
+				<div class="block_horisontal">
+					<h3>HTML</h3>
+				</div>
+				<div class="block_horisontal">
+					<h3>CSS</h3>
+				</div>
+			</div>
+			<!-- Описания -->
+			<div class="section_horisontal">
+				<div class="block-description block_horisontal">
+					<pre><code>
+	<b>&lt;table&gt;</b> - Тег начала таблицы 
+
+	<b>&lt;thead&gt;</b> - Шапка
+		<b>&lt;tr&gt;</b> - Строка шапки
+		<b>&lt;th&gt;</b> - Заголовок колонки 1 (ячейка шапки)
+		<b>&lt;th&gt;</b> - Заголовок колонки 2 (ячейка шапки)
+		<b>&lt;th&gt;</b> ...
+		<b>&lt;/tr&gt;</b>
+	<b>&lt;/thead&gt;</b>
+
+	<b>&lt;tbody&gt;</b> - Тело таблицы
+		<b>&lt;tr&gt;</b> - Строка
+		<b>&lt;th&gt;</b> - Заголовок строки 1 (1 ячейка)
+		<b>&lt;td&gt;</b> - Ячейка 1
+		<b>&lt;td&gt;</b> ...
+		<b>&lt;/tr&gt;</b>
+	<b>&lt;/tbody&gt;</b>
+
+	<b>&lt;tfoot&gt;</b> - Подвал таблицы (итоги)
+		<b>&lt;tr&gt;</b> - Строка
+		<b>&lt;th&gt;</b> - Итог колонки 1 (ячейка подвала)
+		<b>&lt;th&gt;</b> - Итог колонки 2 (ячейка подвала)
+		<b>&lt;th&gt;</b> ...
+		<b>&lt;/tr&gt;</b>
+	<b>&lt;/tbody&gt;</b>
+	
+	<b>&lt;/table&gt;</b>				
+					</code></pre>
+				</div>
+				<div class="block-description block_horisontal">
+					<pre><code>
+		/* ********************** */
+		/* Формат таблиц */ 
+		thead th, tfoot th {
+			background-color:  var(--menu-color);
+			color: white;
+		}
+
+		tbody td,
+		tbody th {
+			background-color: var(--menu-background-color);;
+			color: #222;
+		}
+
+		tbody th:first-child,
+		tbody td:first-child {
+			background-color: var(--menu-color);
+			color: white;
+		}
+
+		tbody tr > :nth-child(3){
+			background-color: white;
+			color: var(--menu-color);
+		}
+		/* Формат таблиц */ 
+		/* ********************** */				
+					</code></<pre>
+				</div>
+			</div>
+			<!-- Примеры -->
+			<div class="block-example">
+				<h3> Пример 1 </h3>
+				<table>
+					<thead>
+						<tr>
+							<th bgcolor="var(--menu-color)" ></th>
+							<th>TV1000</th>
+							<th>ТНТ</th>
+							<th>СТС</th>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<tr>
+							<th>20:00-21:00</th>
+							<td rowspan="2">Фильм</td>
+							<td>Ток-шоу</td>
+							<td>Юмор</td>
+						</tr>
+						<tr>
+							<th>21:00-22:00</th>
+							<td>шок-Тшоу</td>
+							<td>Мультфильм</td>
+						</tr>
+					</tbody>
+					
+					<tfoot>
+						<tr>
+							<th></th>
+							<th>*</th>
+							<th>**</th>
+							<th>***</th>
+						</tr>
+					</tfoot>
+				</table>
+		
+				<br>
+				<h3> Пример 2 (с объединением ячеек) </h3>
+				<table>
+					<thead>
+						<tr>
+							<th>Оранжевая потому что <span style="color: black;">&lt;th&gt;</span> и для нее задан стиль CSS</th>
+							<th scope="col">Хостинг "Домашний начальный"</th>
+							<th scope="col">Хостинг "Домашний Премиум"</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">Дисковое пространство</th>
+							<td>1 Гб</td>
+							<td>3 Гб</td>
+						</tr>
+						<tr>
+							<th scope="row">Трафик</th>
+							<td>15 Гб/мес</td>
+							<td>50 Гб/мес</td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<!-- для tfoot td не задан формат, поетому они белые -->
+							<td>Белая потому что <b>&lt;td&gt;</b> и для него есть стиль в CSS</td>
+							<td colspan="2">Закажи сейчас и сэкономь 10%!</td>
+							<th></th> <!-- а эта ячейка будет цветная потому что она <th> (для нее в CSS яадан формат). Колонка выше без форматат - потому белая -->
+						</tr>
+					</tfoot>
+				</table>
+				<br>
+				<p> Последдняя ячейка будет цветная потому что она &lt;th&gt; (для нее в CSS задан формат).<br> 
+					Белое пространство выше без формата - потому что оно добавлено автоматически<br> 
+					т.к. в пердыдущих строках в этой колонке нет ячеек.<br>
+				</p>
+			</div>
+					
+		</section>
+
+
+		<!-- *********************** -->
+		<!-- <FORM> - использование форм -->
+		<!-- отправка и вывод передаваемых полей (элеиментов формы) выполняется с помощю JS (в отдельном файле) -->
+		<section id="forms" class="section-reference">
+			<h2> <b>&lt;form&gt;</b> - Использование форм</h2>
+			
+			<div class="block-description"> <!-- opisanie -->
+				<pre><code>
+	<b>&lt;form</b> - форма
+	<b>id="myTestForm"</b> - ID формы ( параметр для CSS и JS)
+	<b>method="post"</b> - get/post метод отправки данных формы. 
+		GET - как параметр адресной строки.
+		POST - в теле HTTP-запроса вида:
+		заголовки                 <i>Content-Type: application/x-www-form-urlencoded</i>
+			+                       +
+		тело запроса с данными    <i>username=Ivan&email=test@example.com</i>
+	<b>action="http://my.local/result.php"</b> - web-адресполучателя данных
+	<b>&gt;</b>
+
+	<b>&lt;fieldset&gt; &lt;/fieldset&gt;</b> - объединяет атрибуты формы в набор (на экране в рамке)
+	<b>&lt;legend&gt;</b>"Zagolovok"<b>&lt;/legend&gt;</b> - звголовок набора (рамки)
+
+	<b>&lt;label for="comments"&gt;</b>Что вы думаете об этом выступлении?<b>&lt;/label&gt;</b> - заголовок элемента. 
+		Связь через id элемента: <b>for="comments"</b> (Для textarea задан <b>id="comments"</b>)
+	<b>&lt;textarea</b> - многосмтрочноке поле ввода.
+		<b>id="comments"</b> - идентификатор (для обращениея в форме, например для <b>lable</b>)
+		<b>name="comment"</b> - Имя параметра (поля)ю Передается при отправке формы (POST). 
+		Отправится: comment="Текст введенный пользователем в поле"
+		<b>cols="60"</b> - ширина поля на экране (длина строки). В примере заданно через CSS для масштабирования.
+		<b>rows="4"</b> - высота в строках.
+		<b>placeholder="Введите свой комментарий..."</b> - текст-подсказка доввода.
+	<b>&gt;
+	&lt;/textarea&gt;</b>
+
+	<b>&lt;label&gt; Пожалуйста введите имя:</b> - другой вариант использования <b>lable</b> без <b>for="ID"</b>
+		<b>&lt;input id="username" type="text" name="username" /&gt;</b> - полеввода 
+	<b>&lt;/label&gt;</b>
+	
+	<b>&lt;input id="depart" type="date" name="depart" required="required" /&gt;</b> - ввод даты
+		<b>required="required</b> признак обязательности ввода
+	<b>&lt;input type="url" name="sait" value="https://yoursite.org" /&gt;</b> - ввод web-адреса
+	<b>&lt;input type="email" name="email" /&gt;</b> - ввод email
+
+	Радио-кнопки				
+	<b>&lt;input type="radio" name="genre" value="rock" checked="checked" /&gt;</b> Рок
+	...
+	<b>&lt;input type="radio" name="genre" value="pop" /&gt;</b> Поп 
+
+	Check-boksy
+	<b>&lt;input type="checkbox" name="service" value="house" checked="checked" /&gt;</b> Дома
+	...
+	<b>&lt;input type="checkbox" name="service" value="work" /&gt;</b> На работе
+
+	Селектрор со множественным выбором
+	<b>&lt;select name="devices"&gt;</b>
+		<b>&lt;option value="ipod"&gt;</b>iPod<b>&lt;/option&gt;</b>
+		...
+		<b>&lt;option value="computer" selected&gt;</b>Компьютер<b>&lt;/option&gt;</b>
+	<b>&lt;/select&gt;</b>
+
+	Кнопки
+	<b>&lt;button type="submit" name="buttonAction" value="fetch"&gt;</b>Отправить (FETCH)<b>&lt;/button&gt;</b>
+	<b>&lt;button type="submit" name="buttonAction" value="post"&gt;</b>Отправить (POST)<b>&lt;/button&gt;</b>
+		
+	<b>&lt;/form&gt;</b>				
+				</code></pre>
 				
 				<br>
-				<button class="button-custom" type="submit" name="buttonAction" value="fetch">Отправить - (FETCH)</button>
-				<button type="submit" name="buttonAction" value="post">Отправить (POST)</button>
+				<p>
+					После нажатия кнопки, форма отправляет поля (у которых задано "name" в параметрах)<br>
+					метод формы <b>method="post"</b> (по умолчанию - GET)<br>
+					по адресу <b>action="/php/result.php"</b><br>
+					оправленные данные получает файл /result.php в папке PHP на сервере<br>
+				</p>
+				<pre><code>
+		&lt?php // result.php
+		header('Content-Type: text/plain; charset=utf-8'); // Устанавливаем кодировку
+		// Проверяем, есть ли данные POST
+		if (!empty($_POST)) {
+			echo "Сервер получил данные:\n\n";
+			foreach ($_POST as $key => $value) { echo $key . " = " . $value . "\n";	}
+		} else {
+			echo "POST-параметры не получены.";
+		}
+		?&rt
+				</code></pre>
+				<p>
+					<br>
+					В примере при откравке формы JS назначает в форме обработчик нажания кнопок (function(event))
+				</p>
+				<pre><code>
+		<b>form.addEventListener("submit", function(event) {</b>
+		// Этот код выполнится позже
+		<b>});</b>
+				</code></pre>
+				<p>
+					<b>function(event)</b> - выполняется при нажатии кнопки. В ней прописаны 2 варианта<br>
+					которые зависят от значения атрибута кнопки <b>value="..."</b><br>
+					<ul class="attributes">
+						<li><b>value="post"</b> обычная отправка через метод POST</li>
+						<li><b>value="fetch"</b> отправка методом FETCH (с выводом таблицы результатов на той же странице)</li>
+					</ul>
+				</p>
+						
+			</div>
 			
-			</form>
-		</div>
-
-		<div id="block_result" class="block-description"> <!-- Rezultat otpravki formi -->
-			<h2>Переданные параметры:</h2>
-			<div id="result">
-				<p> ... </p>
-			</div>
-			<br>
-			<div id="docHeight">
-			</div>
-		</div>
+			<div class="block-example"> <!-- primeri -->
+				<form id="testForm" method="post" action="php/form-handler.php">
+					<label for="comments">Что вы думаете об этом выступлении?</label>
+					<br>
+					<textarea id="comments" name="comments" cols="60" rows="4" placeholder="Введите свой комментарий..." > </textarea>
+					
+					<br><br>
+					<label for="username">Imya:</label>
+					<input id="username" type="text" name="username" /> 
 				
-	</section>
+					<br><br>
+					<fieldset>
+						<legend>Your preferences</legend>
+						
+						<p>Пожалуйста, выберите любимый жанр музыки:
+							<br>
+							<input type="radio" name="genre" value="rock" checked="checked" > Рок
+							<input type="radio" name="genre" value="pop" > Поп 
+							<input type="radio" name="genre" value="techno" > Электроника
+						</p> <br>
+						
+						<p>Пожалуйста, выберите, где вы слушаете музыку: 
+							<br>
+							<input type="checkbox" name="service" value="house" checked="checked" /> Дома
+							<input type="checkbox" name="service" value="work" /> На работе
+							<input type="checkbox" name="service" value="inroad" /> В дороге
+						</p> 
+						<br>
+						
+						<label>На каком устройстве вы слушаете музыку чаще всего?
+							<select name="devices">
+								<option value="ipod">iPod</option>
+								<option value="radio">Радио</option>
+								<option value="computer" selected>Компьютер</option>
+							</select>
+						</label> <br>
 
-
-	<!-- *********************** -->
-	<!-- <IFRAME> - встраивание другой страницы -->
-	<section id="iframes" class="section-reference">
-		<h2> <b>&lt;iframe&gt;</b> - элемент для встраивания другой страницы</h2>	
-		
-		<div class="block-description">
-			<h2>Встраивание - form.html</h2>	
-		</div>
-		<div class="block-example">
-			<p>
-				<b>&lt;iframe&gt; src="forms/form.html" title="Test form">&lt;/iframe&gt;</b>
-			</p>
-			<br>
-			<iframe src="forms/form.html" title="Test: form"></iframe>
-		</div>
-
-		<div class="block-description">
-			<h2>Встраивание - Colours.html</h2>	
-		</div>
-		<div class="block-example">
-			<p>
-				<b>&lt;iframe&gt; src="forms/colours.html" title="Test color">&lt;/iframe&gt;</b>
-			</p>
-			<br>
-			<iframe src="forms/colours.html" title="Test color"></iframe>
-		</div>
-
-		<div class="block-description">
-			<h2>Youtube</h2>	
-			<p> Youtube через <b>iframe</b> - не работате при локальном запуске</p>
-		</div>
-		<div class="block-example">
-			<p>
-				<b>&lt;iframe&gt; src="https://www.youtube.com/embed/WrIiWk1hFeg" title="Test Youtube">&lt;/iframe&gt;</b>
-			</p>
-			<br>
-			<iframe 
-				width="595" 
-				height="1057" 		
-				src="https://www.youtube.com/embed/WrIiWk1hFeg" 
-				title="Test Youtube" 
-				frameborder="0" 
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-				referrerpolicy="strict-origin-when-cross-origin" 
-				allowfullscreen>
-			</iframe>
-		</div>
-	</section>
-
-
-	<!-- AUDIO -->
-	<section id="audio" class="section-reference">
-		<h2><b>&lt;audio&gt;</b> - вставка аудио контента</h2>	
-		
-		<div class="block-description">
-			<p>
-				<b>&lt;audio</b>
-					<ul class="attributes">
-						<li><b>src =</b> - Путь к аудиофайлу.</li>
-						<li><b>controls</b> - Показывает панель управления.</li>
-						<li><b>autoplay</b> - Автоматическое воспроизведение.</li>
-						<li><b>loop</b> - Повторять после окончания.</li>
-						<li><b>muted</b> - Без звука.</li>
-						<li><b>preload</b> - Предварительная загрузка.</li>
-						<li><b>crossorigin</b> - Настройки доступа.</li>
-					</ul>
-				<b>&gt;</b> <br>
-					<ul class="attributes">
-						Cпособ через <b>source</b> (альтернативные версии одного и того же аудио.)
-						<li><b>&lt;source src="audio/song.mp3" type="audio/mpeg"&gt;</b> </li>
-						<li><b>&lt;source src=""music.ogg" type="audio/ogg"&gt;</b> </li>
-						<li><b>&lt;source src=""music.wav" type="audio/wav"&gt;</b> </li>
-						<li>Ваш браузер не поддерживает аудио.</li>	
-					</ul>
-				<b>&lt;/audio&gt;</b>
-			</p>
-		</div>
-		<div class="block-example">
-			<p>assets/audio/02-Breathe.mp3</p><br>
-			<audio controls preload="auto">
-				<source src="assets\audio\02-Breathe.mp3" type="audio/mpeg">
-				Ваш браузер не поддерживает аудио.	
-			</audio>
-			<audio src="">
-		</div>
+						<p> Играете ли вы на одном из инструментов,
+						перечисленных ниже? <br>(Вы можете выбрать сразу
+						несколько вариантов ответа, <br> нажав и удерживая
+						клавишу <i>Ctrl</i> (Windows) или <i>Cmd</i> (OS X)).
+						</p>  <br>
+						<select name="instrumenty" size="3" multiple="multiple">
+							<option value="gitara" selected="selected">Гитара</option>
+							<option value="barabany">Барабаны</option>
+							<option value="klavishnye" selected="selected">Клавишные</option>
+							<option value="bas">Бас-гитара</option>
+						</select>
+						
+						<br> <br>
+						<label for="depart">Дата вылета</label>
+						<input id="depart" type="date" name="depart" required="required" /> 
+						
+						<!-- lable bez id -->
+						<br> <br>
+						<label>Пожалуйста введите адрес вашего сайта:
+							<input type="url" name="sait" value="https://yoursite.org" />
+						</label>
+						
+						<br> <br>
+						<label> Пожалуйста введите адрес электронной почты:
+							<input type="email" name="email" />
+						</label>
+						
+						<br><br>
+						<label> 0-100%:
+							<input class="slider" type="range" name="volume" min="0" max="100" value="50" step="1">
+						</label>
+						<br><br>
+					</fieldset>
+					
+					<br>
+					<button class="button-custom" type="submit" name="buttonAction" value="fetch">Отправить - (FETCH)</button>
+					<button type="submit" name="buttonAction" value="post">Отправить (POST)</button>
 				
-	</section>
+				</form>
+			</div>
+
+			<div id="block_result" class="block-description"> <!-- Rezultat otpravki formi -->
+				<h2>Переданные параметры:</h2>
+				<div id="result">
+					<p> ... </p>
+				</div>
+				<br>
+				<div id="docHeight">
+				</div>
+			</div>
+					
+		</section>
 
 
-	<!-- *********************** -->
-	<!-- VIDEO -->
-	<section id="video" class="section-reference">
-		<h2><b>&lt;video&gt;</b> - вставка видео контента.</h2>	
-		
-		<div class="block-description">
-			<p>
+		<!-- *********************** -->
+		<!-- <IFRAME> - встраивание другой страницы -->
+		<section id="iframes" class="section-reference">
+			<h2> <b>&lt;iframe&gt;</b> - элемент для встраивания другой страницы</h2>	
+			
+			<div class="block-description">
+				<h2>Встраивание - form.html</h2>	
+			</div>
+			<div class="block-example">
+				<p>
+					<b>&lt;iframe&gt; src="forms/form.html" title="Test form">&lt;/iframe&gt;</b>
+				</p>
+				<br>
+				<iframe src="forms/form.html" title="Test: form"></iframe>
+			</div>
+
+			<div class="block-description">
+				<h2>Встраивание - Colours.html</h2>	
+			</div>
+			<div class="block-example">
+				<p>
+					<b>&lt;iframe&gt; src="forms/colours.html" title="Test color">&lt;/iframe&gt;</b>
+				</p>
+				<br>
+				<iframe src="forms/colours.html" title="Test color"></iframe>
+			</div>
+
+			<div class="block-description">
+				<h2>Youtube</h2>	
+				<p> Youtube через <b>iframe</b> - не работате при локальном запуске</p>
+			</div>
+			<div class="block-example">
+				<p>
+					<b>&lt;iframe&gt; src="https://www.youtube.com/embed/WrIiWk1hFeg" title="Test Youtube">&lt;/iframe&gt;</b>
+				</p>
+				<br>
+				<iframe 
+					width="595" 
+					height="1057" 		
+					src="https://www.youtube.com/embed/WrIiWk1hFeg" 
+					title="Test Youtube" 
+					frameborder="0" 
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin" 
+					allowfullscreen>
+				</iframe>
+			</div>
+		</section>
+
+
+		<!-- AUDIO -->
+		<section id="audio" class="section-reference">
+			<h2><b>&lt;audio&gt;</b> - вставка аудио контента</h2>	
+			
+			<div class="block-description">
+				<p>
+					<b>&lt;audio</b>
+						<ul class="attributes">
+							<li><b>src =</b> - Путь к аудиофайлу.</li>
+							<li><b>controls</b> - Показывает панель управления.</li>
+							<li><b>autoplay</b> - Автоматическое воспроизведение.</li>
+							<li><b>loop</b> - Повторять после окончания.</li>
+							<li><b>muted</b> - Без звука.</li>
+							<li><b>preload</b> - Предварительная загрузка.</li>
+							<li><b>crossorigin</b> - Настройки доступа.</li>
+						</ul>
+					<b>&gt;</b> <br>
+						<ul class="attributes">
+							Cпособ через <b>source</b> (альтернативные версии одного и того же аудио.)
+							<li><b>&lt;source src="audio/song.mp3" type="audio/mpeg"&gt;</b> </li>
+							<li><b>&lt;source src=""music.ogg" type="audio/ogg"&gt;</b> </li>
+							<li><b>&lt;source src=""music.wav" type="audio/wav"&gt;</b> </li>
+							<li>Ваш браузер не поддерживает аудио.</li>	
+						</ul>
+					<b>&lt;/audio&gt;</b>
+				</p>
+			</div>
+			<div class="block-example">
+				<p>assets/audio/02-Breathe.mp3</p><br>
+				<audio controls preload="auto">
+					<source src="assets\audio\02-Breathe.mp3" type="audio/mpeg">
+					Ваш браузер не поддерживает аудио.	
+				</audio>
+				<audio src="">
+			</div>
+					
+		</section>
+
+
+		<!-- *********************** -->
+		<!-- VIDEO -->
+		<section id="video" class="section-reference">
+			<h2><b>&lt;video&gt;</b> - вставка видео контента.</h2>	
+			
+			<div class="block-description">
 				<b>&lt;video</b>
 				<ul class="attributes">
 					<li><b>src =</b> - Путь к видеофайлу.</li>
@@ -1038,326 +1039,397 @@
 					<li><b>muted</b> - Без звука.</li>
 					<li><b>poster="assets/images/video-poster.jpg"</b> - Показывает изображение до запуска видео</li>
 					<li><b>playsinline</b> - Просит мобильный браузер воспроизводить видео внутри страницы, а не обязательно во весь экран</li>
-					<li><b>preload = </b> - Предварительная загрузка. <br> </li>
-					<ul class="attributes">
-						<li><b>none</b> - Браузер не должен начинать загрузку 
-							видеоролика, пока пользователь не щелкнет мышью по кнопке Воспроизведение. </li>
-						<li><b>auto</b> - Браузер должен загрузить видео ролик по окончании загрузки страницы</li>
-						<li><b>metadata</b> - Браузер должен лишь собрать такую метаинформацию, как размер видео, первый кадр, список воспроизведения и длительность</li>
-					</ul>
-							<li><b>crossorigin</b> - Настройки доступа.</li>
+					<li><b>preload = </b> - Предварительная загрузка. <br> 
+						<ul class="attributes">
+							<li><b>none</b> - Браузер не должен начинать загрузку 
+								видеоролика, пока пользователь не щелкнет мышью по кнопке Воспроизведение. </li>
+							<li><b>auto</b> - Браузер должен загрузить видео ролик по окончании загрузки страницы</li>
+							<li><b>metadata</b> - Браузер должен лишь собрать такую метаинформацию, как размер видео, первый кадр, список воспроизведения и длительность</li>
+						</ul>
+					</li>
+					<li><b>crossorigin</b> - Настройки доступа.</li>
 				</ul>
 				<b>&gt;</b> <br>
+				<p>Cпособ через <b>source</b> (Браузер выберет первый поддерживаемый источник)</p>
 				<ul class="attributes">
-					Cпособ через <b>source</b> (Браузер выберет первый поддерживаемый источник)
 					<li><b>&lt;source src="assets/video/example.mp4" type="video/mp4"&gt;</b> </li>
 					<li><b>&lt;source src="assets/video/example.webm" type="video/webm"&gt;</b> </li>
 					<li>Ваш браузер не поддерживает видео.</li>	
-					<li><b>&lt;track</b> - Добавляет субтитры к видео. <br> </li>
-					<ul class="attributes">
-						<li><b>src="assets/subtitles/example-en.vtt"</b> </li>
-						<li><b>kind="subtitles"</b> </li>
-						<li><b>srclang="en"</b> </li>
-						<li><b>label="English"</b> </li>
-					</ul>
-					<b>&lt;/track&gt;</b>
+					<li><b>&lt;track</b> - Добавляет субтитры к видео. <br> 
+						<ul class="attributes">
+							<li><b>src="assets/subtitles/example-en.vtt"</b> </li>
+							<li><b>kind="subtitles"</b> </li>
+							<li><b>srclang="en"</b> </li>
+							<li><b>label="English"</b> </li>
+						</ul>
+						<b>&gt;</b>
+					</li>
 					<li><b>width=""</b> и <b>height=""</b> - Размеры видео на странице (обычно настраивают через CSS)</li>
 				</ul>
 				<b>&lt;/video&gt;</b>
-			</p>
-		</div>
-		<div class="block-example">
-			<p>assets/video/365737_medium.mp4</p><br>
-			<video controls width="640" height="360" preload="auto">
-				<source src="assets/video/365737_medium.mp4" type="video/mp4">
-			</video>
-		</div>
-				
-	</section>
-
-
-	<!-- *********************** -->
-	<!-- SHRIFTY -->
-	<section id="font-settings" class="section-reference">
-		<h2>Формат Шрифта <b></b> </h2>	
+			</div>
+			<div class="block-example">
+				<p>assets/video/365737_medium.mp4</p><br>
+				<video controls width="640" height="360" preload="auto">
+					<source src="assets/video/365737_medium.mp4" type="video/mp4">
+				</video>
+			</div>
+		</section>
 		
-		<div class="block-description form-greed">
-			<label for="font-family">Шрифт (font-family):</label>
-			<select id="font-family"> <!-- Option will be genereted by JS --> </select>
-
-			<label for="font-style">Стиль: (font-style):</label>
-			<select id="font-style"> <!-- Option will be genereted by JS --> </select>
+		<!-- *********************** -->
+		<!-- SHRIFTY -->
+		<section id="font-settings" class="section-reference">
+			<h2>Формат Шрифта <b></b> </h2>	
 			
-			<label for="text-transform">Регистр (text-transform):</label>
-			<select id="text-transform"> <!-- Option will be genereted by JS --> </select>
+			<div class="block-description form-greed">
+				<label for="font-family">Шрифт (font-family):</label>
+				<select id="font-family"> <!-- Option will be genereted by JS --> </select>
 
-			<label for="font-size">Размер (font-size):</label>
-			<div>
-				<input type="range" id="font-size" min="10" max="72" value="16"	>
-				<span id="font-size-value"><!-- will be genereted by JS --></span>
-			</div>	
-
-			<label for="font-weight">Жирность: (font-weight):</label>
-			<select id="font-weight"> <!-- Option will be genereted by JS --> </select>
-			
-			<!-- <button class="button-custom" id="apply-font" type="button"> Применить </button> -->
-		</div>
-		<div class="block-example" id="font-example">
-			<h2> Primer teksta dlya demonstracii izmeneniya nasroek shrifa</h2>
-			<br>
-			<p>	Tekushie nastroiki: </p>
-			<p id="font-settings-output" class="form-greed">
-				<!-- Шрифт (font-family):<br>
-				Стиль: (font-style):<br> 
-				Регистр (text-transform):<br>
-				Размер (font-size):<br>
-				Жирность: (font-weight):<br> -->
-			</p>
-			<br>
-		</div>
+				<label for="font-style">Стиль: (font-style):</label>
+				<select id="font-style"> <!-- Option will be genereted by JS --> </select>
 				
-	</section>
+				<label for="text-transform">Регистр (text-transform):</label>
+				<select id="text-transform"> <!-- Option will be genereted by JS --> </select>
+
+				<label for="font-size">Размер (font-size):</label>
+				<div>
+					<input type="range" id="font-size" min="10" max="72" value="16"	>
+					<span id="font-size-value"><!-- will be genereted by JS --></span>
+				</div>	
+
+				<label for="font-weight">Жирность: (font-weight):</label>
+				<select id="font-weight"> <!-- Option will be genereted by JS --> </select>
+				
+				<!-- <button class="button-custom" id="apply-font" type="button"> Применить </button> -->
+			</div>
+			<div class="block-example" id="font-example">
+				<h2> Primer teksta dlya demonstracii izmeneniya nasroek shrifa</h2>
+				<br>
+				<p>	Tekushie nastroiki: </p>
+				<p id="font-settings-output" class="form-greed">
+					<!-- Шрифт (font-family):<br>
+					Стиль: (font-style):<br> 
+					Регистр (text-transform):<br>
+					Размер (font-size):<br>
+					Жирность: (font-weight):<br> -->
+				</p>
+				<br>
+			</div>
+		</section>
 
 
-<!-- *********************** -->
-	<!-- BLOCKS -->
-	<section id="blocks" class="section-reference">
-		<h2>Элементы для создания блоков и позиционирования</h2>	
-		
-		<div class="block-description">
-			<p>
-				Для элементов c <b>display: flex;</b>:<br>
-				<ul class="attributes">
-					<li><b>&lt;div&gt;</b> - Универсальный контейнер </li>
-					<li><b>&lt;section&gt;</b> - Секция страницы </li>
-					<li><b>&lt;article&gt;</b> - Самостоятельный блок контента, карточка, публикация и т. п. </li>
-					<li><b>&lt;header&gt;</b> - Верхняя часть страницы или секции </li>
-					<li><b>&lt;footer&gt;</b> - Нижняя часть страницы или секции </li>
-					<li><b>&lt;main&gt;</b> - Основное содержимое страницы </li>
-					<li><b>&lt;nav&gt;</b> - Контейнер навигации </li>
-					<li><b>&lt;aside&gt;</b> - Боковой/дополнительный контент </li>
-				</ul>
-				<br>
-				Выравнивание внутри такого <b>элемента</b> задается с помощью атрибутов:<br>
-				<br>
-				<b>justify-content</b> - по главной оси (main axis): горизонталь (flex-direction=row) / вертикаль (flex-direction=column)</li>
+    	<!-- *********************** -->
+		<!-- BLOCKS -->
+		<section id="blocks" class="section-reference">
+			<h2>Элементы для создания блоков и позиционирования</h2>	
+			
+			<div class="block-description">
+				<p>
+					Для элементов c <b>display: flex;</b>:<br>
 					<ul class="attributes">
-						<li><b>stretch</b> - Растягивает элементы по поперечной оси — значение по умолчанию</li>
-						<li><b>flex-start</b> - Прижимает к началу поперечной оси</li>
-						<li><b>center</b> - Центрирует по поперечной оси</li>
-						<li><b>flex-end</b> - Прижимает к концу поперечной оси</li>
-						<li><b>baseline</b> - Выравнивает элементы по базовой линии текста</li>
+						<li><b>&lt;div&gt;</b> - Универсальный контейнер </li>
+						<li><b>&lt;section&gt;</b> - Секция страницы </li>
+						<li><b>&lt;article&gt;</b> - Самостоятельный блок контента, карточка, публикация и т. п. </li>
+						<li><b>&lt;header&gt;</b> - Верхняя часть страницы или секции </li>
+						<li><b>&lt;footer&gt;</b> - Нижняя часть страницы или секции </li>
+						<li><b>&lt;main&gt;</b> - Основное содержимое страницы </li>
+						<li><b>&lt;nav&gt;</b> - Контейнер навигации </li>
+						<li><b>&lt;aside&gt;</b> - Боковой/дополнительный контент </li>
 					</ul>
-				<br>
-				<b>align-items</b> - по пересекающей оси оси (cross axis): вертикаль (flex-direction=row) / горизонталь (flex-direction=column)
-					<ul class="attributes">
-						<li><b>stretch</b> - Растягивает элементы по поперечной оси — значение по умолчанию </li>
-						<li><b>flex-start</b> - Прижимает к началу поперечной оси</li>
-						<li><b>center</b> - Центрирует по поперечной оси</li>
-						<li><b>flex-end</b> - Прижимает к концу поперечной оси</li>
-						<li><b>baseline</b> - Выравнивает элементы по базовой линии текста</li>
+					<br>
+					Выравнивание внутри такого <b>элемента</b> задается с помощью атрибутов:<br>
+					<br>
+					<b>justify-content</b> - по главной оси (main axis): горизонталь (flex-direction=row) / вертикаль (flex-direction=column)</li>
+						<ul class="attributes">
+							<li><b>stretch</b> - Растягивает элементы по поперечной оси — значение по умолчанию</li>
+							<li><b>flex-start</b> - Прижимает к началу поперечной оси</li>
+							<li><b>center</b> - Центрирует по поперечной оси</li>
+							<li><b>flex-end</b> - Прижимает к концу поперечной оси</li>
+							<li><b>baseline</b> - Выравнивает элементы по базовой линии текста</li>
+						</ul>
+					<br>
+					<b>align-items</b> - по пересекающей оси оси (cross axis): вертикаль (flex-direction=row) / горизонталь (flex-direction=column)
+						<ul class="attributes">
+							<li><b>stretch</b> - Растягивает элементы по поперечной оси — значение по умолчанию </li>
+							<li><b>flex-start</b> - Прижимает к началу поперечной оси</li>
+							<li><b>center</b> - Центрирует по поперечной оси</li>
+							<li><b>flex-end</b> - Прижимает к концу поперечной оси</li>
+							<li><b>baseline</b> - Выравнивает элементы по базовой линии текста</li>
 
-					</ul>
-				<br> 
-				flex-direction: <b>row</b><br>
-				<b>→ [A] [B] [C] → </b><br>
-				main axis  → горизонтальная<br>
-				cross axis ↓ вертикальная<br>
+						</ul>
+					<br> 
+					flex-direction: <b>row</b><br>
+					<b>→ [A] [B] [C] → </b><br>
+					main axis  → горизонтальная<br>
+					cross axis ↓ вертикальная<br>
+					<br>
+					flex-direction: <b>column</b><br>
+					<b>
+						↓<br> 
+						[A]<br>
+						[B]<br>
+						[C]<br>
+						↓ <br> 
+					</b>
+					main axis  ↓ вертикальная<br>
+					cross axis → горизонтальная<br>
+				</p>
+			</div>
+			<div class="block-example">
+				<h3>Размер задн в % относительно родителя</h3>		
+				<div class="section_horisontal">
+					<div style="height: 250px; width: 250px; background-color: #bbbbaa;">
+						<div style="height: 70%; width: 70%; background-color: var(--menu-color);">
+							<p>70% x 70% <br>
+								
+							</p>
+						</div>
+						<p> height=250p width=250px</p>
+					</div>
+					<div style="height: 150px; width: 150px; background-color: #bbbbaa;">
+						<div style="height: 70%; width: 70%; background-color: var(--menu-color)">
+							<p>70% x 70%</p>
+						</div>
+						<p>150 x 150</p>
+					</div>
+				</div>
 				<br>
-				flex-direction: <b>column</b><br>
-				<b>
-					↓<br> 
-					[A]<br>
-					[B]<br>
-					[C]<br>
-					↓ <br> 
-				</b>
-				main axis  ↓ вертикальная<br>
-				cross axis → горизонтальная<br>
-			</p>
-		</div>
-		<div class="block-example">
-			<h3>Размер задн в % относительно родителя</h3>		
-			<div class="section_horisontal">
-				<div style="height: 250px; width: 250px; background-color: #bbbbaa;">
-					<div style="height: 70%; width: 70%; background-color: var(--menu-color);">
-						<p>70% x 70% <br>
-							
+
+				<br>
+				<h3>Использование сетки <b>&lt;grid&gt;</b> и ее областей</h3>		
+				<div class="section_horisontal"
+					style="
+						display: grid;
+						grid-template-columns: repeat(3, 1fr);
+						grid-template-rows: 100px 100px;
+						grid-template-rows: repeat(2, 1fr);
+						grid-template-areas:
+							'a a b'
+							'a a c';
+						aspect-ratio: 3 / 2;
+						width: 100%;
+						color: white;
+
+					"
+				>
+					<div class="block_horisontal" class="item1" style="  grid-area: a;  background: gray;" 	>
+						display: grid; <br>
+						grid-template-columns: repeat(3, 1fr); <br>
+						grid-template-rows: 100px 100px; <br>
+						grid-template-rows: repeat(2, 1fr); <br>
+						grid-template-areas: <br>
+							'<b>a a</b> b' <br>
+							'<b>a a</b> c'; <br>
+						aspect-ratio: 3 / 2; <br>
+						width: 100%; <br>
+						<br>
+						<b>Item 1:</b> <br>
+						class="item1"; <br>
+						grid-area: <b>a</b> <br>
+					</div>
+					<div class="block_horisontal" class="item2" style="  grid-area: b;  background: purple;">
+						grid-template-areas: <br>
+							'a a <b>b</b>' <br>
+							'a a c'; <br>
+						<br>
+						<b>Item 2:</b> <br>
+						class="item2"; <br>
+						grid-area: <b>b</b> <br>
+					</div>
+					<div class="block_horisontal" class="item3" style="  grid-area: c;  background: blue;"	>
+						grid-template-areas: <br>
+							'a a b' <br>
+							'a a <b>c</b>'; <br>					
+						<br>
+						<b>Item 3:</b> <br>
+						class="item3"; <br>
+						grid-area: <b>c</b> <br>
+					</div>
+				</div>
+
+				<br>
+				<h3>Использование <b>&lt;flex&gt;</b> выравнивание и задание минимальных размеров</h3>		
+				<div class="section_horisontal">
+					<div class="block_horisontal" style="
+						border: 1px solid gray; 
+						background-color: lightyellow; 
+						
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						min-width: 200px; max-width: 300px;  
+						min-height: 200px; max-height: 300px;  
+						">
+
+						<img src="assets/images/Logo_2.png" width="100" height="100" alt="Logo2">
+					</div>
+					<div class="block_horisontal" style="
+						border: 1px solid gray; 
+						background-color: lightgray;
+						
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						min-width: 350px; 
+						max-width: 650px;
+						">
+						
+						<p>	
+							Для 1 flex-блока (желтый) <b>&lt;div&gt;</b> :<br>
+							<b>justify-content: center;</b> - задаем выравниваем по центру относително вертикалной оси  <br>
+							<b>align-items: center;</b> - относително горизонтальной оси<br>
+							<b>min-width: 200px; min-height: 200px;</b> -  и мин. размер 200px <br>
+						</p>
+						<br>
+						<p> Для 2 flex-блока (серый) минимальный и максимальный размер ограничен:<br>
+							<b>flex-direction: column;</b> - дети располагаются вертикально<br>
+							<b>justify-content: center</b> - центрирование по главной (теперь горизонтальной) оси<br>
+							<b>min-width: 450px; >max-width: 650px;</b> <br>
 						</p>
 					</div>
-					<p> height=250p width=250px</p>
-				</div>
-				<div style="height: 150px; width: 150px; background-color: #bbbbaa;">
-					<div style="height: 70%; width: 70%; background-color: var(--menu-color)">
-						<p>70% x 70%</p>
-					</div>
-					<p>150 x 150</p>
-				</div>
-			</div>
-			<br>
-
-			<br>
-			<h3>Использование сетки <b>&lt;grid&gt;</b> и ее областей</h3>		
-			<div class="section_horisontal"
-				style="
-					display: grid;
-					grid-template-columns: repeat(3, 1fr);
-					grid-template-rows: 100px 100px;
-					grid-template-rows: repeat(2, 1fr);
-					grid-template-areas:
-						'a a b'
-						'a a c';
-					aspect-ratio: 3 / 2;
-					width: 100%;
-					color: white;
-
-				"
-			>
-				<div class="block_horisontal" class="item1" style="  grid-area: a;  background: gray;" 	>
-					display: grid; <br>
-					grid-template-columns: repeat(3, 1fr); <br>
-					grid-template-rows: 100px 100px; <br>
-					grid-template-rows: repeat(2, 1fr); <br>
-					grid-template-areas: <br>
-						'<b>a a</b> b' <br>
-						'<b>a a</b> c'; <br>
-					aspect-ratio: 3 / 2; <br>
-					width: 100%; <br>
-					<br>
-					<b>Item 1:</b> <br>
-					class="item1"; <br>
-					grid-area: <b>a</b> <br>
-				</div>
-				<div class="block_horisontal" class="item2" style="  grid-area: b;  background: purple;">
-					grid-template-areas: <br>
-						'a a <b>b</b>' <br>
-						'a a c'; <br>
-					<br>
-					<b>Item 2:</b> <br>
-					class="item2"; <br>
-					grid-area: <b>b</b> <br>
-				</div>
-				<div class="block_horisontal" class="item3" style="  grid-area: c;  background: blue;"	>
-					grid-template-areas: <br>
-						'a a b' <br>
-						'a a <b>c</b>'; <br>					
-					<br>
-					<b>Item 3:</b> <br>
-					class="item3"; <br>
-					grid-area: <b>c</b> <br>
 				</div>
 			</div>
 
-			<br>
-			<h3>Использование <b>&lt;flex&gt;</b> выравнивание и задание минимальных размеров</h3>		
-			<div class="section_horisontal">
-				<div class="block_horisontal" style="
-					border: 1px solid gray; 
-					background-color: lightyellow; 
-					
+			<div class="block-description">
+				<h3>Отступы:</h3> 				
+				<b>margin</b>  - внешние отступы <br>
+				<b>padding</b> - внутренние отступы <br>
+				значения перечисляются по часовой стрелке:<br> 
+				верх, правая сторона, низ, левая сторона:<br>
+				margin: 1px 2px 3px 4px; <br>
+				padding: 10px 5px 3px 1px;<br>
+				<br>
+				<b>box-sizing: content-box</b> - к размеру контента прибавляется все остальное<br>
+				<b>box-sizing: border-box</b> - размер контента включает padding и border, а margin  прибавляется
+			</div>
+			<div class="block-example">
+				<p>
+					<strong>Общие параметры:</strong><br>
+					width: 300px;<br>
+					height: 300px;<br>
+					margin: 10px;<br>
+					padding: 5px;<br>
+					border: 1px;<br>
+				</p>
+				<br>
+
+			<!-- box-sizing: content-box -->
+				<p>
+					<strong>box-sizing: <b>content-box</b></strong> (по умолчанию) -
+					padding, border и margin добавляются к заданному размеру content (300px).
+					<br> <b>content-box</b> = margin + border + padding + <b>content</b> + padding + border + margin
+					<br> <b>content-box</b> = 10 + 1 + 5 + <b>300</b> + 5 + 1 + 10 = <b>332px</b>
+					<br> Общий размер = <b>content-box</b>
+				</p>
+				<div style="
+					display: flex;
+					width: 484px;
+					justify-content: space-between;
+					font-size: 11px;
+					margin: 0 auto;
+				">
+					<span>←</span> 10 + [1 + 5 + 300 + 5 + 1] + 10 <span>→</span>
+				</div>
+				<div style="
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					min-width: 200px; max-width: 300px;  
-					min-height: 200px; max-height: 300px;  
-					">
-
-					<img src="assets/images/Logo_2.png" width="100" height="100" alt="Logo2">
-				</div>
-				<div class="block_horisontal" style="
-					border: 1px solid gray; 
-					background-color: lightgray;
-					
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					min-width: 350px; 
-					max-width: 650px;
-					">
-					
-					<p>	
-						Для 1 flex-блока (желтый) <b>&lt;div&gt;</b> :<br>
-						<b>justify-content: center;</b> - задаем выравниваем по центру относително вертикалной оси  <br>
-						<b>align-items: center;</b> - относително горизонтальной оси<br>
-						<b>min-width: 200px; min-height: 200px;</b> -  и мин. размер 200px <br>
-					</p>
-					<br>
-					<p> Для 2 flex-блока (серый) минимальный и максимальный размер ограничен:<br>
-						<b>flex-direction: column;</b> - дети располагаются вертикально<br>
-						<b>justify-content: center</b> - центрирование по главной (теперь горизонтальной) оси<br>
-						<b>min-width: 450px; >max-width: 650px;</b> <br>
-					</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="block-description">
-			<h3>Отступы:</h3> 				
-			<b>margin</b>  - внешние отступы <br>
-			<b>padding</b> - внутренние отступы <br>
-			значения перечисляются по часовой стрелке:<br> 
-			верх, правая сторона, низ, левая сторона:<br>
-			margin: 1px 2px 3px 4px; <br>
-			padding: 10px 5px 3px 1px;<br>
-			<br>
-			<b>box-sizing: content-box</b> - к размеру контента прибавляется все остальное<br>
-			<b>box-sizing: border-box</b> - размер контента включает padding и border, а margin  прибавляется
-		</div>
-		<div class="block-example">
-			<p>
-				<strong>Общие параметры:</strong><br>
-				width: 300px;<br>
-				height: 300px;<br>
-				margin: 10px;<br>
-				padding: 5px;<br>
-				border: 1px;<br>
-			</p>
-	 		<br>
-
-		<!-- box-sizing: content-box -->
-			<p>
-				<strong>box-sizing: <b>content-box</b></strong> (по умолчанию) -
-				padding, border и margin добавляются к заданному размеру content (300px).
-				<br> <b>content-box</b> = margin + border + padding + <b>content</b> + padding + border + margin
-				<br> <b>content-box</b> = 10 + 1 + 5 + <b>300</b> + 5 + 1 + 10 = <b>332px</b>
-				<br> Общий размер = <b>content-box</b>
-			</p>
-			<div style="
-				display: flex;
-				width: 484px;
-				justify-content: space-between;
-				font-size: 11px;
-				margin: 0 auto;
-			">
-				<span>←</span> 10 + [1 + 5 + 300 + 5 + 1] + 10 <span>→</span>
-			</div>
-			<div style="
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			">
-				<!-- margin: 10px -->
-				<div style="
-					background-color: #f6c58f;
-					padding: 50px;
-					position: relative;
 				">
-					<span style="
-						position: absolute;
-						top: 100px;
-						left: 2px;
-						font-size: 11px;
-					">
-						margin <br> ← 10px →
-					</span>
-
-					<!-- border: 1px -->
+					<!-- margin: 10px -->
 					<div style="
-						width: 300px;
-						height: 300px;
-						padding: 42px;
-						background-color: #b8d99a;
-						box-sizing: content-box;
+						background-color: #f6c58f;
+						padding: 50px;
+						position: relative;
+					">
+						<span style="
+							position: absolute;
+							top: 100px;
+							left: 2px;
+							font-size: 11px;
+						">
+							margin <br> ← 10px →
+						</span>
+
+						<!-- border: 1px -->
+						<div style="
+							width: 300px;
+							height: 300px;
+							padding: 42px;
+							background-color: #b8d99a;
+							box-sizing: content-box;
+						">
+							<span style="
+								position: absolute;
+								top: 20px;
+								left: 30px;
+								font-size: 11px;
+							">
+								border <br>  → 1px ←
+							</span>
+
+							<!-- content -->
+							<div style="
+								width: 300px;
+								height: 300px;
+								background-color: #8fc5e8;
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								text-align: center;
+								border: 1px solid black;
+							">
+								<span style="
+									position: absolute;
+									top: 200px;
+									left: 50px;
+									font-size: 11px;
+								">
+									padding <br> ← 5px →
+								</span>
+
+								<div style="
+									display: flex; 
+									width: 100%; 
+									justify-content: space-between;
+									font-size: 11px;
+			">
+									<span>←</span> <strong>content 300px</strong> <span>→</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br><br>
+
+			<!-- box-sizing: border-box-->
+				<p>
+					<strong>box-sizing: <b>border-box</b></strong> -
+					padding, border входить в состав контента (300px), 
+					а margin добавляются к заданному размеру.
+					<br> <b>border-box</b> = border + padding + <b>content</b> + padding + border
+					<br> Общий размер = margin + [<b>border-box</b>] + margin
+					<br> <b>border-box</b> = 1 + 5 + 288 + 5 + 1 = <b>300px</b>
+					<br> Общий размер  10 + [<b>300px</b>] + 10 = <b>320px</b>
+				</p>
+				<div style="
+					display: flex;
+					width: 484px;
+					justify-content: space-between;
+					font-size: 11px;
+					margin: 0 auto;
+				">
+					<span>←</span> 10 + [300px] + 10 <span>→</span>
+				</div>
+				<div style="
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				">
+					<!-- margin: 10px -->
+					<div style="
+						background-color: #f6c58f;
+						padding: 50px;
+						position: relative;
 					">
 						<span style="
 							position: absolute;
@@ -1367,452 +1439,406 @@
 						">
 							border <br>  → 1px ←
 						</span>
-
-						<!-- content -->
-						<div style="
-							width: 300px;
-							height: 300px;
-							background-color: #8fc5e8;
-							display: flex;
-							justify-content: center;
-							align-items: center;
-							text-align: center;
-							border: 1px solid black;
-						">
-							<span style="
-								position: absolute;
-								top: 200px;
-								left: 50px;
-								font-size: 11px;
-							">
-								padding <br> ← 5px →
-							</span>
-
-							<div style="
-								display: flex; 
-								width: 100%; 
-								justify-content: space-between;
-								font-size: 11px;
-		">
-								<span>←</span> <strong>content 300px</strong> <span>→</span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-	 		<br><br>
-
-		<!-- box-sizing: border-box-->
-			<p>
-				<strong>box-sizing: <b>border-box</b></strong> -
-				padding, border входить в состав контента (300px), 
-				а margin добавляются к заданному размеру.
-				<br> <b>border-box</b> = border + padding + <b>content</b> + padding + border
-				<br> Общий размер = margin + [<b>border-box</b>] + margin
-				<br> <b>border-box</b> = 1 + 5 + 288 + 5 + 1 = <b>300px</b>
-				<br> Общий размер  10 + [<b>300px</b>] + 10 = <b>320px</b>
-			</p>
-			<div style="
-				display: flex;
-				width: 484px;
-				justify-content: space-between;
-				font-size: 11px;
-				margin: 0 auto;
-			">
-				<span>←</span> 10 + [300px] + 10 <span>→</span>
-			</div>
-			<div style="
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			">
-				<!-- margin: 10px -->
-				<div style="
-					background-color: #f6c58f;
-					padding: 50px;
-					position: relative;
-				">
-					<span style="
-						position: absolute;
-						top: 20px;
-						left: 30px;
-						font-size: 11px;
-					">
-						border <br>  → 1px ←
-					</span>
-					<span style="
-						position: absolute;
-						top: 100px;
-						left: 2px;
-						font-size: 11px;
-					">
-						margin <br> ← 10px →
-					</span>
-
-					<!-- border-box -->
-					<div style="
-						width: 300px;
-						height: 300px;
-						padding: 42px;
-						border: 1px solid black;
-						background-color: #b8d99a;
-						box-sizing: content-box;
-						position: relative;
-					">
-						<div style="
+						<span style="
 							position: absolute;
-							top: 20px;
-							left: 0;
-							right: 0;
-							display: flex;
-							justify-content: space-between;
+							top: 100px;
+							left: 2px;
 							font-size: 11px;
 						">
-							<span><strong>←</strong></span>
-							<span><strong>border-box 300px</strong></span>
-							<span><strong>→</strong></span>
-						</div>				
+							margin <br> ← 10px →
+						</span>
 
-						<!-- content -->
+						<!-- border-box -->
 						<div style="
 							width: 300px;
 							height: 300px;
-							background-color: #8fc5e8;
-							display: flex;
-							justify-content: center;
-							align-items: center;
-							text-align: center;
-							font-size: 11px;
+							padding: 42px;
+							border: 1px solid black;
+							background-color: #b8d99a;
+							box-sizing: content-box;
+							position: relative;
 						">
-							<span style="
-								position: absolute;
-								top: 100px;
-								left: 0px;
-								font-size: 11px;
-							">
-								padding <br> ← 5px →
-							</span>
-
 							<div style="
-								display: flex; 
-								width: 100%; 
+								position: absolute;
+								top: 20px;
+								left: 0;
+								right: 0;
+								display: flex;
 								justify-content: space-between;
 								font-size: 11px;
 							">
-								<span>←</span> <strong>content 288px</strong> <span>→</span>
+								<span><strong>←</strong></span>
+								<span><strong>border-box 300px</strong></span>
+								<span><strong>→</strong></span>
+							</div>				
+
+							<!-- content -->
+							<div style="
+								width: 300px;
+								height: 300px;
+								background-color: #8fc5e8;
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								text-align: center;
+								font-size: 11px;
+							">
+								<span style="
+									position: absolute;
+									top: 100px;
+									left: 0px;
+									font-size: 11px;
+								">
+									padding <br> ← 5px →
+								</span>
+
+								<div style="
+									display: flex; 
+									width: 100%; 
+									justify-content: space-between;
+									font-size: 11px;
+								">
+									<span>←</span> <strong>content 288px</strong> <span>→</span>
+								</div>
 							</div>
+
 						</div>
 
 					</div>
 
 				</div>
+				<br><br>
 
-			</div>
-			<br><br>
-
-		<!-- border-image: -->
-			<p>
-				<b>border-image:</b> позволяет использовать изображение как рамку элемента.<br>
-				<b>border-image: url('assets/images/logo_2.png') 50 stretch;</b> <br>
-				Изображение делится на 9 квадратов и каждый квадрат будет углом и линиями (кроме центрального)<br>
-				квадрат отмеряетса от внешней границы рисунка (50) для него задается поведение (stretch - растягивать)<br>
-				<b>border: 8px solid transparent;</b> 
-				- задает толщину рамки (8px) и прозрачный цвет, чтобы не перекрывать изображение рамки.<br>
-				<br>
-			</p>
-			<div style="
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				background: lightyellow;
-				border: 8px solid transparent;
-				border-image: url('assets/images/logo_2.png') 50 stretch;
-				min-width: 400px;
-				max-width: 800px;
-				height: 100px;
-				margin: 0 auto;
-			">
-				Пример border-image
-			</div>
-			<br><br>
-
-		<!-- box-shadow: -->
-			<p>
-				<b>box-shadow: offset-x offset-y blur spread color; </b> - добавляет тень к элементу.<br>
-				<ul class="attributes">
-					<li><b>offset-x</b> - смещение по горизонтали</li>
-					<li><b>offset-y</b> - смещение по вертикали</li>
-					<li><b>blur</b> - размытие</li>
-					<li><b>spread</b> - увеличение/уменьшение тени</li>
-					<li><b>color</b> - цвет</li>
-				</ul>
-			</p>
-			<div style="
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				">
-				<div class="square-block" style="
-					box-shadow: -5px -5px gray;
-					border-radius: 25px 5px 25px 5px;
-				">
-					box-shadow: -5px -5px gray;<br>
-					border-radius: 25px 5px 25px 5px;
-				</div>
-				<div class="square-block" style="
-					box-shadow: 5px 5px 5px gray;
-					border-radius: 15px 15px 15px 15px;
-				">
-					box-shadow: 5px 5px 5px gray;<br>
-					border-radius: 15px 15px 15px 15px;
-				</div>
-				<div class="square-block" style="
-					box-shadow: 5px 5px 5px 5px gray;
-				">
-					box-shadow: 5px 5px 5px 5px gray;
-				</div>
-				<div class="square-block" style="
-					box-shadow: 0 0 10px gray;
-					border-top-left-radius: 90px 30px;
-				">
-					box-shadow: 0 0 10px gray;
-				</div>
-				<div class="square-block" style="
-					background: yellow;
-					box-shadow: inset 2px -7px 10px gray;
-					border-radius: 5px 85px 5px 85px;
-				">
-					box-shadow: inset 1px -5px 5px gray;<br>
-					border-radius: 5px 85px 5px 85px;
-				</div>
-			</div>
-			<br>
-		</div>
-
-		<!-- Interaktivniy blok -->
-		<div class="block-example">
-			<h2>Interaktivniy blok</h2>
-			<div class="section_horisontal">
-				<!-- Atributy bloka (blockInteractive) -->
-				<div class="block_horisontal">
-					<strong>Blok:</strong>
+			<!-- border-image: -->
+				<p>
+					<b>border-image:</b> позволяет использовать изображение как рамку элемента.<br>
+					<b>border-image: url('assets/images/logo_2.png') 50 stretch;</b> <br>
+					Изображение делится на 9 квадратов и каждый квадрат будет углом и линиями (кроме центрального)<br>
+					квадрат отмеряетса от внешней границы рисунка (50) для него задается поведение (stretch - растягивать)<br>
+					<b>border: 8px solid transparent;</b> 
+					- задает толщину рамки (8px) и прозрачный цвет, чтобы не перекрывать изображение рамки.<br>
 					<br>
-					<div class="form-greed" id="blockAtributes">
-						<label> Width: </label> 
-						<input data-css="width" type="number" value="200" data-unit="px">
-						
-						<label> Height: </label> 
-						<input data-css="height" type="number" value="200" data-unit="px">
-
-						<label> Background color:</label> 
-						<input data-css="backgroundColor" type="color" value="#c3f047">
-					</div>
-				</div>
-				<!-- Atributy teni (blockInteractive) -->
-				<div class="block_horisontal">
-					<strong>Teni:</strong>
-					<br>
-					<div class="form-greed" id="shadowAtributes">
-						<label> tip: </label>
-						<select id="shadowInset">
-							<option value="">Outside</option>
-							<option value="inset" selected>Inside</option>
-						</select> 
-						<!-- <input data-css="shadowInset" type="checkbox" value="inset"> -->
-
-						<label> Ten po X : </label> 
-						<input data-css="shadowX" type="number" value="-10" data-unit="px">
-						
-						<label> Ten po Y: </label> 
-						<input data-css="shadowY" type="number" value="-10" data-unit="px">
-
-						<label> Razmitie: </label> 
-						<input data-css="shadowBlur" type="number" value="25" data-unit="px">
-
-						<label> Rasprostranenie: </label> 
-						<input data-css="shadowSpread" type="number" value="1" data-unit="px">
-
-						<label> Color:</label> 
-						<input data-css="shadowColor" type="color" value="#7e892f">
-					</div>
-				</div>
-				<!-- Atributy ramki (blockInteractive) -->
-				<div class="block_horisontal">
-					<strong>Ramka:</strong>
-					<br>
-					<div class="form-greed" id="frameAtributes">
-						<label> Border width: </label> 
-						<input data-css="borderWidth" type="number" value="0" data-unit="px">
-						
-						<label> Border color:</label> 
-						<input data-css="borderColor" type="color" value="#c3f047">
-
-						<label> Left top corner radius: </label> 
-						<input data-css="borderTopLeftRadius" type="number" value="130" data-unit="px">
-
-						<label> Right top corner radius: </label> 
-						<input data-css="borderTopRightRadius" type="number" value="15" data-unit="px">
-						
-						<label> Right bottom corner radius: </label> 
-						<input data-css="borderBottomRightRadius" type="number" value="130" data-unit="px">
-
-						<label> Left bottom corner radius: </label> 
-						<input data-css="borderBottomLeftRadius" type="number" value="15" data-unit="px">				
-					</div>
-				</div>
-
-				<!-- Interaktivniy Blok -->
-				<div class="block_horisontal" style="
+				</p>
+				<div style="
 					display: flex;
+					justify-content: center;
 					align-items: center;
-					justify-content: center;">
-					<div id="blockInteractive" >
-						<!-- Interaktivniy Blok -->
+					background: lightyellow;
+					border: 8px solid transparent;
+					border-image: url('assets/images/logo_2.png') 50 stretch;
+					min-width: 400px;
+					max-width: 800px;
+					height: 100px;
+					margin: 0 auto;
+				">
+					Пример border-image
+				</div>
+				<br><br>
+
+			<!-- box-shadow: -->
+				<p>
+					<b>box-shadow: offset-x offset-y blur spread color; </b> - добавляет тень к элементу.<br>
+					<ul class="attributes">
+						<li><b>offset-x</b> - смещение по горизонтали</li>
+						<li><b>offset-y</b> - смещение по вертикали</li>
+						<li><b>blur</b> - размытие</li>
+						<li><b>spread</b> - увеличение/уменьшение тени</li>
+						<li><b>color</b> - цвет</li>
+					</ul>
+				</p>
+				<div style="
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					">
+					<div class="square-block" style="
+						box-shadow: -5px -5px gray;
+						border-radius: 25px 5px 25px 5px;
+					">
+						box-shadow: -5px -5px gray;<br>
+						border-radius: 25px 5px 25px 5px;
+					</div>
+					<div class="square-block" style="
+						box-shadow: 5px 5px 5px gray;
+						border-radius: 15px 15px 15px 15px;
+					">
+						box-shadow: 5px 5px 5px gray;<br>
+						border-radius: 15px 15px 15px 15px;
+					</div>
+					<div class="square-block" style="
+						box-shadow: 5px 5px 5px 5px gray;
+					">
+						box-shadow: 5px 5px 5px 5px gray;
+					</div>
+					<div class="square-block" style="
+						box-shadow: 0 0 10px gray;
+						border-top-left-radius: 90px 30px;
+					">
+						box-shadow: 0 0 10px gray;
+					</div>
+					<div class="square-block" style="
+						background: yellow;
+						box-shadow: inset 2px -7px 10px gray;
+						border-radius: 5px 85px 5px 85px;
+					">
+						box-shadow: inset 1px -5px 5px gray;<br>
+						border-radius: 5px 85px 5px 85px;
+					</div>
+				</div>
+				<br>
+			</div>
+
+			<!-- Interaktivniy blok -->
+			<div class="block-example">
+				<h2>Interaktivniy blok</h2>
+				<div class="section_horisontal">
+					<!-- Atributy bloka (blockInteractive) -->
+					<div class="block_horisontal">
+						<strong>Blok:</strong>
+						<br>
+						<div class="form-greed" id="blockAtributes">
+							<label> Width: </label> 
+							<input data-css="width" type="number" value="200" data-unit="px">
+							
+							<label> Height: </label> 
+							<input data-css="height" type="number" value="200" data-unit="px">
+
+							<label> Background color:</label> 
+							<input data-css="backgroundColor" type="color" value="#c3f047">
+						</div>
+					</div>
+					<!-- Atributy teni (blockInteractive) -->
+					<div class="block_horisontal">
+						<strong>Teni:</strong>
+						<br>
+						<div class="form-greed" id="shadowAtributes">
+							<label> tip: </label>
+							<select id="shadowInset">
+								<option value="">Outside</option>
+								<option value="inset" selected>Inside</option>
+							</select> 
+							<!-- <input data-css="shadowInset" type="checkbox" value="inset"> -->
+
+							<label> Ten po X : </label> 
+							<input data-css="shadowX" type="number" value="-10" data-unit="px">
+							
+							<label> Ten po Y: </label> 
+							<input data-css="shadowY" type="number" value="-10" data-unit="px">
+
+							<label> Razmitie: </label> 
+							<input data-css="shadowBlur" type="number" value="25" data-unit="px">
+
+							<label> Rasprostranenie: </label> 
+							<input data-css="shadowSpread" type="number" value="1" data-unit="px">
+
+							<label> Color:</label> 
+							<input data-css="shadowColor" type="color" value="#7e892f">
+						</div>
+					</div>
+					<!-- Atributy ramki (blockInteractive) -->
+					<div class="block_horisontal">
+						<strong>Ramka:</strong>
+						<br>
+						<div class="form-greed" id="frameAtributes">
+							<label> Border width: </label> 
+							<input data-css="borderWidth" type="number" value="0" data-unit="px">
+							
+							<label> Border color:</label> 
+							<input data-css="borderColor" type="color" value="#c3f047">
+
+							<label> Left top corner radius: </label> 
+							<input data-css="borderTopLeftRadius" type="number" value="130" data-unit="px">
+
+							<label> Right top corner radius: </label> 
+							<input data-css="borderTopRightRadius" type="number" value="15" data-unit="px">
+							
+							<label> Right bottom corner radius: </label> 
+							<input data-css="borderBottomRightRadius" type="number" value="130" data-unit="px">
+
+							<label> Left bottom corner radius: </label> 
+							<input data-css="borderBottomLeftRadius" type="number" value="15" data-unit="px">				
+						</div>
+					</div>
+
+					<!-- Interaktivniy Blok -->
+					<div class="block_horisontal" style="
+						display: flex;
+						align-items: center;
+						justify-content: center;">
+						<div id="blockInteractive" >
+							<!-- Interaktivniy Blok -->
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 
-	</section>
+		</section>
 
 
-<!-- *********************** -->
-	<!-- BACKGROUND -->
-	<section  id="background" class="section-reference">
-		<h2>Background</h2>	
-		
-		<div class="block-description">
-			<ul class="attributes">
-				<li><b>background-image: url("</b>путь к файлу<b>");</b> - <strong>изображение</strong> </li>
-				<br>
-				<li><b>background-color: white;</b> - <strong>цвет фона</strong> </li>
-				<br>	
-				<li><b>background-repeat: repeat;</b> - повторение изображения фона </li>
+		<!-- *********************** -->
+		<!-- BACKGROUND -->
+		<section  id="background" class="section-reference">
+			<h2>Background</h2>	
+			
+			<div class="block-description">
 				<ul class="attributes">
-					<li><b>repeat</b> - повторять по горизонтали и вертикали </li>
-					<li><b>repeat-x</b> - повторять только по горизонтали </li>
-					<li><b>repeat-y</b> - повторять только по вертикали </li>
-					<li><b>space</b> - повторять с равными промежутками </li>
-					<li><b>round</b> - повторять, подгоняя изображения по размеру </li>
+					<li><b>background-image: url("</b>путь к файлу<b>");</b> - <strong>изображение</strong> </li>
+					<br>
+					<li><b>background-color: white;</b> - <strong>цвет фона</strong> </li>
+					<br>	
+					<li><b>background-repeat: repeat;</b> - повторение изображения фона </li>
+					<ul class="attributes">
+						<li><b>repeat</b> - повторять по горизонтали и вертикали </li>
+						<li><b>repeat-x</b> - повторять только по горизонтали </li>
+						<li><b>repeat-y</b> - повторять только по вертикали </li>
+						<li><b>space</b> - повторять с равными промежутками </li>
+						<li><b>round</b> - повторять, подгоняя изображения по размеру </li>
+					</ul>
+					<br>
+					<li><b>background-position: center;</b> - <strong>позиция изображения фона</strong> </li>
+					<ul class="attributes">
+						<li><b>center</b> - по центру </li>
+						<li><b>top</b> - сверху </li>
+						<li><b>bottom</b> - снизу </li>
+						<li><b>left</b> - слева </li>
+						<li><b>right</b> - справа </li>
+						<li><b>top left</b> - сверху слева</li>
+						<li><b>top right</b> - сверху справа</li>
+						<li><b>bottom left</b> - снизу слева</li>
+						<li><b>bottom right</b> - снизу справа</li>
+						<li><b>20px 10px</b> - 20px слева, 10px сверху</li>
+						<li><b>50% 50%</b> - по центру в процентах</li>
+					</ul>
+					<br>
+					<li><b>background-size: cover;</b> - <strong>размер изображения фона</strong> </li>
+					<ul class="attributes">
+						<li><b>cover</b> - заполнить весь блок, часть картинки может обрезаться</li>
+						<li><b>contain</b> - показать картинку целиком, могут остаться пустые области</li>
+						<li><b>auto</b> - исходный размер</li>
+						<li><b>100px 80px</b> - задать ширину и высоту</li>
+						<li><b>50%</b> - ширина 50%, высота автоматически</li>
+						<li><b>100% 100%</b> - растянуть точно по размеру блока</li>
+					</ul>
+					<br>
+					<li><b>background-attachment: scroll;</b> - <strong>поведение фона при прокрутке</strong> </li>
+					<ul class="attributes">
+						<li><b>scroll</b> - фон прокручивается вместе со страницей</li>
+						<li><b>fixed</b> - фон остаётся неподвижным</li>
+						<li><b>local</b> - фон прокручивается вместе с содержимым элемента</li>
+					</ul>
+					<br>
+					<li><b>background-origin: padding-box;</b> - <strong>позиция фона</strong> </li>
+					<ul class="attributes">
+						<li><b>padding-box</b> - позиция фона считается от области padding</li>
+						<li><b>border-box</b> - позиция фона считается от внешнего края border</li>
+						<li><b>content-box</b> - позиция фона считается от области	 content</li>
+					</ul>
+					<br>
+					<li><b>background-clip: border-box;</b> - <strong>обрезка фона</strong> </li>
+					<ul class="attributes">
+						<li><b>border-box</b> - фон рисуется под border</li>
+						<li><b>padding-box</b> - фон доходит только до padding</li>
+						<li><b>content-box</b> - фон только внутри content</li>
+					</ul>
 				</ul>
 				<br>
-				<li><b>background-position: center;</b> - <strong>позиция изображения фона</strong> </li>
-				<ul class="attributes">
-					<li><b>center</b> - по центру </li>
-					<li><b>top</b> - сверху </li>
-					<li><b>bottom</b> - снизу </li>
-					<li><b>left</b> - слева </li>
-					<li><b>right</b> - справа </li>
-					<li><b>top left</b> - сверху слева</li>
-					<li><b>top right</b> - сверху справа</li>
-					<li><b>bottom left</b> - снизу слева</li>
-					<li><b>bottom right</b> - снизу справа</li>
-					<li><b>20px 10px</b> - 20px слева, 10px сверху</li>
-					<li><b>50% 50%</b> - по центру в процентах</li>
-				</ul>
+				<p> <strong>Cокращённо: </strong> <b>background: url("../assets/images/image.jpg") center / cover no-repeat;</b></p>
 				<br>
-				<li><b>background-size: cover;</b> - <strong>размер изображения фона</strong> </li>
-				<ul class="attributes">
-					<li><b>cover</b> - заполнить весь блок, часть картинки может обрезаться</li>
-					<li><b>contain</b> - показать картинку целиком, могут остаться пустые области</li>
-					<li><b>auto</b> - исходный размер</li>
-					<li><b>100px 80px</b> - задать ширину и высоту</li>
-					<li><b>50%</b> - ширина 50%, высота автоматически</li>
-					<li><b>100% 100%</b> - растянуть точно по размеру блока</li>
-				</ul>
-				<br>
-				<li><b>background-attachment: scroll;</b> - <strong>поведение фона при прокрутке</strong> </li>
-				<ul class="attributes">
-					<li><b>scroll</b> - фон прокручивается вместе со страницей</li>
-					<li><b>fixed</b> - фон остаётся неподвижным</li>
-					<li><b>local</b> - фон прокручивается вместе с содержимым элемента</li>
-				</ul>
-				<br>
-				<li><b>background-origin: padding-box;</b> - <strong>позиция фона</strong> </li>
-				<ul class="attributes">
-					<li><b>padding-box</b> - позиция фона считается от области padding</li>
-					<li><b>border-box</b> - позиция фона считается от внешнего края border</li>
-					<li><b>content-box</b> - позиция фона считается от области	 content</li>
-				</ul>
-				<br>
-				<li><b>background-clip: border-box;</b> - <strong>обрезка фона</strong> </li>
-				<ul class="attributes">
-					<li><b>border-box</b> - фон рисуется под border</li>
-					<li><b>padding-box</b> - фон доходит только до padding</li>
-					<li><b>content-box</b> - фон только внутри content</li>
-				</ul>
-			</ul>
-			<br>
-			<p> <strong>Cокращённо: </strong> <b>background: url("../assets/images/image.jpg") center / cover no-repeat;</b></p>
-			<br>
-		</div>
-		<div class="block-example">
-			<h2 >Пример блоков с фоном</h2>
-			<div style="gap: 20px; display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
-				<div class="block-background-image" style="width: 500px; height: 200px;">
-					background-image: url("background_1.png");<br>
-					background-repeat: no-repeat;<br>
-					background-position: center;<br>
-					background-size: cover;<br>
-					background-attachment: <strong>fixed</strong>;<br>
-				</div>
-				<div class="block-background-image" style="background-attachment: scroll; border-radius: 120px; width: 500px; height: 200px;">
-					background-image: url("background_1.png");<br>
-					background-repeat: no-repeat;<br>
-					background-position: center;<br>
-					background-size: cover;<br>
-					background-attachment: <strong>scroll</strong>;<br>
-				</div>
 			</div>
-		</div>
-	</section>
-
-
-
-
-
-<!-- *********************** -->
-	<!-- SHABLON -->
-	<section class="section-reference">
-		<h2>zagolovok sekcii</h2>	
-		
-		<div class="block-description">
-			<p>
-				<b>&lt;h1&gt;</b> - Opisanie,
-			</p>
-		</div>
-		<div class="block-example">
-			<h2>Primer &lt;h2&gt;</h2>
-			<form action="example.php" method="post">
-			<div class="form-greed">
-				<label for="name" class="title">Имя:</label>
-				<input type="text" id="name" name="name">
-
-				<label for="email" class="title">Email:</label>
-				<input type="email" id="email" name="email">
-
-				<span class="title">Пол:</span>
-				<div>
-					<input type="radio" name="gender" id="male" value="M" checked">
-					<label for="male">М</label>
-					
-					<input type="radio" name="gender" id="female" value="F">
-					<label for="female">Ж</label><br/>
+			<div class="block-example">
+				<h2 >Пример блоков с фоном</h2>
+				<div style="gap: 20px; display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
+					<div class="block-background-image" style="width: 600px; height: 200px;">
+						background-image: url("background_1.png");<br>
+						background-repeat: no-repeat;<br>
+						background-position: center;<br>
+						background-size: cover;<br>
+						background-attachment: <strong>fixed</strong>;<br>
+					</div>
+					<div class="block-background-image" style="background-attachment: scroll; border-radius: 120px; width: 600px; height: 200px;">
+						background-image: url("background_1.png");<br>
+						background-repeat: no-repeat;<br>
+						background-position: center;<br>
+						background-size: cover;<br>
+						background-attachment: <strong>scroll</strong>;<br>
+					</div>
+				</div>
+				<br>
+				<div style="gap: 20px; display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
+					<div class="block-background-image" style="background: radial-gradient(circle at 90% 10%, rgb(254, 245, 117), blue); width: 600px; height: 250px;">
+						background: radial-gradient( <strong>circle at 90% 10%</strong>, yellow, blue);<br>
+						circle              - круг <br>
+						ellipse             - эллипс, по умолчанию <br>
+						closest-side        - до ближайшей стороны <br>
+						closest-corner      - до ближайшего угла <br>
+						farthest-side       - до дальней стороны <br>
+						farthest-corner     - до дальнего угла, по умолчанию <br>
+						circle closest-side  - круг до ближайшей стороны <br>
+						ellipse closest-corner - эллипс до ближайшего угла ... <br>
+					</div>
+					<div class="block-background-image" style="background: linear-gradient(45deg, red, blue); width: 600px; height: 250px; border-radius: 120px;">
+						background: linear-gradient( <strong>45deg</strong>, red, blue); <br>
+						to right          - слева направо<br>
+						to left           - справа налево<br>
+						to bottom         - сверху вниз<br>
+						to top            - снизу вверх<br>
+						to bottom right   - по диагонали вниз-вправо  ...<br>
+						45deg             - угол в градусах ...<br>					
+					</div>
 				</div>
 
-				<input type="submit" class="button-custom" value="Регистрация" id="submit">
-				<button class="button-custom"> Регистрация </button>
 			</div>
-			</form>
+		</section>
+
+
+
+
+
+		<!-- *********************** -->
+		<!-- SHABLON -->
+		<section class="section-reference">
+			<h2>zagolovok sekcii</h2>	
+			
+			<div class="block-description">
+				<p>
+					<b>&lt;h1&gt;</b> - Opisanie,
+				</p>
+			</div>
+			<div class="block-example">
+				<h2>Primer &lt;h2&gt;</h2>
+				<form action="example.php" method="post">
+				<div class="form-greed">
+					<label for="name" class="title">Имя:</label>
+					<input type="text" id="name" name="name">
+
+					<label for="email" class="title">Email:</label>
+					<input type="email" id="email" name="email">
+
+					<span class="title">Пол:</span>
+					<div>
+						<input type="radio" name="gender" id="male" value="M" checked">
+						<label for="male">М</label>
+						
+						<input type="radio" name="gender" id="female" value="F">
+						<label for="female">Ж</label><br/>
+					</div>
+
+					<input type="submit" class="button-custom" value="Регистрация" id="submit">
+					<button class="button-custom"> Регистрация </button>
+				</div>
+				</form>
+		
+			</div>
+		</section>
+
+	</div> <!-- class="main-sections-container" -->
 	
-		</div>
-				
-	</section>
+	</main>
 
-
-
-	<!-- Prilipshaya iconka vnizu -->
-	<img src="assets/images/solar_sign.svg" class="fixIcon" width="50" height="50" alt="Logo2">
+	<footer>
+		<!-- Prilipshaya iconka vnizu -->
+		<img src="assets/images/solar_sign.svg" class="fixIcon" width="50" height="50" alt="Logo2">
+	</footer>
 
 
 </body>

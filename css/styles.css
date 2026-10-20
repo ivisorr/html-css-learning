@@ -12,10 +12,14 @@
     --menu-height: 60px;
 
     --menu-color: #F73;
-    --menu-background-color: rgb(223, 202, 202);    
+    --menu-background-color: #f5eaea;  /* rgb(223, 202, 202) */  
     --menu-background-color1: #3d3a37;
     --menu-background-color2: #706c67;
     --menu-shadow: #323233;
+
+    --accordeon-text-color: #3d3a37;
+    --accordeon-background-color: #f5eaea; /* #DCC5C1 */
+    --accordeon-background-hover-color: #DCC5C1; /* #DCC5C1 */
     
     --section-reference-color: #f3ecec; /* #EEE7E7 */
     --block-description-color: #ecf3f7;
@@ -110,17 +114,17 @@ aside {
     margin-top: 10px;
 }
 
+/* Blok dekoracii */
 .menu-decoration {
     position: relative;
     align-items: center;
     justify-content:center;
-	width: calc(var(--menu-height)*1.4); 
 	height: var(--menu-height);
+	width: calc(var(--menu-height)*1.42); 
     flex-shrink: 0;    
-    margin-left: 20px;
 }
 
-.menu-logo img {
+.square-image img {
     position: absolute;
     inset: 0;
     width: var(--menu-height);
@@ -129,25 +133,31 @@ aside {
     overflow: visible;
     flex-shrink: 0;
 
-    transform: rotate(45deg);
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(45deg);
+
 }
 
-.line-logo img {
+.solar-image img {
     position: absolute;
     width: var(--line-logo-size);
     height: var(--line-logo-size);
-    top: calc( (var(--menu-height) - var(--line-logo-size)) / 2 );
-    left:  calc( (var(--menu-height) - var(--line-logo-size)) / 2 );
+    top: 50%;
+    left: 50%;
 
-    animation: logo-rotate 5s linear infinite;
+    animation: solar-image-rotate 5s linear infinite;
 }
 
-@keyframes logo-rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+@keyframes solar-image-rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-
+/* menu Nav */
 .main-menu {
     position: relative;
     display: flex;          /* делаем горизонтально */
@@ -271,12 +281,81 @@ pre {
     overflow-x: auto;
 }
 
+/* Raskrivayushiysa blok dlya sekcii */
+.accordeon-for-section-reference {
+    box-shadow: 2px 3px 3px var(--section-reference-frame-color);
+}
+
+.accordeon-for-section-reference summary {
+    margin: 20px 0 0 0;
+    padding: 20px 40px 5px 40px;
+
+    font-weight: bold;
+    /* color: var(--menu-color);
+
+    background-color: var(--menu-background-color2); */
+    color: var(--accordeon-text-color);
+
+    background-color: var(--accordeon-background-color); */
+    border: 1px solid var(--section-reference-frame-color);
+    border-radius: 5px;
+}
+
+.accordeon-for-section-reference[open] > summary {
+    background-color: #FFE8D9;
+}
+
+.accordeon-for-section-reference summary:hover {
+    background-color: var(--accordeon-background-hover-color);
+    color: white;
+}
+
+.accordeon-for-section-reference > summary::marker {
+    font-size: 30px;
+}
+
+/* obertka vnutri <summary> dlya togo shtobi standartno primenat css k potomkam vnutri summary */
+.accordeon-for-section-reference > summary > div {
+    margin: -15px 0 0 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+
+.section-reference {
+    /* margin: 60px 5px; */
+    padding: 40px;
+    border: 1px solid var(--section-reference-frame-color);
+    border-radius: 5px;
+    background-color: var(--section-reference-color);
+    box-shadow: 2px 3px 3px var(--section-reference-frame-color);
+}
+
+.block-description {
+    /* margin: 40px 0 20px; */
+    padding: 20px 30px;
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    background-color: var(--block-description-color);
+    box-shadow: 2px 3px 3px var(--section-reference-frame-color);
+}
+
+.block-example {
+    margin: 20px 0 0 0;
+    padding: 30px;
+    border: 1px solid #ccc;
+    background-color: var(--block-example-color);
+    box-shadow: 2px 3px 3px var(--section-reference-frame-color);
+}
+
 .section_horisontal {
     display: flex;              /* ставит блоки в одну строку */
     /* align-items: flex-start; /* прижимает блоки к верху */
     flex-wrap: wrap;
     align-items: stretch;		/* выравнивает размер блоков по большему, по высоте */
     gap: 10px;                  /* расстояние между блоками */
+    margin: 10px 0 0 0;
 }		
 
 .block_horisontal {
@@ -286,32 +365,6 @@ pre {
     margin-top: 0 !important; /* без этого "align-items: flex-start;" не срабатывает */
     padding: 10px;              /*  отступы */
 }		
-
-.section-reference {
-    margin: 60px 5px;
-    padding: 40px;
-    border: 1px solid var(--section-reference-frame-color);
-    border-radius: 5px;
-    background-color: var(--section-reference-color);
-    box-shadow: 2px 3px 3px var(--section-reference-frame-color);
-}
-
-.block-description {
-    margin: 40px 0 20px;
-    padding: 20px 30px;
-    border: 1px solid #ccc; 
-    border-radius: 5px;
-    background-color: var(--block-description-color);
-    box-shadow: 2px 3px 3px var(--section-reference-frame-color);
-}
-
-.block-example {
-    margin: 20px 0;
-    padding: 30px;
-    border: 1px solid #ccc;
-    background-color: var(--block-example-color);
-    box-shadow: 2px 3px 3px var(--section-reference-frame-color);
-}
 
 .block-background-image {
     /* background-color: white; */
@@ -545,14 +598,8 @@ textarea {
 .fixIcon {
     position: fixed;
     left: 0;
-    bottom: 0;
+    bottom:  calc( (var(--menu-height)*1.42 - var(--menu-height)) / 2); /* вертикальные отступы вращающегося логотипа */
     z-index: 100;
-    animation: rotate-logo 10s linear infinite;
-}
-
-@keyframes rotate-logo {
-	from { transform: rotate(0deg); }
-	to   { transform: rotate(360deg); }
 }
 /* Prilipshaya iconka vnizu */
 /* ********************** */

@@ -4,28 +4,39 @@
 
 :root {
     --background-color: white;
-    --tag-color: #F73;
-    --purple-color: #782E7A;
-    
-    --table-background-color: #00a746;
+    --background-middle-color: #706c67;
+    --background-dark-color: #3d3a37;
 
+    --section-bg-color: #f3ecec;
+    --hover-color: #F73;
+    --purple-color: #782E7A;
+    --shadow-color: #323233;
+    --frame-color: #ccc;
+    /* --table-background-color: #00a746; */
+
+    --tag-color: var(--hover-color);
+
+    --menu-color: var(--hover-color);
+    --menu-background-color: var(--section-bg-color);  
+    --menu-background-color1: var(--background-dark-color);
+    --menu-background-color2: var(--background-middle-color);
+    --menu-shadow: var(--shadow-color);
+
+    --accordeon-text-color: var(--background-dark-color);
+    --accordeon-text-hover-color: white;
+    --accordeon-text-open-color: var(--hover-color);
+    --accordeon-background-color: var(--section-bg-color);
+    --accordeon-background-hover-color: var(--hover-color);
+    --accordeon-background-open-color: var(--background-dark-color);
+    
+    --section-reference-color: var(--section-bg-color);
+    --block-description-color: #ecf3f7;
+    --block-example-color: #edf2ef; 
+    --section-reference-frame-color: var(--frame-color); /* #EEE7E7 */
+ 
+    
     --menu-height: 60px;
 
-    --menu-color: #F73;
-    --menu-background-color: #f5eaea;  /* rgb(223, 202, 202) */  
-    --menu-background-color1: #3d3a37;
-    --menu-background-color2: #706c67;
-    --menu-shadow: #323233;
-
-    --accordeon-text-color: #3d3a37;
-    --accordeon-background-color: #f5eaea; /* #DCC5C1 */
-    --accordeon-background-hover-color: #DCC5C1; /* #DCC5C1 */
-    
-    --section-reference-color: #f3ecec; /* #EEE7E7 */
-    --block-description-color: #ecf3f7;
-    --block-example-color: #edf2ef; /* #f8f8f8; */
-    --section-reference-frame-color: #ccc; /* #EEE7E7 */
- 
     --asaide-size: 180px;
 
     --logo-size: 25px;
@@ -98,6 +109,7 @@ aside {
 .main-sections-container {
     flex: 1; /* чтобы блок занял всю оставшуюся ширину */
     margin-left: var(--asaide-size);
+    padding-bottom: 60px;
     width: calc(100% - var(--asaide-size));
 }
 
@@ -281,42 +293,59 @@ pre {
     overflow-x: auto;
 }
 
-/* Raskrivayushiysa blok dlya sekcii */
+/* Accordeobn - askrivayushiysa blok dlya sekciy */
 .accordeon-for-section-reference {
     box-shadow: 2px 3px 3px var(--section-reference-frame-color);
+    margin: 20px;
 }
 
 .accordeon-for-section-reference summary {
-    margin: 20px 0 0 0;
-    padding: 20px 40px 5px 40px;
+    padding: 10px 0 0 20px;
 
     font-weight: bold;
-    /* color: var(--menu-color);
-
-    background-color: var(--menu-background-color2); */
     color: var(--accordeon-text-color);
 
-    background-color: var(--accordeon-background-color); */
-    border: 1px solid var(--section-reference-frame-color);
+    background-color: var(--accordeon-background-color);
     border-radius: 5px;
 }
 
+.accordeon-for-section-reference summary:hover {
+    color: var(--accordeon-text-hover-color);
+    background-color: var(--accordeon-background-hover-color);
+	text-shadow: 0 2px 2px var(--menu-shadow);
+	box-shadow: 0 5px 5px var(--menu-shadow);}
+
 .accordeon-for-section-reference[open] > summary {
-    background-color: #FFE8D9;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 5px;
+
+    color: var(--accordeon-text-open-color);
+    background-color: var(--accordeon-background-open-color);
+    border: 1px solid var(--accordeon-text-color);
+    box-shadow: 2px 3px 3px var(--section-reference-frame-color);
 }
 
-.accordeon-for-section-reference summary:hover {
+.accordeon-for-section-reference[open] > summary:hover {
+    color: var(--accordeon-text-hover-color);
     background-color: var(--accordeon-background-hover-color);
-    color: white;
+    border: 1px solid var(--accordeon-background-hover-color);
+	text-shadow: 0 2px 2px var(--menu-shadow);
+	box-shadow: 0 5px 5px var(--menu-shadow);
 }
+
+.accordeon-for-section-reference > summary:hover b {
+    color: var(--background-dark-color);
+	text-shadow: none;
+}   
 
 .accordeon-for-section-reference > summary::marker {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 /* obertka vnutri <summary> dlya togo shtobi standartno primenat css k potomkam vnutri summary */
 .accordeon-for-section-reference > summary > div {
-    margin: -15px 0 0 0;
+    margin: -10px 0 0 0;
     display: inline-block;
     vertical-align: middle;
 }
@@ -325,7 +354,7 @@ pre {
 
 .section-reference {
     /* margin: 60px 5px; */
-    padding: 40px;
+    padding: 0 40px 40px 40px;
     border: 1px solid var(--section-reference-frame-color);
     border-radius: 5px;
     background-color: var(--section-reference-color);
@@ -333,7 +362,7 @@ pre {
 }
 
 .block-description {
-    /* margin: 40px 0 20px; */
+    margin-top: 40px;
     padding: 20px 30px;
     border: 1px solid #ccc; 
     border-radius: 5px;

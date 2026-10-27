@@ -10,7 +10,7 @@
     --section-bg-color: #f3ecec;
     --hover-color: #F73;
     --purple-color: #782E7A;
-    --shadow-color: #323233;
+    --shadow-color: #63636b;
     --frame-color: #ccc;
     /* --table-background-color: #00a746; */
 
@@ -67,6 +67,16 @@ input, select, textarea {
     cursor: url("../assets/images/cursor_pen_32.png") 2 29, auto;
 }
 
+pre {
+    font-family: inherit;
+}
+
+code {
+    display: block;
+    margin: 10px 0;
+    padding: 0 20px;
+    border: 1px solid var(--section-reference-frame-color);
+}
 
 
 body {
@@ -313,7 +323,8 @@ pre {
     color: var(--accordeon-text-hover-color);
     background-color: var(--accordeon-background-hover-color);
 	text-shadow: 0 2px 2px var(--menu-shadow);
-	box-shadow: 0 5px 5px var(--menu-shadow);}
+	box-shadow: 0 5px 5px var(--menu-shadow);
+}
 
 .accordeon-for-section-reference[open] > summary {
     position: relative;
@@ -334,10 +345,16 @@ pre {
 	box-shadow: 0 5px 5px var(--menu-shadow);
 }
 
+.accordeon-for-section-reference[open] > summary b {
+    color: var(--accordeon-text-hover-color);
+	text-shadow: none;
+}   
+
 .accordeon-for-section-reference > summary:hover b {
     color: var(--background-dark-color);
 	text-shadow: none;
 }   
+
 
 .accordeon-for-section-reference > summary::marker {
     font-size: 20px;
@@ -632,6 +649,7 @@ textarea {
 }
 /* Prilipshaya iconka vnizu */
 /* ********************** */
+
 
 /* ********************** */
 /* modalnoe vsplivayushee okno */

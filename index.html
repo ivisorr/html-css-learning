@@ -804,71 +804,71 @@
 		<details class="accordeon-for-section-reference">
 			<summary>
 				<div>
-					<h3>Использование форм - <b>>&lt;form&gt;</b></h3>	
+					<h3>Использование форм - <b>&lt;form&gt;</b></h3>	
 				</div>
 			</summary>
 
 			<section id="forms" class="section-reference">
 				<div class="block-description"> <!-- opisanie -->
-					<pre><code>
-		<b>&lt;form</b> - форма
-		<b>id="myTestForm"</b> - ID формы ( параметр для CSS и JS)
-		<b>method="post"</b> - get/post метод отправки данных формы. 
-			GET - как параметр адресной строки.
-			POST - в теле HTTP-запроса вида:
-			заголовки                 <i>Content-Type: application/x-www-form-urlencoded</i>
-				+                       +
-			тело запроса с данными    <i>username=Ivan&email=test@example.com</i>
-		<b>action="http://my.local/result.php"</b> - web-адресполучателя данных
-		<b>&gt;</b>
+					<pre>
+<b>&lt;form</b> - форма
+<b>id="myTestForm"</b> - ID формы ( параметр для CSS и JS)
+<b>method="post"</b> - get/post метод отправки данных формы. 
+	GET - как параметр адресной строки.
+	POST - в теле HTTP-запроса вида:
+	заголовки                 <i>Content-Type: application/x-www-form-urlencoded</i>
+		+                       +
+	тело запроса с данными    <i>username=Ivan&email=test@example.com</i>
+<b>action="http://my.local/result.php"</b> - web-адресполучателя данных
+<b>&gt;</b>
 
-		<b>&lt;fieldset&gt; &lt;/fieldset&gt;</b> - объединяет атрибуты формы в набор (на экране в рамке)
-		<b>&lt;legend&gt;</b>"Zagolovok"<b>&lt;/legend&gt;</b> - звголовок набора (рамки)
+<b>&lt;fieldset&gt; &lt;/fieldset&gt;</b> - объединяет атрибуты формы в набор (на экране в рамке)
+<b>&lt;legend&gt;</b>"Zagolovok"<b>&lt;/legend&gt;</b> - звголовок набора (рамки)
 
-		<b>&lt;label for="comments"&gt;</b>Что вы думаете об этом выступлении?<b>&lt;/label&gt;</b> - заголовок элемента. 
-			Связь через id элемента: <b>for="comments"</b> (Для textarea задан <b>id="comments"</b>)
-		<b>&lt;textarea</b> - многосмтрочноке поле ввода.
-			<b>id="comments"</b> - идентификатор (для обращениея в форме, например для <b>lable</b>)
-			<b>name="comment"</b> - Имя параметра (поля)ю Передается при отправке формы (POST). 
-			Отправится: comment="Текст введенный пользователем в поле"
-			<b>cols="60"</b> - ширина поля на экране (длина строки). В примере заданно через CSS для масштабирования.
-			<b>rows="4"</b> - высота в строках.
-			<b>placeholder="Введите свой комментарий..."</b> - текст-подсказка доввода.
-		<b>&gt;
-		&lt;/textarea&gt;</b>
+<b>&lt;label for="comments"&gt;</b>Что вы думаете об этом выступлении?<b>&lt;/label&gt;</b> - заголовок элемента. 
+	Связь через id элемента: <b>for="comments"</b> (Для textarea задан <b>id="comments"</b>)
+<b>&lt;textarea</b> - многосмтрочноке поле ввода.
+	<b>id="comments"</b> - идентификатор (для обращениея в форме, например для <b>lable</b>)
+	<b>name="comment"</b> - Имя параметра (поля)ю Передается при отправке формы (POST). 
+	Отправится: comment="Текст введенный пользователем в поле"
+	<b>cols="60"</b> - ширина поля на экране (длина строки). В примере заданно через CSS для масштабирования.
+	<b>rows="4"</b> - высота в строках.
+	<b>placeholder="Введите свой комментарий..."</b> - текст-подсказка доввода.
+<b>&gt;
+&lt;/textarea&gt;</b>
 
-		<b>&lt;label&gt; Пожалуйста введите имя:</b> - другой вариант использования <b>lable</b> без <b>for="ID"</b>
-			<b>&lt;input id="username" type="text" name="username" /&gt;</b> - полеввода 
-		<b>&lt;/label&gt;</b>
-		
-		<b>&lt;input id="depart" type="date" name="depart" required="required" /&gt;</b> - ввод даты
-			<b>required="required</b> признак обязательности ввода
-		<b>&lt;input type="url" name="sait" value="https://yoursite.org" /&gt;</b> - ввод web-адреса
-		<b>&lt;input type="email" name="email" /&gt;</b> - ввод email
+<b>&lt;label&gt; Пожалуйста введите имя:</b> - другой вариант использования <b>lable</b> без <b>for="ID"</b>
+	<b>&lt;input id="username" type="text" name="username" /&gt;</b> - полеввода 
+<b>&lt;/label&gt;</b>
 
-		Радио-кнопки				
-		<b>&lt;input type="radio" name="genre" value="rock" checked="checked" /&gt;</b> Рок
-		...
-		<b>&lt;input type="radio" name="genre" value="pop" /&gt;</b> Поп 
+<b>&lt;input id="depart" type="date" name="depart" required="required" /&gt;</b> - ввод даты
+	<b>required="required</b> признак обязательности ввода
+<b>&lt;input type="url" name="sait" value="https://yoursite.org" /&gt;</b> - ввод web-адреса
+<b>&lt;input type="email" name="email" /&gt;</b> - ввод email
 
-		Check-boksy
-		<b>&lt;input type="checkbox" name="service" value="house" checked="checked" /&gt;</b> Дома
-		...
-		<b>&lt;input type="checkbox" name="service" value="work" /&gt;</b> На работе
+Радио-кнопки				
+<b>&lt;input type="radio" name="genre" value="rock" checked="checked" /&gt;</b> Рок
+...
+<b>&lt;input type="radio" name="genre" value="pop" /&gt;</b> Поп 
 
-		Селектрор со множественным выбором
-		<b>&lt;select name="devices"&gt;</b>
-			<b>&lt;option value="ipod"&gt;</b>iPod<b>&lt;/option&gt;</b>
-			...
-			<b>&lt;option value="computer" selected&gt;</b>Компьютер<b>&lt;/option&gt;</b>
-		<b>&lt;/select&gt;</b>
+Check-boksy
+<b>&lt;input type="checkbox" name="service" value="house" checked="checked" /&gt;</b> Дома
+...
+<b>&lt;input type="checkbox" name="service" value="work" /&gt;</b> На работе
 
-		Кнопки
-		<b>&lt;button type="submit" name="buttonAction" value="fetch"&gt;</b>Отправить (FETCH)<b>&lt;/button&gt;</b>
-		<b>&lt;button type="submit" name="buttonAction" value="post"&gt;</b>Отправить (POST)<b>&lt;/button&gt;</b>
-			
-		<b>&lt;/form&gt;</b>				
-					</code></pre>
+Селектрор со множественным выбором
+<b>&lt;select name="devices"&gt;</b>
+	<b>&lt;option value="ipod"&gt;</b>iPod<b>&lt;/option&gt;</b>
+	...
+	<b>&lt;option value="computer" selected&gt;</b>Компьютер<b>&lt;/option&gt;</b>
+<b>&lt;/select&gt;</b>
+
+Кнопки
+<b>&lt;button type="submit" name="buttonAction" value="fetch"&gt;</b>Отправить (FETCH)<b>&lt;/button&gt;</b>
+<b>&lt;button type="submit" name="buttonAction" value="post"&gt;</b>Отправить (POST)<b>&lt;/button&gt;</b>
+	
+<b>&lt;/form&gt;</b>				
+					</pre>
 					
 					<br>
 					<p>
@@ -878,25 +878,25 @@
 						оправленные данные получает файл /result.php в папке PHP на сервере<br>
 					</p>
 					<pre><code>
-			&lt?php // result.php
-			header('Content-Type: text/plain; charset=utf-8'); // Устанавливаем кодировку
-			// Проверяем, есть ли данные POST
-			if (!empty($_POST)) {
-				echo "Сервер получил данные:\n\n";
-				foreach ($_POST as $key => $value) { echo $key . " = " . $value . "\n";	}
-			} else {
-				echo "POST-параметры не получены.";
-			}
-			?&rt
+&lt?php // result.php
+header('Content-Type: text/plain; charset=utf-8'); // Устанавливаем кодировку
+// Проверяем, есть ли данные POST
+if (!empty($_POST)) {
+	echo "Сервер получил данные:\n\n";
+	foreach ($_POST as $key => $value) { echo $key . " = " . $value . "\n";	}
+} else {
+	echo "POST-параметры не получены.";
+}
+?&rt
 					</code></pre>
 					<p>
 						<br>
 						В примере при откравке формы JS назначает в форме обработчик нажания кнопок (function(event))
 					</p>
 					<pre><code>
-			<b>form.addEventListener("submit", function(event) {</b>
-			// Этот код выполнится позже
-			<b>});</b>
+<b>form.addEventListener("submit", function(event) {</b>
+// Этот код выполнится позже
+<b>});</b>
 					</code></pre>
 					<p>
 						<b>function(event)</b> - выполняется при нажатии кнопки. В ней прописаны 2 варианта<br>
@@ -1058,7 +1058,7 @@
 
 
 		<!-- *********************** -->
-		<!-- Модальное окно -->
+		<!-- <DIALOG> - Модальное окно -->
 		 <details class="accordeon-for-section-reference">
 			<summary>
 				<div>

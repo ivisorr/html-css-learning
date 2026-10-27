@@ -587,3 +587,15 @@
 }
 // ************************************
 // #endregion  Interactivniy blok
+
+
+// #region Modal Dialog 
+// ************************************
+{
+    const modal = document.getElementById("myModal");
+
+    document.getElementById("openModal").onclick = () => { modal.showModal(); };
+    document.getElementById("closeModal").onclick = () => { modal.close(); };
+}
+// ************************************
+// #region Modal Dialog

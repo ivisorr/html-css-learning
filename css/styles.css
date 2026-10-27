@@ -632,3 +632,25 @@ textarea {
 }
 /* Prilipshaya iconka vnizu */
 /* ********************** */
+
+/* ********************** */
+/* modalnoe vsplivayushee okno */
+dialog {
+    width: min(90%, 450px);
+    padding: 25px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px var(--menu-shadow);
+}
+
+/* Затемнение страницы */
+dialog::backdrop {
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+}
+
+#myModal{
+    background-color: var(--section-reference-color);
+}
+/* modalnoe vsplivayushee okno */
+/* ********************** */

@@ -38,7 +38,8 @@
 					<li><a href="#spiski">Списки</a></li>
 					<li><a href="#tablici">Таблицы</a></li>
 					<li><a href="#forms">Формы</a></li>
-					<li><a href="#iframes">IFRAME</a></li>
+					<li><a href="#iframes">IFrame</a></li>
+					<li><a href="#modalWindow">Modal</a></li>
 					<li><a href="#audio">Аудио</a></li>
 					<li><a href="#video">Видео</a></li>
 					<li><a href="#font-settings">Шрифт</a></li>
@@ -66,7 +67,8 @@
 					<li><a href="#spiski">Списки</a></li>
 					<li><a href="#tablici">Таблицы</a></li>
 					<li><a href="#forms">Формы</a></li>
-					<li><a href="#iframes">IFRAME</a></li>
+					<li><a href="#iframes">IFrame</a></li>
+					<li><a href="#modalWindow">Modal</a></li>
 					<li><a href="#audio">Аудио</a></li>
 					<li><a href="#video">Видео</a></li>	        
 					<li><a href="#blocks">Блоки</a></li>
@@ -1055,6 +1057,87 @@
 		</details>
 
 
+		<!-- *********************** -->
+		<!-- Модальное окно -->
+		 <details class="accordeon-for-section-reference">
+			<summary>
+				<div>
+					<h3>Модальное окно <b>&lt;dialog&gt;</b> </h3>
+				</div>
+			</summary>
+
+			<section id="modalWindow" class="section-reference">
+				<div class="block-description">
+					<p>
+						<b>&lt;dialog&gt;</b> - Создает модальное окно (Modal Dialog)<br>
+						<br>
+						<b>openModal</b> - кнопка для открытия окна<br> 
+						<b>closeModal</b> - кнопка для закрытия окна<br>						
+					</p>
+					<br>
+					<p><strong> HTML code </strong></p>
+					<pre>
+						<code> 
+&lt;button id="openModal"&gt;Модальное окно&lt;/button&gt;
+&lt;dialog id="myModal"&gt;
+	&lt;h2&gt;Модальное окно&lt;/h2&gt;
+	... содержимое модального окна ...
+	&lt;button id="closeModal"&gt;Закрыть&lt;/button&gt;
+&lt;/dialog&gt;
+						</code>
+					</pre>
+					<p><strong> CSS code </strong></p>
+					<pre>
+						<code> 
+dialog::backdrop {
+    background: rgba(0,0,0,0.6); /* затемнение с прозрачностью */
+    backdrop-filter: blur(4px);  /* размытие  */ 
+}							
+						</code>
+					</pre>
+					<p><strong> Java Script code </strong></p>
+					<pre>
+						<code> 
+const modal = document.getElementById("myModal");
+document.getElementById("openModal").onclick = () => { modal.showModal(); };
+document.getElementById("closeModal").onclick = () => { modal.close(); };
+						</code>
+					</pre>
+				</div>
+
+				<div class="block-example">
+					<button id="openModal" class="button-custom">Открыть окно</button>
+					<dialog id="myModal">
+						<h2>Модальное окно</h2>
+						<form action="php/form-handler.php" method="post">
+							<div class="form-greed">
+								<label for="name" class="title">Имя:</label>
+								<input type="text" id="name" name="name">
+
+								<label for="email" class="title">Email:</label>
+								<input type="email" id="email" name="email">
+
+								<span class="title">Пол:</span>
+								<div>
+									<input type="radio" name="gender" id="male" value="M" checked">
+									<label for="male">М</label>
+									
+									<input type="radio" name="gender" id="female" value="F">
+									<label for="female">Ж</label><br/>
+								</div>
+
+								<button type="submit" class="button-custom">Отправить</button>
+								<button id="closeModal" type="button" class="button-custom">Отмена</button>
+							</div>
+						</form>
+					</dialog>
+
+			
+				</div>
+			</section>
+		</details>
+
+
 		<!-- <AUDIO> - Вставка аудио контента -->
 		<details class="accordeon-for-section-reference">
 			<summary>
@@ -1929,29 +2012,8 @@
 					</p>
 				</div>
 				<div class="block-example">
+
 					<h3>Primer &lt;h2&gt;</h3>
-
-					<form action="example.php" method="post">
-					<div class="form-greed">
-						<label for="name" class="title">Имя:</label>
-						<input type="text" id="name" name="name">
-
-						<label for="email" class="title">Email:</label>
-						<input type="email" id="email" name="email">
-
-						<span class="title">Пол:</span>
-						<div>
-							<input type="radio" name="gender" id="male" value="M" checked">
-							<label for="male">М</label>
-							
-							<input type="radio" name="gender" id="female" value="F">
-							<label for="female">Ж</label><br/>
-						</div>
-
-						<input type="submit" class="button-custom" value="Регистрация" id="submit">
-						<button class="button-custom"> Регистрация </button>
-					</div>
-					</form>
 			
 				</div>
 			</section>

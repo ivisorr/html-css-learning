@@ -63,9 +63,9 @@ a:hover {
 }
 
 /* cursor */
-input, select, textarea {
-    /* cursor: url("../assets/images/cursor_pen_32.png") 2 29, auto; */
-}
+/* input, select, textarea {
+   cursor: url("../assets/images/cursor_pen_32.png") 2 29, auto;
+} */
 
 pre {
     font-family: inherit;
@@ -112,7 +112,7 @@ aside {
     top: Calc(var(--menu-height)+20);          /* отступа сверху  */
     left: 0; 
     width: var(--asaide-size);
-    height: calc(100vh - var(--menu-height)); высота на всю страницу минус высота шапки */
+    height: calc(100vh - var(--menu-height)); /*высота на всю страницу минус высота шапки */
     overflow-y: auto; /* если меню не помещается по высоте, то появляется полоса прокрутки */
     /* border: 1px solid var(--section-reference-frame-color);    */
 }
@@ -272,7 +272,7 @@ aside {
 .main-menu li > a {
     display: flex;
     align-items: center; /* центрируем элементы внутри */
-    padding: 10px 15px; отступы вокруг текста пункта меню 1-в/н 2-п/л */
+    padding: 10px 15px; /*отступы вокруг текста пункта меню 1-в/н 2-п/л */
     height: 100%;
     text-decoration: none; /* чтобы не было подчеркивания */
     text-shadow: 0 2px 2px black;

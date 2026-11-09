@@ -64,7 +64,7 @@ a:hover {
 
 /* cursor */
 input, select, textarea {
-    cursor: url("../assets/images/cursor_pen_32.png") 2 29, auto;
+    /* cursor: url("../assets/images/cursor_pen_32.png") 2 29, auto; */
 }
 
 pre {
@@ -109,11 +109,12 @@ main {
 aside {
     position: fixed ; /* чтобы боковое меню не сдвигалось */
     z-index: 100;   /* чтобы было поверх всего */
-    top: var(--menu-height);          /* отступа сверху  */
+    top: Calc(var(--menu-height)+20);          /* отступа сверху  */
     left: 0; 
     width: var(--asaide-size);
     height: calc(100vh - var(--menu-height)); высота на всю страницу минус высота шапки */
     overflow-y: auto; /* если меню не помещается по высоте, то появляется полоса прокрутки */
+    /* border: 1px solid var(--section-reference-frame-color);    */
 }
 
 .main-sections-container {
